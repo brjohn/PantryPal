@@ -2,6 +2,8 @@ const axios = require('axios');
 const spoonacular = require('./keys');
 const apiKeyToUse = spoonacular.apiKey3
 
+
+// A function that gets ingredients
 const getIngredient = (query, printToFileFunction) => axios.get(
   spoonacular.getIngredientsURL,
   {
@@ -23,31 +25,22 @@ const getIngredient = (query, printToFileFunction) => axios.get(
 
   .catch(err => console.log(err))
 
-module.exports = getIngredient;
 
 
 
-
-
-
-
-
-
-const getRecipebyIngredients = (ingredients) => axios.get(
+// A function that gets recipes given ingredients
+const getRecipeByIngredients = (ingredients) => axios.get(
   spoonacular.getRecipesByIngredientsURL,
   {
     params: { // params is the body parameters
       ingredients,
-      // excludeIngredients,
       apiKey: apiKeyToUse,
       number: 100, //100 is the maximum
-      // diet,
-      // intolerances
     }
 
   })
   .then(payload => {
-    console.log(payload.data)
+    console.log(payload.data[0])
     // we're gonna need to dispatch this through our reducers and middleware
   })
 
@@ -55,4 +48,25 @@ const getRecipebyIngredients = (ingredients) => axios.get(
 
 
 
-getRecipebyIngredients('apples,+flour,+sugar')
+// A function that gets information on a particular recipe
+const getRecipeInformation = (id) => axios.get(
+  spoonacular.getRecipeInformationURL(id),
+  { params: {
+    apiKey: apiKeyToUse,
+  }}
+
+
+).then(payload => {
+  console.log(payload)
+  // we're gonna need to dispatch this through our reducers and middleware
+})
+
+  .catch(err => console.log(err))
+
+
+
+// getRecipeInformation(547425)
+
+
+
+
