@@ -1,36 +1,168 @@
-let ingredients = {
-  "1140": "quail eggs",
-  "1188": "queso dip",
-  "1228": "queso fresco",
-  "5157": "quail",
-  "6150": "bar b q sauce",
-  "8123": "cooked quick oats",
-  "8164": "cooked quick grits",
-  "8314": "quick cooking grits",
-  "8402": "quick oats",
-  "9296": "quince",
-  "11244": "lambs quarters",
-  "20005": "quick cooking barley",
-  "20035": "quinoa",
-  "20048": "quick-cooking white rice",
-  "20137": "cooked quinoa",
-  "93660": "quick cooking tapioca",
-  "93671": "carrot quickbread mix",
-  "93676": "Quark",
-  "93773": "quinoa flour",
-  "93816": "quinoa flakes",
-  "98919": "quorn mince",
-  "98973": "queso quesadilla",
-  "99062": "quinoa pasta",
-  "99220": "queso anejo",
-  "99242": "artichoke heart quarters",
-  "99263": "white queso dip",
-  "99272": "Quark 40% Fett",
-  "99273": "Quark 20% Fett",
-  "1005091": "chicken quarters",
-  "10020035": "black quinoa",
-  "10020048": "quick-cooking brown rice",
-  "10020049": "cooked quick cooking brown rice",
-  "10093676": "skim milk quark"
-}
+let ingredients = [
+  {
+    "id": 5157,
+    "name": "quail",
+    "image": "quail.png"
+  },
+  {
+    "id": 20035,
+    "name": "quinoa",
+    "image": "uncooked-quinoa.png"
+  },
+  {
+    "id": 9296,
+    "name": "quince",
+    "image": "quince.jpg"
+  },
+  {
+    "id": 1188,
+    "name": "queso dip",
+    "image": "cheez-whiz.jpg"
+  },
+  {
+    "id": 1140,
+    "name": "quail eggs",
+    "image": "quail-eggs.jpg"
+  },
+  {
+    "id": 1228,
+    "name": "queso fresco",
+    "image": "camembert.png"
+  },
+  {
+    "id": 93773,
+    "name": "quinoa flour",
+    "image": "white-powder.jpg"
+  },
+  {
+    "id": 93816,
+    "name": "quinoa flakes",
+    "image": "quinoa-flakes.jpg"
+  },
+  {
+    "id": 8402,
+    "name": "quick oats",
+    "image": "rolled-oats.jpg"
+  },
+  {
+    "id": 99220,
+    "name": "queso anejo",
+    "image": "camembert.png"
+  },
+  {
+    "id": 8314,
+    "name": "quick cooking grits",
+    "image": "cornmeal.png"
+  },
+  {
+    "id": 93660,
+    "name": "quick cooking tapioca",
+    "image": "tapioca-pearls.png"
+  },
+  {
+    "id": 20005,
+    "name": "quick cooking barley",
+    "image": "pearl-barley.png"
+  },
+  {
+    "id": 99062,
+    "name": "quinoa pasta",
+    "image": "fusilli.jpg"
+  },
+  {
+    "id": 20048,
+    "name": "quick-cooking white rice",
+    "image": "uncooked-white-rice.png"
+  },
+  {
+    "id": 10020048,
+    "name": "quick-cooking brown rice",
+    "image": "uncooked-brown-rice.png"
+  },
+  {
+    "id": 98919,
+    "name": "quorn mince",
+    "image": "soy-crumbles.jpg"
+  },
+  {
+    "id": 98973,
+    "name": "queso quesadilla",
+    "image": "cheddar-cheese.png"
+  },
+  {
+    "id": 93676,
+    "name": "Quark",
+    "image": "white-cream-fluffy.jpg"
+  },
+  {
+    "id": 99272,
+    "name": "Quark 40% Fett",
+    "image": "white-cream-fluffy.jpg"
+  },
+  {
+    "id": 99273,
+    "name": "Quark 20% Fett",
+    "image": "white-cream-fluffy.jpg"
+  },
+  {
+    "id": 10020035,
+    "name": "black quinoa",
+    "image": "black-quinoa.png"
+  },
+  {
+    "id": 6150,
+    "name": "bar b q sauce",
+    "image": "barbecue-sauce.jpg"
+  },
+  {
+    "id": 20137,
+    "name": "cooked quinoa",
+    "image": "cooked-quinoa.png"
+  },
+  {
+    "id": 11244,
+    "name": "lambs quarters",
+    "image": "lambs-quarters.jpg"
+  },
+  {
+    "id": 99263,
+    "name": "white queso dip",
+    "image": "cheez-whiz.jpg"
+  },
+  {
+    "id": 93671,
+    "name": "carrot quickbread mix",
+    "image": "carrot-quick-bread.png"
+  },
+  {
+    "id": 8123,
+    "name": "cooked quick oats",
+    "image": "porridge-or-cream-of-wheat.png"
+  },
+  {
+    "id": 8164,
+    "name": "cooked quick grits",
+    "image": "cornmeal.png"
+  },
+  {
+    "id": 10020049,
+    "name": "cooked quick cooking brown rice",
+    "image": "uncooked-brown-rice.png"
+  },
+  {
+    "id": 1005091,
+    "name": "chicken quarters",
+    "image": "chicken-thigh.jpg"
+  },
+  {
+    "id": 10093676,
+    "name": "skim milk quark",
+    "image": "white-cream-fluffy.jpg"
+  },
+  {
+    "id": 99242,
+    "name": "artichoke heart quarters",
+    "image": "artichoke-hearts.png"
+  }
+]
 module.exports = ingredients

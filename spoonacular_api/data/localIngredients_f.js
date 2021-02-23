@@ -1,103 +1,503 @@
-let ingredients = {
-  "1019": "feta cheese",
-  "1020": "fontina cheese",
-  "1036": "fresh ricotta",
-  "1085": "fat-free milk",
-  "1118": "fat free yogurt",
-  "2018": "fennel seed",
-  "2019": "fenugreek seeds",
-  "2041": "fresh tarragon",
-  "2044": "fresh basil",
-  "2045": "fresh dill",
-  "2063": "fresh rosemary",
-  "2064": "fresh mint",
-  "4513": "frying oil",
-  "6963": "fish stock",
-  "8104": "farina",
-  "9089": "fig",
-  "9099": "fruit cocktail",
-  "9431": "fruit",
-  "10004": "fatback",
-  "10862": "fried bacon",
-  "11152": "frisee",
-  "11156": "fresh chives",
-  "11165": "fresh cilantro",
-  "11167": "fresh corn",
-  "11260": "fresh mushrooms",
-  "11304": "fresh peas",
-  "11408": "fries",
-  "11463": "frozen spinach",
-  "11913": "frozen corn",
-  "11957": "fennel",
-  "12108": "flake coconut",
-  "12220": "flax meal",
-  "15028": "flounder",
-  "16053": "fava beans",
-  "18029": "french loaf",
-  "18033": "french baguette",
-  "18338": "filo dough",
-  "18374": "fresh yeast",
-  "19003": "fritos",
-  "19100": "fudge",
-  "19230": "frosting",
-  "19310": "fruit pectin",
-  "20081": "flour",
-  "20093": "fresh pasta",
-  "21118": "frank",
-  "23059": "flat iron steak",
-  "23657": "flank steak",
-  "28015": "frozen waffles",
-  "42193": "fat free mayo",
-  "80200": "frog legs",
-  "93709": "fried onions",
-  "93808": "fennel pollen",
-  "93817": "fillo shells",
-  "93837": "focaccia",
-  "98869": "freekeh",
-  "98878": "Frank's Red Hot",
-  "98925": "fruit cake mix",
-  "98934": "flax oil",
-  "98953": "fennel powder",
-  "98963": "fenugreek leaves",
-  "99226": "fresh sage",
-  "99231": "fresh chorizo",
-  "1002002": "five spice powder",
-  "1002004": "fresh bay leaf",
-  "1002025": "fresh nutmeg",
-  "1004513": "fat of choice",
-  "1005150": "foie gras",
-  "1009265": "fuyu persimmons",
-  "1011077": "full-fat milk",
-  "1012049": "fresh thyme",
-  "1021026": "fresh mozzarella",
-  "1029016": "fruit juice",
-  "1049003": "fuji apple",
-  "10011052": "flat beans",
-  "10011167": "fresh corn kernels",
-  "10011297": "fresh marjoram",
-  "10012220": "flax",
-  "10013926": "filet mignon",
-  "10015117": "fresh tuna",
-  "10016213": "firm tofu",
-  "10018413": "flatbread",
-  "10019348": "fudge topping",
-  "10020005": "farro",
-  "10020409": "fettuccine",
-  "10111297": "fresh herbs",
-  "10112220": "flax egg",
-  "10115261": "fish",
-  "10120420": "farfalle",
-  "10211052": "fresh green beans",
-  "10211216": "fresh ginger",
-  "10211819": "finger chile",
-  "10218364": "flour tortilla",
-  "10242040": "flavor shot",
-  "10311297": "flat-leaf parsley",
-  "10511297": "fresh parsley",
-  "10711111": "food dye",
-  "11311111": "file powder",
-  "11320420": "fusilli",
-  "11519297": "fig jam",
-  "12320420": "fregola"
-}
+let ingredients = [
+  {
+    "id": 9089,
+    "name": "fig",
+    "image": "figs-fresh.jpg"
+  },
+  {
+    "id": 10115261,
+    "name": "fish",
+    "image": "fish-fillet.jpg"
+  },
+  {
+    "id": 10012220,
+    "name": "flax",
+    "image": "flax-seeds.png"
+  },
+  {
+    "id": 20081,
+    "name": "flour",
+    "image": "flour.png"
+  },
+  {
+    "id": 9431,
+    "name": "fruit",
+    "image": "mixed-fresh-fruit.jpg"
+  },
+  {
+    "id": 10020005,
+    "name": "farro",
+    "image": "farro-or-spelt.jpg"
+  },
+  {
+    "id": 19100,
+    "name": "fudge",
+    "image": "fudge-isolated.jpg"
+  },
+  {
+    "id": 11408,
+    "name": "fries",
+    "image": "french-fries-isolated.jpg"
+  },
+  {
+    "id": 21118,
+    "name": "frank",
+    "image": "hotdogs.png"
+  },
+  {
+    "id": 11957,
+    "name": "fennel",
+    "image": "fennel.png"
+  },
+  {
+    "id": 11152,
+    "name": "frisee",
+    "image": "frisee.jpg"
+  },
+  {
+    "id": 19003,
+    "name": "fritos",
+    "image": "fritos-or-corn-chips.jpg"
+  },
+  {
+    "id": 11320420,
+    "name": "fusilli",
+    "image": "fusilli.jpg"
+  },
+  {
+    "id": 11519297,
+    "name": "fig jam",
+    "image": "fig-preserves.jpg"
+  },
+  {
+    "id": 10711111,
+    "name": "food dye",
+    "image": "food-coloring.png"
+  },
+  {
+    "id": 19230,
+    "name": "frosting",
+    "image": "vanilla-frosting.png"
+  },
+  {
+    "id": 98869,
+    "name": "freekeh",
+    "image": "freekeh.jpg"
+  },
+  {
+    "id": 10112220,
+    "name": "flax egg",
+    "image": "no.jpg"
+  },
+  {
+    "id": 10120420,
+    "name": "farfalle",
+    "image": "farfalle.png"
+  },
+  {
+    "id": 93837,
+    "name": "focaccia",
+    "image": "focaccia.jpg"
+  },
+  {
+    "id": 15028,
+    "name": "flounder",
+    "image": "flounder-fresh.jpg"
+  },
+  {
+    "id": 8104,
+    "name": "farina",
+    "image": "porridge-or-cream-of-wheat.png"
+  },
+  {
+    "id": 12220,
+    "name": "flax meal",
+    "image": "flax-seeds.png"
+  },
+  {
+    "id": 10018413,
+    "name": "flatbread",
+    "image": "pita-bread.jpg"
+  },
+  {
+    "id": 1005150,
+    "name": "foie gras",
+    "image": "liver-goose-or-foie-gras.jpg"
+  },
+  {
+    "id": 2064,
+    "name": "fresh mint",
+    "image": "mint.jpg"
+  },
+  {
+    "id": 2045,
+    "name": "fresh dill",
+    "image": "dill.jpg"
+  },
+  {
+    "id": 99226,
+    "name": "fresh sage",
+    "image": "fresh-sage.png"
+  },
+  {
+    "id": 10004,
+    "name": "fatback",
+    "image": "pork-belly.jpg"
+  },
+  {
+    "id": 10020409,
+    "name": "fettuccine",
+    "image": "egg-noodles.jpg"
+  },
+  {
+    "id": 11304,
+    "name": "fresh peas",
+    "image": "peas.jpg"
+  },
+  {
+    "id": 11167,
+    "name": "fresh corn",
+    "image": "corn-on-the-cob.jpg"
+  },
+  {
+    "id": 18338,
+    "name": "filo dough",
+    "image": "filo-dough.png"
+  },
+  {
+    "id": 6963,
+    "name": "fish stock",
+    "image": "chicken-broth.png"
+  },
+  {
+    "id": 16053,
+    "name": "fava beans",
+    "image": "broad-beans.jpg"
+  },
+  {
+    "id": 1049003,
+    "name": "fuji apple",
+    "image": "apple.jpg"
+  },
+  {
+    "id": 10016213,
+    "name": "firm tofu",
+    "image": "tofu.png"
+  },
+  {
+    "id": 10011052,
+    "name": "flat beans",
+    "image": "runner-beans.jpg"
+  },
+  {
+    "id": 2044,
+    "name": "fresh basil",
+    "image": "fresh-basil.jpg"
+  },
+  {
+    "id": 1012049,
+    "name": "fresh thyme",
+    "image": "thyme.jpg"
+  },
+  {
+    "id": 1019,
+    "name": "feta cheese",
+    "image": "feta.png"
+  },
+  {
+    "id": 11913,
+    "name": "frozen corn",
+    "image": "corn.png"
+  },
+  {
+    "id": 4513,
+    "name": "frying oil",
+    "image": "vegetable-oil.jpg"
+  },
+  {
+    "id": 23657,
+    "name": "flank steak",
+    "image": "flank-steak.jpg"
+  },
+  {
+    "id": 2018,
+    "name": "fennel seed",
+    "image": "fennel-seeds.jpg"
+  },
+  {
+    "id": 10111297,
+    "name": "fresh herbs",
+    "image": "mixed-fresh-herbs.jpg"
+  },
+  {
+    "id": 12320420,
+    "name": "fregola",
+    "image": "couscous-israeli.jpg"
+  },
+  {
+    "id": 18029,
+    "name": "french loaf",
+    "image": "crusty-bread.jpg"
+  },
+  {
+    "id": 10862,
+    "name": "fried bacon",
+    "image": "cooked-bacon.jpg"
+  },
+  {
+    "id": 10211216,
+    "name": "fresh ginger",
+    "image": "ginger.png"
+  },
+  {
+    "id": 11156,
+    "name": "fresh chives",
+    "image": "fresh-chives.jpg"
+  },
+  {
+    "id": 10242040,
+    "name": "flavor shot",
+    "image": "no.jpg"
+  },
+  {
+    "id": 93709,
+    "name": "fried onions",
+    "image": "fried-onions.jpg"
+  },
+  {
+    "id": 18374,
+    "name": "fresh yeast",
+    "image": "yeast-fresh.jpg"
+  },
+  {
+    "id": 1029016,
+    "name": "fruit juice",
+    "image": "apple-juice.jpg"
+  },
+  {
+    "id": 11311111,
+    "name": "file powder",
+    "image": "hemp-protein-powder.png"
+  },
+  {
+    "id": 98934,
+    "name": "flax oil",
+    "image": "flax-oil.png"
+  },
+  {
+    "id": 1002025,
+    "name": "fresh nutmeg",
+    "image": "ground-nutmeg.jpg"
+  },
+  {
+    "id": 19310,
+    "name": "fruit pectin",
+    "image": "white-powder.jpg"
+  },
+  {
+    "id": 10511297,
+    "name": "fresh parsley",
+    "image": "parsley.jpg"
+  },
+  {
+    "id": 10015117,
+    "name": "fresh tuna",
+    "image": "tuna-steak.png"
+  },
+  {
+    "id": 1085,
+    "name": "fat-free milk",
+    "image": "milk.jpg"
+  },
+  {
+    "id": 10019348,
+    "name": "fudge topping",
+    "image": "chocolate-glaze.png"
+  },
+  {
+    "id": 1011077,
+    "name": "full-fat milk",
+    "image": "milk.png"
+  },
+  {
+    "id": 12108,
+    "name": "flake coconut",
+    "image": "coconut-flakes.png"
+  },
+  {
+    "id": 10013926,
+    "name": "filet mignon",
+    "image": "filet-mignon.png"
+  },
+  {
+    "id": 93817,
+    "name": "fillo shells",
+    "image": "mini-phyllo-shells.png"
+  },
+  {
+    "id": 20093,
+    "name": "fresh pasta",
+    "image": "fusilli.jpg"
+  },
+  {
+    "id": 1036,
+    "name": "fresh ricotta",
+    "image": "ricotta.png"
+  },
+  {
+    "id": 11165,
+    "name": "fresh cilantro",
+    "image": "cilantro.png"
+  },
+  {
+    "id": 2063,
+    "name": "fresh rosemary",
+    "image": "rosemary.jpg"
+  },
+  {
+    "id": 11463,
+    "name": "frozen spinach",
+    "image": "spinach-frozen.jpg"
+  },
+  {
+    "id": 2041,
+    "name": "fresh tarragon",
+    "image": "tarragon.jpg"
+  },
+  {
+    "id": 1020,
+    "name": "fontina cheese",
+    "image": "fontina.jpg"
+  },
+  {
+    "id": 10011297,
+    "name": "fresh marjoram",
+    "image": "marjoram.jpg"
+  },
+  {
+    "id": 42193,
+    "name": "fat free mayo",
+    "image": "mayonnaise.png"
+  },
+  {
+    "id": 9099,
+    "name": "fruit cocktail",
+    "image": "fruit-cocktail.png"
+  },
+  {
+    "id": 1004513,
+    "name": "fat of choice",
+    "image": "butter-sliced.jpg"
+  },
+  {
+    "id": 10218364,
+    "name": "flour tortilla",
+    "image": "flour-tortilla.jpg"
+  },
+  {
+    "id": 1002004,
+    "name": "fresh bay leaf",
+    "image": "bay-leaves.jpg"
+  },
+  {
+    "id": 11260,
+    "name": "fresh mushrooms",
+    "image": "mushrooms.png"
+  },
+  {
+    "id": 18033,
+    "name": "french baguette",
+    "image": "half-baguette.jpg"
+  },
+  {
+    "id": 2019,
+    "name": "fenugreek seeds",
+    "image": "fenugreek.jpg"
+  },
+  {
+    "id": 28015,
+    "name": "frozen waffles",
+    "image": "frozen-waffles.png"
+  },
+  {
+    "id": 99231,
+    "name": "fresh chorizo",
+    "image": "chorizo-sausages.png"
+  },
+  {
+    "id": 1021026,
+    "name": "fresh mozzarella",
+    "image": "mozzarella.png"
+  },
+  {
+    "id": 98925,
+    "name": "fruit cake mix",
+    "image": "candied-fruit-cake-mix.jpg"
+  },
+  {
+    "id": 98953,
+    "name": "fennel powder",
+    "image": "hemp-protein-powder.png"
+  },
+  {
+    "id": 10311297,
+    "name": "flat-leaf parsley",
+    "image": "parsley.jpg"
+  },
+  {
+    "id": 10211052,
+    "name": "fresh green beans",
+    "image": "green-beans-or-string-beans.jpg"
+  },
+  {
+    "id": 80200,
+    "name": "frog legs",
+    "image": "frog-legs.jpg"
+  },
+  {
+    "id": 93808,
+    "name": "fennel pollen",
+    "image": "bee-pollen.jpg"
+  },
+  {
+    "id": 23059,
+    "name": "flat iron steak",
+    "image": "blade-steak.png"
+  },
+  {
+    "id": 1118,
+    "name": "fat free yogurt",
+    "image": "plain-yogurt.jpg"
+  },
+  {
+    "id": 98878,
+    "name": "Frank's Red Hot",
+    "image": "hot-sauce-or-tabasco.png"
+  },
+  {
+    "id": 1009265,
+    "name": "fuyu persimmons",
+    "image": "fuyu-persimmon.png"
+  },
+  {
+    "id": 98963,
+    "name": "fenugreek leaves",
+    "image": "methi.png"
+  },
+  {
+    "id": 1002002,
+    "name": "five spice powder",
+    "image": "chinese-five-spice-powder.png"
+  },
+  {
+    "id": 10011167,
+    "name": "fresh corn kernels",
+    "image": "corn.png"
+  },
+  {
+    "id": 10211819,
+    "name": "finger chile",
+    "image": "red-chili.jpg"
+  }
+]
 module.exports = ingredients
