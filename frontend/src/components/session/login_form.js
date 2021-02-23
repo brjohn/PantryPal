@@ -53,6 +53,15 @@ class LoginForm extends React.Component {
     );
   }
 
+  demoButton() {
+    return (
+      <button type="submit" className="demo-button"
+        onClick={() => this.setState({ email: "demo@gmail.com", password: '123456' })}>
+        Try a Demo
+      </button>
+    )
+  }
+
   render() {
     return (
       <div>
@@ -71,6 +80,11 @@ class LoginForm extends React.Component {
             />
             <br />
             <input type="submit" value="Submit" />
+            <br />
+            <div className="demo-button-div">
+              {this.demoButton()}
+            </div>
+            <br />
             {this.renderErrors()}
           </div>
         </form>
