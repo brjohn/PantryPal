@@ -4,7 +4,7 @@ const fs = require('fs');
 
 
 const mergeWrite = (fileSalt = null) => (newData)=> {
-  const filePath = `./data/localIngredients${fileSalt}.js`
+  const filePath = `./spoonacular_api/data/localIngredients${fileSalt}.js`
   // const mergedData = Object.assign({}, importedData, newData);
   const dataToBeWritten = 'let ingredients = ' + JSON.stringify(newData, null, 2)
     + '\nmodule.exports = ingredients'

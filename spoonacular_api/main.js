@@ -1,5 +1,6 @@
 const mergeWrite = require('./files')
-const getIngredient = require('./spoonacular_api')
+const {getIngredient} = require('./spoonacular_api')
+
 
 
 // getIngredient('c', mergeWrite)
@@ -8,25 +9,41 @@ const getIngredient = require('./spoonacular_api')
 const getIngredients = () => {
   for (let i = 97; i < 123; i++) {
     let phrase = String.fromCharCode(i)
-    getIngredient(phrase, mergeWrite('_'+phrase));
+    getIngredient(phrase, mergeWrite('_' + phrase))
   }
 }
+
+// getIngredients()
+
+
+
+
+
+
+
+
+
 
 
 const mergeIngredients = () => {
   let importedIngredients = {};
-  let allIngredients = {};
+  let allIngredients = [];
 
   for (let i = 97; i < 123; i++) {
     let phrase = String.fromCharCode(i)
-
+    // console.log(phrase)
     importedIngredients = require(`./data/localIngredients_${phrase}`)
-    Object.assign(allIngredients, importedIngredients)
+    // console.log(importedIngredients[0].name)
+    // Object.assign(allIngredients, importedIngredients)
+    allIngredients = allIngredients.concat(importedIngredients)
   }
-
+  // console.log(allIngredients)
   return allIngredients
 }
 
-// mergeWrite('_all')(mergeIngredients())
 
-getIngredient('be', console.log)
+// mergeIngredients();
+
+mergeWrite('_all')(mergeIngredients())
+
+

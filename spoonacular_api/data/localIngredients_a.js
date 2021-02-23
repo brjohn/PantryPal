@@ -1,103 +1,503 @@
-let ingredients = {
-  "1253": "american cheese",
-  "2001": "allspice",
-  "2002": "anise",
-  "2048": "apple cider vinegar",
-  "4016": "asian salad dressing",
-  "4529": "almond oil",
-  "4581": "avocado oil",
-  "6179": "asian fish sauce",
-  "6979": "adobo sauce",
-  "6996": "au jus",
-  "7064": "andouille",
-  "8001": "all-bran",
-  "9003": "apple",
-  "9016": "apple juice",
-  "9019": "applesauce",
-  "9021": "apricot",
-  "9036": "apricot nectar",
-  "9037": "avocados",
-  "10123": "applewood smoked bacon",
-  "11007": "artichoke",
-  "11011": "asparagus",
-  "11209": "aubergine",
-  "11482": "acorn squash",
-  "11663": "agar",
-  "11959": "arugula",
-  "11962": "arbol chiles",
-  "12061": "almond",
-  "12071": "almond paste",
-  "12195": "almond butter",
-  "14037": "alcohol",
-  "15001": "anchovy",
-  "15117": "ahi tuna steak",
-  "15126": "albacore tuna in water",
-  "16002": "adzuki beans",
-  "18088": "angel food cake",
-  "18370": "aluminum free baking powder",
-  "18375": "active yeast",
-  "19065": "almond joy bar",
-  "19294": "apple butter",
-  "19312": "apple pie filling",
-  "19719": "apricot jam",
-  "19912": "agave",
-  "20001": "amaranth",
-  "20003": "arrowroot",
-  "20081": "AP flour",
-  "93606": "alfredo sauce",
-  "93607": "almond milk",
-  "93647": "acini di pepe",
-  "93648": "achiote",
-  "93653": "angostura bitters",
-  "93693": "ackee",
-  "93740": "almond meal",
-  "93758": "aioli",
-  "93763": "amaranth flour",
-  "93766": "amaretti cookies",
-  "93796": "anchovies in salt",
-  "98848": "allergy friendly chocolate chips",
-  "98857": "almond bark",
-  "98896": "acai juice",
-  "98917": "andes mints",
-  "98941": "apricot cake filling",
-  "98959": "artichoke bottoms",
-  "98964": "amchur",
-  "99017": "ajwain",
-  "99034": "Asian dumplings",
-  "99094": "acai powder",
-  "99095": "alo drink",
-  "99120": "alligator meat",
-  "99168": "amla",
-  "99220": "anejo cheese",
-  "99242": "artichoke hearts",
-  "1001033": "asiago",
-  "1002001": "allspice berries",
-  "1002050": "almond extract",
-  "1002069": "aged balsamic vinegar",
-  "1006973": "aji amarillo paste",
-  "1009016": "apple cider",
-  "1009252": "anjou pear",
-  "1012020": "adobo seasoning",
-  "1012050": "artificial vanilla flavoring",
-  "1022009": "ancho chile powder",
-  "1029195": "alcaparrado",
-  "1032035": "asafetida",
-  "1042035": "apple pie spice",
-  "1062009": "aleppo pepper",
-  "10014534": "amaretto liqueur",
-  "10015002": "anchovy paste",
-  "10019297": "apple jelly",
-  "10020052": "arborio rice",
-  "10020420": "angel hair",
-  "10031015": "anaheim chiles",
-  "10093648": "annatto seeds",
-  "10111001": "alfalfa sprouts",
-  "10111583": "Asian medley",
-  "10115117": "ahi tuna",
-  "10118369": "alum",
-  "10211962": "ancho chile",
-  "10311819": "aji amarillo",
-  "10414003": "ale",
-  "10611111": "anise extract"
-}
+let ingredients = [
+  {
+    "id": 10414003,
+    "name": "ale",
+    "image": "ale.png"
+  },
+  {
+    "id": 11663,
+    "name": "agar",
+    "image": "white-powder.jpg"
+  },
+  {
+    "id": 9003,
+    "name": "apple",
+    "image": "apple.jpg"
+  },
+  {
+    "id": 19912,
+    "name": "agave",
+    "image": "agave.png"
+  },
+  {
+    "id": 93758,
+    "name": "aioli",
+    "image": "aioli.jpg"
+  },
+  {
+    "id": 2002,
+    "name": "anise",
+    "image": "aniseed-or-anise.jpg"
+  },
+  {
+    "id": 12061,
+    "name": "almond",
+    "image": "almonds.jpg"
+  },
+  {
+    "id": 1001033,
+    "name": "asiago",
+    "image": "parmesan.jpg"
+  },
+  {
+    "id": 99168,
+    "name": "amla",
+    "image": "sliced-amla.jpg"
+  },
+  {
+    "id": 10118369,
+    "name": "alum",
+    "image": "white-powder.jpg"
+  },
+  {
+    "id": 11959,
+    "name": "arugula",
+    "image": "arugula-or-rocket-salad.jpg"
+  },
+  {
+    "id": 15001,
+    "name": "anchovy",
+    "image": "anchovies.jpg"
+  },
+  {
+    "id": 9021,
+    "name": "apricot",
+    "image": "apricot.jpg"
+  },
+  {
+    "id": 93648,
+    "name": "achiote",
+    "image": "paprika.jpg"
+  },
+  {
+    "id": 9037,
+    "name": "avocados",
+    "image": "avocado.jpg"
+  },
+  {
+    "id": 2001,
+    "name": "allspice",
+    "image": "allspice-ground.jpg"
+  },
+  {
+    "id": 98964,
+    "name": "amchur",
+    "image": "amchoor.jpg"
+  },
+  {
+    "id": 10115117,
+    "name": "ahi tuna",
+    "image": "tuna-steak.png"
+  },
+  {
+    "id": 20081,
+    "name": "AP flour",
+    "image": "flour.png"
+  },
+  {
+    "id": 20001,
+    "name": "amaranth",
+    "image": "amaranth.jpg"
+  },
+  {
+    "id": 11011,
+    "name": "asparagus",
+    "image": "asparagus.png"
+  },
+  {
+    "id": 20003,
+    "name": "arrowroot",
+    "image": "white-powder.jpg"
+  },
+  {
+    "id": 6996,
+    "name": "au jus",
+    "image": "gravy.jpg"
+  },
+  {
+    "id": 11209,
+    "name": "aubergine",
+    "image": "eggplant.png"
+  },
+  {
+    "id": 1032035,
+    "name": "asafetida",
+    "image": "curry-powder.jpg"
+  },
+  {
+    "id": 14037,
+    "name": "alcohol",
+    "image": "rum-dark.jpg"
+  },
+  {
+    "id": 11007,
+    "name": "artichoke",
+    "image": "artichokes.png"
+  },
+  {
+    "id": 9019,
+    "name": "applesauce",
+    "image": "applesauce.png"
+  },
+  {
+    "id": 99017,
+    "name": "ajwain",
+    "image": "ajwain.jpg"
+  },
+  {
+    "id": 8001,
+    "name": "all-bran",
+    "image": "all-bran-cereal.jpg"
+  },
+  {
+    "id": 7064,
+    "name": "andouille",
+    "image": "smoked-sausage.jpg"
+  },
+  {
+    "id": 99095,
+    "name": "alo drink",
+    "image": "aloe-vera-juice.jpg"
+  },
+  {
+    "id": 10020420,
+    "name": "angel hair",
+    "image": "angelhair.jpg"
+  },
+  {
+    "id": 93607,
+    "name": "almond milk",
+    "image": "almond-milk.png"
+  },
+  {
+    "id": 9016,
+    "name": "apple juice",
+    "image": "apple-juice.jpg"
+  },
+  {
+    "id": 1009016,
+    "name": "apple cider",
+    "image": "apple-cider.jpg"
+  },
+  {
+    "id": 4581,
+    "name": "avocado oil",
+    "image": "avocado-oil.jpg"
+  },
+  {
+    "id": 6979,
+    "name": "adobo sauce",
+    "image": "harissa.jpg"
+  },
+  {
+    "id": 93740,
+    "name": "almond meal",
+    "image": "almond-meal-or-almond-flour.jpg"
+  },
+  {
+    "id": 19719,
+    "name": "apricot jam",
+    "image": "apricot-jam.jpg"
+  },
+  {
+    "id": 10019297,
+    "name": "apple jelly",
+    "image": "apple-jelly.jpg"
+  },
+  {
+    "id": 98857,
+    "name": "almond bark",
+    "image": "baking-chocolate.jpg"
+  },
+  {
+    "id": 1009252,
+    "name": "anjou pear",
+    "image": "anjou-pear.jpg"
+  },
+  {
+    "id": 4529,
+    "name": "almond oil",
+    "image": "almond-oil.jpg"
+  },
+  {
+    "id": 98896,
+    "name": "acai juice",
+    "image": "acai-juice.jpg"
+  },
+  {
+    "id": 10211962,
+    "name": "ancho chile",
+    "image": "dried-arbol-chiles.jpg"
+  },
+  {
+    "id": 18375,
+    "name": "active yeast",
+    "image": "yeast-granules.jpg"
+  },
+  {
+    "id": 10020052,
+    "name": "arborio rice",
+    "image": "arborio-rice.png"
+  },
+  {
+    "id": 98917,
+    "name": "andes mints",
+    "image": "mint-chocolate.jpg"
+  },
+  {
+    "id": 11482,
+    "name": "acorn squash",
+    "image": "acorn-squash.jpg"
+  },
+  {
+    "id": 12071,
+    "name": "almond paste",
+    "image": "marzipan-or-almond-paste.jpg"
+  },
+  {
+    "id": 19294,
+    "name": "apple butter",
+    "image": "apple-jelly.jpg"
+  },
+  {
+    "id": 11962,
+    "name": "arbol chiles",
+    "image": "dried-arbol-chiles.jpg"
+  },
+  {
+    "id": 12195,
+    "name": "almond butter",
+    "image": "almond-butter.jpg"
+  },
+  {
+    "id": 93606,
+    "name": "alfredo sauce",
+    "image": "alfredo-sauce.png"
+  },
+  {
+    "id": 10015002,
+    "name": "anchovy paste",
+    "image": "anchovy-paste.png"
+  },
+  {
+    "id": 1002050,
+    "name": "almond extract",
+    "image": "extract.png"
+  },
+  {
+    "id": 1062009,
+    "name": "aleppo pepper",
+    "image": "red-pepper-flakes.jpg"
+  },
+  {
+    "id": 10611111,
+    "name": "anise extract",
+    "image": "vanilla-extract.jpg"
+  },
+  {
+    "id": 10311819,
+    "name": "aji amarillo",
+    "image": "aji-amarillo.png"
+  },
+  {
+    "id": 9036,
+    "name": "apricot nectar",
+    "image": "apricot-nectar-or-apricot-juice.jpg"
+  },
+  {
+    "id": 1253,
+    "name": "american cheese",
+    "image": "american-cheese.jpg"
+  },
+  {
+    "id": 10111583,
+    "name": "Asian medley",
+    "image": "asian-medley.png"
+  },
+  {
+    "id": 15117,
+    "name": "ahi tuna steak",
+    "image": "tuna-steak.png"
+  },
+  {
+    "id": 18088,
+    "name": "angel food cake",
+    "image": "angel-food-cake.jpg"
+  },
+  {
+    "id": 10031015,
+    "name": "anaheim chiles",
+    "image": "chili-peppers-green.jpg"
+  },
+  {
+    "id": 1042035,
+    "name": "apple pie spice",
+    "image": "garam-masala.jpg"
+  },
+  {
+    "id": 1012020,
+    "name": "adobo seasoning",
+    "image": "onion-powder.jpg"
+  },
+  {
+    "id": 10111001,
+    "name": "alfalfa sprouts",
+    "image": "alfalfa-sprouts.png"
+  },
+  {
+    "id": 99242,
+    "name": "artichoke hearts",
+    "image": "artichoke-hearts.png"
+  },
+  {
+    "id": 16002,
+    "name": "adzuki beans",
+    "image": "Azuki-beans.jpg"
+  },
+  {
+    "id": 6179,
+    "name": "asian fish sauce",
+    "image": "asian-fish-sauce.jpg"
+  },
+  {
+    "id": 10014534,
+    "name": "amaretto liqueur",
+    "image": "temporary-orange-liqueur.jpg"
+  },
+  {
+    "id": 1002001,
+    "name": "allspice berries",
+    "image": "allspice-berries.png"
+  },
+  {
+    "id": 10093648,
+    "name": "annatto seeds",
+    "image": "achiote-seeds.jpg"
+  },
+  {
+    "id": 93763,
+    "name": "amaranth flour",
+    "image": "brown-flour.jpg"
+  },
+  {
+    "id": 19312,
+    "name": "apple pie filling",
+    "image": "apple-pie-slice.jpg"
+  },
+  {
+    "id": 93653,
+    "name": "angostura bitters",
+    "image": "dark-sauce.jpg"
+  },
+  {
+    "id": 93766,
+    "name": "amaretti cookies",
+    "image": "amaretti.jpg"
+  },
+  {
+    "id": 1022009,
+    "name": "ancho chile powder",
+    "image": "chili-powder.jpg"
+  },
+  {
+    "id": 93647,
+    "name": "acini di pepe",
+    "image": "pastina.jpg"
+  },
+  {
+    "id": 2048,
+    "name": "apple cider vinegar",
+    "image": "apple-cider-vinegar.jpg"
+  },
+  {
+    "id": 19065,
+    "name": "almond joy bar",
+    "image": "almond-joy.png"
+  },
+  {
+    "id": 1002069,
+    "name": "aged balsamic vinegar",
+    "image": "balsamic-vinegar.jpg"
+  },
+  {
+    "id": 10123,
+    "name": "applewood smoked bacon",
+    "image": "raw-bacon.png"
+  },
+  {
+    "id": 93693,
+    "name": "ackee",
+    "image": "ackee.png"
+  },
+  {
+    "id": 98959,
+    "name": "artichoke bottoms",
+    "image": "artichoke-hearts.png"
+  },
+  {
+    "id": 15126,
+    "name": "albacore tuna in water",
+    "image": "canned-tuna.png"
+  },
+  {
+    "id": 1029195,
+    "name": "alcaparrado",
+    "image": "green-olives---sliced.jpg"
+  },
+  {
+    "id": 18370,
+    "name": "aluminum free baking powder",
+    "image": "white-powder.jpg"
+  },
+  {
+    "id": 4016,
+    "name": "asian salad dressing",
+    "image": "asian-toasted-sesame-dressing.png"
+  },
+  {
+    "id": 1006973,
+    "name": "aji amarillo paste",
+    "image": "amarillo-chili-sauce.png"
+  },
+  {
+    "id": 99034,
+    "name": "Asian dumplings",
+    "image": "chinese-dumplings-or-gyoza.jpg"
+  },
+  {
+    "id": 99220,
+    "name": "anejo cheese",
+    "image": "camembert.png"
+  },
+  {
+    "id": 99094,
+    "name": "acai powder",
+    "image": "acai-berry-powder.jpg"
+  },
+  {
+    "id": 1012050,
+    "name": "artificial vanilla flavoring",
+    "image": "vanilla-extract.jpg"
+  },
+  {
+    "id": 98941,
+    "name": "apricot cake filling",
+    "image": "no.jpg"
+  },
+  {
+    "id": 99120,
+    "name": "alligator meat",
+    "image": "crocodile-meat.jpg"
+  },
+  {
+    "id": 93796,
+    "name": "anchovies in salt",
+    "image": "anchovies.jpg"
+  },
+  {
+    "id": 98848,
+    "name": "allergy friendly chocolate chips",
+    "image": "chocolate-chips.jpg"
+  }
+]
 module.exports = ingredients
