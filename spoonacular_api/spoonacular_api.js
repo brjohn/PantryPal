@@ -3,7 +3,7 @@ const spoonacular = require('./keys');
 const apiKeyToUse = spoonacular.apiKey3
 
 
-// A function that gets ingredients
+// 01. A function that gets ingredients
 const getIngredient = (query, printToFileFunction) => axios.get(
   spoonacular.getIngredientsURL,
   {
@@ -28,7 +28,7 @@ const getIngredient = (query, printToFileFunction) => axios.get(
 
 
 
-// A function that gets recipes given ingredients
+// 02. A function that gets recipes given ingredients
 const getRecipeByIngredients = (ingredients) => axios.get(
   spoonacular.getRecipesByIngredientsURL,
   {
@@ -48,7 +48,7 @@ const getRecipeByIngredients = (ingredients) => axios.get(
 
 
 
-// A function that gets information on a particular recipe
+// 03. A function that gets information on a particular recipe
 const getRecipeInformation = (id) => axios.get(
   spoonacular.getRecipeInformationURL(id),
   { params: {
@@ -57,15 +57,22 @@ const getRecipeInformation = (id) => axios.get(
 
 
 ).then(payload => {
-  console.log(payload)
+  console.log(payload.data.extendedIngredients)
   // we're gonna need to dispatch this through our reducers and middleware
 })
 
   .catch(err => console.log(err))
 
 
+// getRecipeInformation(45641)
 
-// getRecipeInformation(547425)
+
+// Exporting 3 functions that were created
+module.exports = {
+  getIngredient,
+  getRecipeByIngredients,
+  getRecipeInformation
+}
 
 
 
