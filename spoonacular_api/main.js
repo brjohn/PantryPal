@@ -19,7 +19,6 @@ const mergeIngredients = () => {
 
   for (let i = 97; i < 123; i++) {
     let phrase = String.fromCharCode(i)
-    // getIngredient(phrase, mergeWrite('_' + phrase));
 
     importedIngredients = require(`./data/localIngredients_${phrase}`)
     Object.assign(allIngredients, importedIngredients)
@@ -28,4 +27,6 @@ const mergeIngredients = () => {
   return allIngredients
 }
 
-mergeWrite('_all')(mergeIngredients())
+// mergeWrite('_all')(mergeIngredients())
+
+getIngredient('be', console.log)
