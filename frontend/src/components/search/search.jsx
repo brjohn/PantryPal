@@ -12,7 +12,7 @@ class Search extends React.Component {
   updateSearch() {
     return (e) => {
       if (e.target.value === '') {
-        debugger
+        // debugger
         e.target.nextElementSibling.classList.add('hide')
         // e.target.classList.add('hide')
       } else {
@@ -35,9 +35,11 @@ class Search extends React.Component {
           onChange={this.updateSearch()} />
 
         <div className='search-values hide'>
-          {searchIngredient(this.state.searching).map(el => {
+          {searchIngredient(this.state.searching).map((el, idx) => {
             return (
-              <div >{el}</div>
+              <div>
+                <div className='search-results' key={el+idx}>{el}</div>
+              </div>
             )
           })}
         </div>

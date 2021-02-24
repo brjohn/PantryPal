@@ -1,3 +1,45 @@
 .hide {
   display: none;
 }
+
+.search-values {
+  max-height: 300px;
+  width: 265px;
+  overflow: hidden;
+
+  background-color: rgb(240, 240, 240);
+  border-width: 1px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 10px 80px rgba(0, 0, 0, 0.12)
+}
+
+.search-bar {
+  height: 25px;
+  width: 250px;
+  padding-left: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  transition: border-color 200ms ease 0s;
+  border-color: rgb(211, 211, 211);
+  /* background-color: rgb(245, 248, 250); */
+}
+
+.search-values > div{
+  padding-left: 10px;
+
+}
+
+
+.search-values > div:hover {
+  cursor: pointer;
+  background-color: rgb(207, 207, 207);
+
+}
+
