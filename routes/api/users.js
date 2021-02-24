@@ -91,4 +91,15 @@ router.post('/login', (req, res) => {
     })
 })
 
+// Brynn's code starting here... adding user routes for patch for updating pantry ingredients,
+// preferences, saved recipes
+
+router.patch('/:id', (req, res) => {
+  User.findById(req.params.id)
+    .then(user => res.json(user))
+    .catch(err => 
+      res.status(404).json({nouserfound: "No user found"}));
+      
+})
+
 module.exports = router;
