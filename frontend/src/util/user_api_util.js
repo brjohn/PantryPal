@@ -4,6 +4,6 @@ export const fetchUser = (id) => {
     return axios.get(`/api/users/${id}`)
 }
 
-export const updateUser = (user) => {
-  return axios.patch(`/api/users/${user.id}`)
+export const updateUser = (data) => {
+  return axios.patch(`/api/users/${data.id}`, data)
 };
