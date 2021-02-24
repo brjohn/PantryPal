@@ -95,11 +95,19 @@ router.post('/login', (req, res) => {
 // preferences, saved recipes
 
 router.patch('/:id', (req, res) => {
-  User.findById(req.params.id)
-    .then(user => res.json(user))
-    .catch(err => 
-      res.status(404).json({nouserfound: "No user found"}));
-      
+  try {
+    const updatedUser = users.updateOne(
+      {_id: req.params.id},
+      {$set: {preferences: req.body.preferences}},
+      {$set: {exclusions: req.body.exclusions}},
+      {$set: {ingredients: req.body.ingredients}},
+      {$set: {recipes: req.body.recipes}},
+    );
+    res.json(updatedUser);
+  } catch {
+      res.status(404).json({nouserfound: "No user found"});
+  }
+
 })
 
 module.exports = router;

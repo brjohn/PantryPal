@@ -17,10 +17,23 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  pantry: {
+  ingredients: {
     type: Array,
     "default": []
-  }
+  },
+  preferences: {
+    type: Array,
+    "default": []
+  },
+  exclusions: {
+    type: Array,
+    "default": []
+  },
+  recipes: {
+    type: Array,
+    "default": []
+  },
+
 }, {
   timestamps: true
 })
