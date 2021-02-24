@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
+
+
 const UserSchema = new Schema({
   username: {
     type: String,
@@ -13,7 +16,24 @@ const UserSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  ingredients: {
+    type: Array,
+    "default": []
+  },
+  preferences: {
+    type: Array,
+    "default": []
+  },
+  exclusions: {
+    type: Array,
+    "default": []
+  },
+  recipes: {
+    type: Array,
+    "default": []
+  },
+
 }, {
   timestamps: true
 })
