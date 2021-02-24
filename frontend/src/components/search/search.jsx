@@ -7,17 +7,21 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = { searching: '' }
+    this.updateSearch = this.updateSearch.bind(this);
   }
+
+
+
+  addToPantry(ingredient) {
+    return () => { console.log(ingredient+ ' added')}
+  }
+
 
   updateSearch() {
     return (e) => {
       if (e.target.value === '') {
-        // debugger
         e.target.nextElementSibling.classList.add('hide')
-        // e.target.classList.add('hide')
       } else {
-        // e.target.classList.remove('hide')
-        // debugger
         e.target.nextElementSibling.classList.remove('hide')
       }
       this.setState({ searching: e.target.value })
@@ -25,7 +29,8 @@ class Search extends React.Component {
   }
 
 
-  //this is a test 
+
+
 
   render() {
     return (
@@ -37,8 +42,10 @@ class Search extends React.Component {
         <div className='search-values hide'>
           {searchIngredient(this.state.searching).map((el, idx) => {
             return (
-              <div>
-                <div className='search-results' key={el+idx}>{el}</div>
+              <div key={el + idx}>
+                <div className='search-results' 
+                  onClick={this.addToPantry(el)}
+                >{el}</div>
               </div>
             )
           })}
