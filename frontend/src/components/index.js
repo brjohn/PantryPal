@@ -6,14 +6,14 @@ import Modal from './modal/modal';
 import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
-import Search from './search/search'
+import SearchContainer from './search/search_container';
 
 
 const App = () => (
   <div>
     <Modal />
     <NavBarContainer />
-    <Search/>
+    <SearchContainer/>
     <Switch>
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
