@@ -65,21 +65,28 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
+        <form onSubmit={this.handleSubmit} >
+          <div className="modal-container">
+            <img className="nav-icon" src="/images/favicon.png" />
+            <h1>Welcome to PantryPal</h1>
+
+            <div className="form-container">
+
             <input type="text"
+              className="modal-input"
               value={this.state.email}
               onChange={this.update('email')}
               placeholder="Email"
             />
             <br />
             <input type="password"
+              className="modal-input"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder="Password"
             />
             <br />
-            <input type="submit" value="Submit" />
+            <input className="modal-submit-button" type="submit" value="Submit" />
             <br />
             <div className="demo-button-div">
               {this.demoButton()}
@@ -87,6 +94,7 @@ class LoginForm extends React.Component {
             <br />
             {this.renderErrors()}
           </div>
+        </div>
         </form>
       </div>
     );

@@ -102,6 +102,7 @@ button:active {
 }
 
 .nav-box {
+  font-family: 'Roboto', sans-serif;
   align-items: center;
   box-sizing: border-box;
   display: flex;
@@ -125,6 +126,7 @@ button:active {
 }
 
 .nav-right {
+  align-items: center;  
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -136,15 +138,17 @@ button:active {
 
 .nav-icon {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
 }
 
 .nav-title-box {
   box-sizing: border-box;
   display: block;
-  margin-left: 4px;
+  margin-left: 7px;
   text-size-adjust: 100%;
+  -webkit-appearance: none;
+
 }
 
 .nav-title {
@@ -152,11 +156,15 @@ button:active {
   font-size: 19px;
   font-weight: 700;
   display: block;
-  color: #e60023;
+  color: #1c4966;
   text-align: left;
   display: block;
   text-align: left;
   -webkit-font-smoothing: antialiased;
+  -webkit-appearance: none;
+    text-decoration-line: none;
+
+
 }
 
 .text-links-box {
@@ -170,6 +178,7 @@ button:active {
 }
 
 .text-link {
+  color:rgb(0, 0, 0);
   box-sizing: border-box;
   display: block;
   text-align: center;
@@ -180,6 +189,8 @@ button:active {
   margin-left: 16px;
   margin-right: 16px;
   text-size-adjust: 100%;
+    -webkit-appearance: none;
+
 }
 
 .link {
@@ -196,7 +207,7 @@ button:active {
 }
 
 .blue-button {
-  background-color: #e60023;
+  background-color: #1c4966;
   color: rgb(255, 255, 255);
 }
 
@@ -205,3 +216,12 @@ button:active {
   background-color: #efefef;
 }
 
+a, a:link, a:visited, a:focus, a:hover, a:active{
+
+  text-decoration:none; 
+}
+
+footer {
+    font-family: 'Roboto', sans-serif;
+
+}
