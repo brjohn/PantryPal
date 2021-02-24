@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const users = require("./routes/api/users");
 
-app.get("/", (req, res) => res.send("Helloooooooooooooooo World"));
+// app.get("/", (req, res) => res.send("Helloooooooooooooooo World"));
 
 mongoose
   .connect(db, { useNewUrlParser: true })
