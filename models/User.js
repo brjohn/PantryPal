@@ -17,9 +17,11 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  ingredients: {
+  ingredients: {  
     type: Array,
     "default": []
+    // type: Schema.Types.ObjectId,
+    // ref: 'ingredients'
   },
   preferences: {
     type: Array,
@@ -31,7 +33,8 @@ const UserSchema = new Schema({
   },
   recipes: {
     type: Array,
-    "default": []
+    "default": []  
+    // references recipes
   },
 
 }, {
