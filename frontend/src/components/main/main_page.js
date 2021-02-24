@@ -6,7 +6,7 @@ class MainPage extends React.Component {
     return (
       <div>
         <footer>
-          Dev Team: Cole Wendling, Tului Gantulga, Alex Lang,	Brynn Johnson.
+          {/* Dev Team: Cole Wendling, Tului Gantulga, Alex Lang,	Brynn Johnson. */}
         </footer>
       </div>
     );

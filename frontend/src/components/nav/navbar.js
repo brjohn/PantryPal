@@ -31,9 +31,7 @@ class NavBar extends React.Component {
           {/* <Link to={'/test'} className="text-link">Nav TBD</Link>
           <Link to={'/test'} className="text-link">Nav TBD</Link>
         <Link to={'/test'} className="text-link">Nav TBD</Link> */}
-        <div className="nav-button-box">
           <button className="blue-button" onClick={this.logoutUser}>Logout</button>
-          </div>
         </div>
         </div>
       );
@@ -47,10 +45,8 @@ class NavBar extends React.Component {
               <Link to='/'><h3 className="nav-title">PantryPal</h3></Link>
             </div>
           <div className="nav-right">
-            <div className="nav-button-box">
               <button className="grey-button" onClick={() => openModal('signup')}>Sign up</button>
               <button className="blue-button" onClick={() => openModal('login')}>Log in</button>
-          </div>
             </div>
           </div>
         
