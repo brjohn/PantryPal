@@ -45,8 +45,8 @@ export const login = user => dispatch => (
     localStorage.setItem('jwtToken', token);
     APIUtil.setAuthToken(token);
     const decoded = jwt_decode(token);
-    debugger
-    dispatch(receiveCurrentUser(decoded))
+    // debugger
+    dispatch(receiveCurrentUser(Object.assign({}, decoded, res.data.userInfo)))
   })
     .catch(err => {
       dispatch(receiveErrors(err.response.data));

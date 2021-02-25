@@ -12,10 +12,11 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
+      // debugger
       return {
         ...state,
         isAuthenticated: !!action.currentUser,
-        currentUser: action.currentUser
+        currentUser: { id: action.currentUser.id }
       };
     case RECEIVE_USER_LOGOUT:
       return {
