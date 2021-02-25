@@ -11,9 +11,12 @@ class Recipe extends React.Component {
 
   render() {
     return (
-      <div className="recipe">
+      <div className="recipe-div">
+        <h1>Recipe Component</h1>
         {/* <h2>WELCOME USER: {this.props.username}</h2>
-        {this.props.username} */}
+        {this.props.ingredients} */}
+        {/* {this.props} */}
+
       </div>
     );
   }
