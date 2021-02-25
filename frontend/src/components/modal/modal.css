@@ -211,6 +211,12 @@ text {
 
 .form-errors li:hover li::after {
   -webkit-appearance: none;
-    text-decoration:none; 
+  text-decoration:none; 
 }
 
+.modal-container a:hover a::after {
+  text-emphasis: none;
+  text-decoration: none;
+  text-decoration-line: none;
+  -webkit-appearance: none;
+}
