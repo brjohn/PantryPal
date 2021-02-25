@@ -183,9 +183,7 @@
 }
 
 .grey-button:hover {
-     color: #e60023;
-     /* color: #58CCED */
-     
+     color: rgb(51, 51, 51); 
 }
 
 text {
@@ -204,5 +202,5 @@ text {
   -webkit-font-smoothing: antialiased;
   -webkit-appearance: none;
   text-decoration-line: none;
-  color: red;
+  color:rgb(51, 51, 51);
 }
