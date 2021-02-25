@@ -138,7 +138,7 @@ button:active {
   text-align: left;
   -webkit-font-smoothing: antialiased;
   -webkit-appearance: none;
-    text-decoration-line: none;
+  text-decoration-line: none;
 
 
 }
@@ -201,7 +201,5 @@ a, a:link, a:visited, a:focus, a:hover, a:active{
 
 footer {
     font-family: 'Roboto', sans-serif;
-
 }
-
 
