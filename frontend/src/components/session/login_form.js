@@ -39,7 +39,10 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user)
-    .then(this.props.closeModal)
+    // debugger
+
+    .then(() => {
+      if (this.props.isAuthenticated) this.props.closeModal()})
   }
 
   // handleSubmit(event) {
