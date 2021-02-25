@@ -56,9 +56,10 @@ router.post('/register', (req, res) => {
 
 
 router.post('/login', (req, res) => {
+  debugger
   const { errors, isValid } = validateLoginInput(req.body);
 
-  console.log(errors);
+//   debugger;
 
   if (!isValid) {
     return res.status(400).json(errors);
@@ -66,6 +67,8 @@ router.post('/login', (req, res) => {
 
   const email = req.body.email;
   const password = req.body.password;
+
+
 
   User.findOne({ email })
     .then(user => {
@@ -84,6 +87,13 @@ router.post('/login', (req, res) => {
               { expiresIn: 3600 },
               (err, token) => {
                 res.json({
+                  userInfo: {
+                    recipes: user.recipes,
+                    exclusions: user.exclusions,
+                    ingredients: user.ingredients,
+                    preferences: user.preferences,
+                  },
+
                   success: true,
                   token: 'Bearer ' + token
                 });
