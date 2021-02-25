@@ -18,7 +18,7 @@ class LoginForm extends React.Component {
 // TBD: Replace / with Pantry component (not yet created) to redirect to after user is authenticated
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/');
+      this.props.history.push('/pantry');
     }
 
     this.setState({ errors: nextProps.errors })
