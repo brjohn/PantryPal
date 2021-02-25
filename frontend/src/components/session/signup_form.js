@@ -45,7 +45,7 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="form-errors" >
         {Object.keys(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.state.errors[error]}
@@ -57,37 +57,47 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
-        <form onSubmit={this.handleSubmit}>
+      <div className="modal-container">
+        <img className="nav-icon" src="/images/favicon.png" />
+        <h1>Welcome to PantryPal</h1>
+        <h2>Find new recipes to try!</h2>
+      <div className="form-container">
+        <form onSubmit={this.handleSubmit} className="modal-form">
           <div className="signup-form">
             <input type="text"
+              className="modal-input"
               value={this.state.email}
               onChange={this.update('email')}
               placeholder="Email"
             />
-            <br />
             <input type="text"
+              className="modal-input"
               value={this.state.username}
               onChange={this.update('username')}
               placeholder="Username"
             />
-            <br />
+          
             <input type="password"
+              className="modal-input"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder="Password"
             />
-            <br />
+           
             <input type="password"
+              className="modal-input"
               value={this.state.password2}
               onChange={this.update('password2')}
               placeholder="Confirm Password"
             />
             <br />
-            <input type="submit" value="Submit" />
+              <button className="modal-button" type="submit" value="Log in">Continue</button>
             {this.renderErrors()}
           </div>
+          <hr />
+          <h6>By continuing, you agree to PantryPal’s <a className='tos' href="">Terms of Service</a>, <a className='tos' href="#">Privacy policy</a></h6>
         </form>
+      </div>
       </div>
     );
   }

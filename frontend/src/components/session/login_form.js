@@ -32,20 +32,29 @@ class LoginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
+    
     let user = {
       email: this.state.email,
       password: this.state.password
     };
 
-    this.props.login(user);
+    this.props.login(user)
+    .then(this.props.closeModal)
   }
+
+  // handleSubmit(event) {
+  //   event.preventDefault();
+  //   const user = Object.assign({}, this.state);
+  //   this.props.processForm(user)
+  //     .then(this.props.closeModal)
+  //     .then(() => this.props.history.push('/users/:userId/pins'));
+  // }
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="form-errors">
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <li  key={`error-${i}`}>
             {this.state.errors[error]}
           </li>
         ))}
@@ -64,30 +73,36 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
+      <div className="modal-container">
+            <img className="nav-icon" src="/images/favicon.png" />
+            <h1>Welcome to PantryPal</h1>
+            
+            <div className="form-container">
+        <form onSubmit={this.handleSubmit} className="modal-form">
+          <div className="login-container">
             <input type="text"
+              className="modal-input"
               value={this.state.email}
               onChange={this.update('email')}
               placeholder="Email"
             />
-            <br />
             <input type="password"
+              className="modal-input"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder="Password"
             />
-            <br />
-            <input type="submit" value="Submit" />
-            <br />
+            <button className="modal-button" type="submit" value="submit">Log in</button>
+            <h5>OR</h5>
             <div className="demo-button-div">
               {this.demoButton()}
             </div>
-            <br />
             {this.renderErrors()}
           </div>
+              <hr />
+              <h6>By continuing, you agree to PantryPal’s <a className='tos' href="">Terms of Service</a>, <a className='tos' href="#">Privacy policy</a></h6>
         </form>
+        </div>
       </div>
     );
   }
