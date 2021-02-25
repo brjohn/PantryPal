@@ -7,46 +7,70 @@ class Pantry extends React.Component {
     super(props);
   }
 
-  placeholder() {
+  ingredientPlaceholder() {
     return (
-    <img src="https://i.pinimg.com/564x/05/f4/1e/05f41e5cd6b3bdb36f26098fba4e1a49.jpg" />
+      <div className="ingredient">
+      <div className="i-img">
+        <img src="https://i.ibb.co/7nP2ttk/apple.webp"></img>
+        <h1 className="i-title">Apple</h1>
+        </div>
+      </div>
     )
   };
+
+  
    
 
   render() {
-    
+    const ingredientPlaceholder = (
+      <div className="ingredient">
+        <div className="i-img">
+          <img src="https://i.ibb.co/7nP2ttk/apple.webp"></img>
+        <h1 className="i-title">Apple</h1>
+      </div>
+    </div> )
+     
+ 
     return (
         
-      <div>
+      <div className="flex-container">
 
-
-      
+      <div className="search">
         <SearchContainer />
-        
+      </div>
 
       <div className="pantry">
+     
         <div className="row">
           <div className="column">
-            {this.placeholder()}
-            {this.placeholder()}   
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
           </div>
           <div className="column">
-            {this.placeholder()}
-            {this.placeholder()}         
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
           </div>
           <div className="column">
-            {this.placeholder()}
-            {this.placeholder()}
-
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
           </div>
           <div className="column">
-            {this.placeholder()}
-            {this.placeholder()}   
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
           </div>
           <div className="column">
-            {this.placeholder()}
-            {this.placeholder()}
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
+              {ingredientPlaceholder}
           </div>
         </div>
       </div>
@@ -61,3 +85,33 @@ class Pantry extends React.Component {
   }
 }
 export default Pantry;
+
+
+// <div className="pantry">
+//   <div className="row">
+//     <div className="column">
+//       {this.placeholder()}
+//       {this.placeholder()}
+//       {this.placeholder()}
+//     </div>
+//     <div className="column">
+//       {this.placeholder()}
+//       {this.placeholder()}
+//       {this.placeholder()}
+//     </div>
+//     <div className="column">
+//       {this.placeholder()}
+//       {this.placeholder()}
+//       {this.placeholder()}
+//     </div>
+//     <div className="column">
+//       {this.placeholder()}
+//       {this.placeholder()}
+//       {this.placeholder()}
+//     </div>
+//     <div className="column">
+//       {this.placeholder()}
+//       {this.placeholder()}
+//       {this.placeholder()}
+//     </div>
+//   </div>
