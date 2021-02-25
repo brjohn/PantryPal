@@ -1,15 +1,22 @@
-import React from "react";
+import React from 'react'
 
-class RecipeSearch extends React.Component {
-  constructor(props) {
-    super(props);
+export default class RecipeSearch extends React.Component {
+  constructor() {
+    super()
     this.state = {
-      ingredients: '',
-      recipes: ''
-    };
+      recipes: []
+    }
+  }
+
+  getRecipes(recipes) {
+    this.setState({ recipes })
   }
 
   render() {
+    return (
+      <div>
+      </div>
+    )
   }
 }
 

@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { fetchUser } from "../../actions/user_actions";
-import RecipeSearch from "./recipe_search";
+
+import Recipe from "./recipe";
 
 const mapStateToProps = (state) => ({
   user: state.session.user,
@@ -12,4 +13,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeSearch);
+export default connect(mapStateToProps, mapDispatchToProps)(Recipe);
