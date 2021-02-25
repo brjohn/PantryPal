@@ -205,8 +205,9 @@ text {
   -webkit-font-smoothing: antialiased;
   -webkit-appearance: none;
   text-decoration-line: none;
-  color: rgb(51, 51, 51);
+  color: rgba(255, 87, 87, 0.7);
   text-align: left;
+  padding-left: 10px;
 }
 
 
