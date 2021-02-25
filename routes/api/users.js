@@ -15,7 +15,11 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
   res.json({
     id: req.user.id,
     username: req.user.username,
-    email: req.user.email
+    email: req.user.email,
+    ingredients: req.user.ingredients,
+    preferences: req.user.preferences,
+    exclusions: req.user.exclusions,
+    recipes: req.user.recipes
   });
 })
 
@@ -94,20 +98,50 @@ router.post('/login', (req, res) => {
 // Brynn's code starting here... adding user routes for patch for updating pantry ingredients,
 // preferences, saved recipes
 
-router.patch('/:id', (req, res) => {
-  try {
-    const updatedUser = users.updateOne(
-      {_id: req.params.id},
-      {$set: {preferences: req.body.preferences}},
-      {$set: {exclusions: req.body.exclusions}},
-      {$set: {ingredients: req.body.ingredients}},
-      {$set: {recipes: req.body.recipes}},
-    );
-    res.json(updatedUser);
-  } catch {
-      res.status(404).json({nouserfound: "No user found"});
+router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
+  const { errors, isValid } = validateRegisterInput(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
   }
 
+  let filter = {_id: req.user.id};
+  let update = req.body;
+  User.findOneAndUpdate(filter, {$set: {
+    id: filter,
+    preferences: req.body.preferences,
+    exclusions: req.body.exclusions,
+    ingredients: req.body.ingredients,
+    recipes: req.body.recipes
+  }}, {new: true})
+    .then(user => {
+      let updateUser = {
+        id: user._id,
+        preferences: user.preferences,
+        exclusions: user.exclusions,
+        ingredients: user.ingredients,
+        recipes: user.recipes
+      }
+      res.json(updateUser)
+    })
+    .catch(err => res.status(400).json(err))
+
 })
+
+router.get('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
+  User.findById(req.params.id)
+    .then(user => {
+      let returnedUser = {
+        id: user._id,
+        username: user.username,
+        preferences: user.preferences,
+        exclusions: user.exclusions,
+        ingredients: user.ingredients,
+        recipes: user.recipes
+      }
+      res.json(returnedUser);
+    })
+    .catch(err => res.status(400).json(err))
+});
 
 module.exports = router;
