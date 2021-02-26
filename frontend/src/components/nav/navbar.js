@@ -45,7 +45,7 @@ class NavBar extends React.Component {
       );
     } else {
       return (
-        
+         <div className="splash">
           <div className="nav-box">
             <div className="nav-left">
               <img className="nav-icon" src="/images/favicon.png" />
@@ -55,6 +55,10 @@ class NavBar extends React.Component {
           <div className="nav-right">
               <button className="grey-button" onClick={() => openModal('signup')}>Sign up</button>
               <button className="blue-button" onClick={() => openModal('login')}>Log in</button>
+            </div>
+          </div>
+            <div className="splash-ani-container">
+                <img className="splash-ani" src="/images/pantrypal.png" />
             </div>
           </div>
         
