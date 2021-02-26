@@ -2,7 +2,7 @@ import React from 'react';
 import { getRecipeByIngredients } from './../../util/spoonacular_api/spoonacular_api'
 import './recipe.css'
 
-const INGREDIENT_LIST = ['apple', 'almond']; //test 
+const INGREDIENT_LIST = ['apple', 'almond'];
 
 export default class RecipeSearch extends React.Component {
 
