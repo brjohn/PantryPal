@@ -16,8 +16,9 @@
 }
 
 .search-bar {
+  border-width: 0px;
   margin-bottom: 10px;
-  height: 45px;
+  height: 47px;
   width: 250px;
   padding-left: 10px;
   background-color: #1c4966; 
@@ -28,7 +29,7 @@
   border-top-left-radius: 36px;
   border-top-right-radius: 36px;
   text-align: center;
-  border-bottom-width: 0px;
+  /* border-bottom-width: 0px; */
   /* background-color: rgb(245, 248, 250); */
 }
 
