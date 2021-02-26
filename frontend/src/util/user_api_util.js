@@ -10,6 +10,6 @@ export const updateUser = (data) => {
 
 
 export const fetchIngredient = (name) => {
-  return axios.get(`/api/ingredients/`, {name})
+  return axios.get(`/api/ingredients/${name}`)
 }
 
