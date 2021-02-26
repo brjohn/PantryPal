@@ -9,7 +9,7 @@ export const addIcon = (
 
 
 
-export const subtractIcon = (
+export const removeIcon = (
   <svg className="svg-circleplus" viewBox="0 0 100 100">
     <line x1="32.5" y1="50" x2="67.5" y2="50" strokeWidth="5"></line>
   </svg>
