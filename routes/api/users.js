@@ -8,6 +8,11 @@ const passport = require('passport');
 
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
+const Ingredient = require("../../models/Ingredient");
+
+
+// Ingredient
+
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
@@ -56,7 +61,7 @@ router.post('/register', (req, res) => {
 
 
 router.post('/login', (req, res) => {
-  debugger
+  // debugger
   const { errors, isValid } = validateLoginInput(req.body);
 
 //   debugger;
@@ -68,8 +73,12 @@ router.post('/login', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
+  // this works
+  // Ingredient.findOne({ name: 'apple' })
+    // .then(res => console.log(res))
+    // .catch(err => console.log(err))
 
-
+  
   User.findOne({ email })
     .then(user => {
       if (!user) {
