@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getUserInfo } from "../../actions/session_actions";
+import { fetchRecipes } from "../../actions/recipe_actions";
 import RecipeSearch from "./recipe_search";
 
 const mapStateToProps = (state) => ({
@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getUserInfo: () => dispatch(getUserInfo()),
+    fetchRecipes: (ingredients) => dispatch(fetchRecipes(ingredients)),
   };
 };
 
