@@ -73,7 +73,7 @@ module.exports = {
 }
 
 
-getRecipeByIngredients('apple')
+// getRecipeByIngredients('apple')
 // getRecipeInformation(9003)
 // getIngredient('apple')
 
