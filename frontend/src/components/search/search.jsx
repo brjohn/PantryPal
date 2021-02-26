@@ -23,8 +23,10 @@ class Search extends React.Component {
         if (!this.props.ingredients.some(el => el.name === res.data.name)) {
           this.props.ingredients.push(res.data)
         }
-        this.props.setPantryState({ingredients: this.props.ingredients})
-        // let newUser = 
+
+
+        this.props.setPantryState({ingredients: this.props.ingredients}) // this updates the pantry since search and pantry are two different components
+
         this.props.updateUser({ id: this.props.currentUser.id, ingredients: this.props.ingredients })
       })
     }
