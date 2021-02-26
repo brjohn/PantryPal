@@ -4,7 +4,7 @@ import Search from './search';
 
 const mapStateToProps = ({users, session}) => ({
     currentUser: session.currentUser,
-    ingredients: users.ingredients
+    ingredients: users.ingredients || []
 });
 
 const mapDispatchToProps = (dispatch) => ({
