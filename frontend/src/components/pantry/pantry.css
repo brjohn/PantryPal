@@ -90,7 +90,8 @@
   margin-right: 8px;
   border-width: 5px;
   border-color: lightgrey;
-  max-height: 200px;
+  max-height: 190px;
+  max-width:160px;
 }
 
 .i-title {
