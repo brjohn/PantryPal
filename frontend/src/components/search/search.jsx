@@ -21,8 +21,7 @@ class Search extends React.Component {
         if (!this.props.ingredients.some(el => el.name === res.data.name)) {
           this.props.ingredients.push(res.data)
         }
-        this.setState({ingredients: this.props.ingredients})
-        console.log(this.state)
+        this.props.setPantryState({ingredients: this.props.ingredients})
 
       })
     }
