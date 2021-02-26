@@ -78,3 +78,16 @@
   background-color: rgba(153, 230, 255, 0.2);
 }
 
+.svg-circleplus { 
+  height: 22px; 
+  stroke: white; 
+  /* border: 1px solid red; */
+}
+
+.search-result-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
