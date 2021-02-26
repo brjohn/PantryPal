@@ -38,8 +38,6 @@ const getRecipeByIngredients = (ingredients) => axios.get(
   .then(payload => {
     console.log(payload.data[0])
     // we're gonna need to dispatch this through our reducers and middleware
-    // OK, but for now lets just return it to recipe_search.js
-    return (payload)
     
   })
 
