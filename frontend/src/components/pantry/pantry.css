@@ -81,6 +81,14 @@
   text-align: center;
 }
 
+body {
+   background: rgba(64, 61, 124, 0.615);
+  background: linear-gradient(90deg, 
+  rgba(63, 60, 129, 0.226) 0%, 
+  rgba(122, 37, 131, 0.164) 16%, 
+  rgba(78, 140, 202, 0.211) 100%);
+}
+
 
 
 .ingredient {
