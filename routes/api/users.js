@@ -108,25 +108,40 @@ router.post('/login', (req, res) => {
 // Brynn's code starting here... adding user routes for patch for updating pantry ingredients,
 // preferences, saved recipes
 
-router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
-  const { errors, isValid } = validateRegisterInput(req.body);
 
-  if (!isValid) {
-    return res.status(400).json(errors);
-  }
+
+
+
+
+
+
+
+
+
+
+
+router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
+  // debugger
+  // const { errors, isValid } = validateRegisterInput(req.body);
+
+  // if (!isValid) {
+  //   return res.status(400).json(errors);
+  // }
 
   let filter = {_id: req.user.id};
-  let update = req.body;
+  debugger
   User.findOneAndUpdate(filter, {$set: {
     id: filter,
     preferences: req.body.preferences,
     exclusions: req.body.exclusions,
     ingredients: req.body.ingredients,
-    recipes: req.body.recipes
+    recipes: req.body.recipes,
+    username: req.body.username
   }}, {new: true})
     .then(user => {
       let updateUser = {
         id: user._id,
+        username: req.body.username,
         preferences: user.preferences,
         exclusions: user.exclusions,
         ingredients: user.ingredients,
@@ -137,6 +152,9 @@ router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) 
     .catch(err => res.status(400).json(err))
 
 })
+
+
+
 
 router.get('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
   User.findById(req.params.id)

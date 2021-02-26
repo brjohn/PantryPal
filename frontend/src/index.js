@@ -5,7 +5,7 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
-import { fetchUserRefresh } from './actions/user_actions';
+import { fetchUserRefresh, updateUser } from './actions/user_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.updateUser = updateUser;
   // window.fetchUser = fetchUser
   // window.fetchUser = fetchUser;
 

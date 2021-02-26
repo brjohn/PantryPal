@@ -11417,7 +11417,6 @@ const searchIngredient = (searchQuery) => {
   let queryArrayPrimary = [];
   let queryArraySecondary = [];
 
-  // debugger
   names.forEach(el => {
     if (el.search(searchQuery) === 0) queryArrayPrimary.push(el)
     if (el.search(searchQuery) > 0) queryArraySecondary.push(el)
