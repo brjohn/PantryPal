@@ -2,6 +2,9 @@ import React from 'react';
 import searchIngredient from './search_function';
 import './search.css'
 import { addIcon } from './search_icon';
+import { fetchIngredient } from '../../util/user_api_util';
+
+
 
 
 class Search extends React.Component {
@@ -9,12 +12,22 @@ class Search extends React.Component {
     super(props);
     this.state = { searching: '' }
     this.updateSearch = this.updateSearch.bind(this);
+    this.addToPantry = this.addToPantry.bind(this);
   }
 
 
 
   addToPantry(ingredient) {
-    return () => { console.log(ingredient+ ' added')}
+    return () => { 
+      fetchIngredient(ingredient).then(res => {
+        if (!this.props.ingredients.some(el => el.name === res.data.name)) {
+          this.props.ingredients.push(res.data)
+        }
+
+        this.props.setPantryState({ingredients: this.props.ingredients}) // this updates the pantry since search and pantry are two different components
+        this.props.updateUser({ id: this.props.currentUser.id, ingredients: this.props.ingredients }) // this updates MongoDB
+      })
+    }
   }
 
 
@@ -45,10 +58,10 @@ class Search extends React.Component {
             return (
               <div key={el + idx} className='search-result-div'>
                 <div className='search-results' 
-                  onClick={this.addToPantry(el)}
+                  
                 >{el}</div>
 
-                <div className='plus-sign'>
+                <div className='plus-sign' onClick={this.addToPantry(el)}>
                   {addIcon}
                 </div>
 

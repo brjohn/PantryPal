@@ -54,7 +54,7 @@
 
 
 .search-values > div:hover {
-  cursor: pointer;
+  cursor: grab;
   background-color: rgba(61, 85, 92, 0.1);
   color: #1c4966;
 }
@@ -93,6 +93,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.plus-sign {
+  /* border: 1px solid red; */
+  cursor: pointer;
 }
 
 

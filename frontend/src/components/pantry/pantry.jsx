@@ -5,6 +5,7 @@ import SearchContainer from '../search/search_container';
 class Pantry extends React.Component {
   constructor(props) {
     super(props);
+    this.setState = this.setState.bind(this)
 
   }
 
@@ -22,7 +23,7 @@ class Pantry extends React.Component {
       <div className="flex-container">
 
         <div className="search">
-          <SearchContainer />
+          <SearchContainer setPantryState={this.setState}/>
         </div>
 
 
