@@ -11,9 +11,11 @@ class Pantry extends React.Component {
 
 
   render() {
+
     const ingredients = this.props.ingredients;
     // if (ingredients === undefined) ingredients = []
     // console.log(ingredients)
+
 
     return (
 
@@ -28,6 +30,7 @@ class Pantry extends React.Component {
         <div className="pantry">
           <div className="p-title">
             <h1>Pantry</h1>
+
           </div>
 
           <div className="row">
@@ -42,6 +45,7 @@ class Pantry extends React.Component {
               )
 
             })}
+
           </div>
 
 

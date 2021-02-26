@@ -61,6 +61,8 @@
   display: flex;
   /* flex-flow: column wrap; */
   flex-grow: 1;
+  /* flex-wrap: wrap; */
+
   padding-top: 0px;
   border-radius: 36px;
   margin-top: 0px;
@@ -88,7 +90,6 @@
   margin-right: 8px;
   border-width: 5px;
   border-color: lightgrey;
-  
 }
 
 .i-title {
@@ -114,7 +115,7 @@
   border-bottom-color: rgb(211, 211, 211);
   padding-bottom: 4px;
   padding-top: 5px;
-
+  max-height: 40px;
 }
 
 .p-title h1 {
