@@ -12,9 +12,10 @@ class Recipe extends React.Component {
   
 
   updateRecipes() {
+    let ingreds = this.props.ingredients.map(el => el.name);
+     
     return () => {
-      
-      
+      console.log(ingreds.join(','))   
     } 
   }
 
