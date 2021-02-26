@@ -4,7 +4,7 @@ import Pantry from './pantry';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
-  ingredients: state.users.ingredients
+  ingredients: state.users.ingredients || []
 })
 
 const mapDispatchToProps = dispatch => ({

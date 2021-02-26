@@ -3,16 +3,17 @@ import './pantry.css'
 import SearchContainer from '../search/search_container';
 
 class Pantry extends React.Component {
-  // constructor(props) {
-    // super(props);
-  // }
+  constructor(props) {
+    super(props);
+    
+  }
 
 
 
   render() {
-
-    const { ingredients } = this.props 
-
+    const ingredients = this.props.ingredients;
+    // if (ingredients === undefined) ingredients = []
+    // console.log(ingredients)
 
     return (
 
@@ -32,8 +33,11 @@ class Pantry extends React.Component {
           <div className="row">
             {ingredients.map(ingredient => {
               return (
-                <div><img src={`https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`} alt={ingredient.name}/></div>
+                <div>
+                  <img src={`https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`} alt={ingredient.name}/>
+                </div>
               )
+
             })}
           </div>
 
