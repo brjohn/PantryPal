@@ -5,6 +5,8 @@ import { addIcon } from './search_icon';
 import { fetchIngredient } from '../../util/user_api_util';
 
 
+
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -22,7 +24,8 @@ class Search extends React.Component {
           this.props.ingredients.push(res.data)
         }
         this.props.setPantryState({ingredients: this.props.ingredients})
-
+        // let newUser = 
+        this.props.updateUser({ id: this.props.currentUser.id, ingredients: this.props.ingredients })
       })
     }
   }
