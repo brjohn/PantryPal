@@ -5,7 +5,7 @@ import SearchContainer from '../search/search_container';
 class Pantry extends React.Component {
   constructor(props) {
     super(props);
-    
+
   }
 
 
@@ -35,7 +35,7 @@ class Pantry extends React.Component {
               return (
                 <div className="ingredient" key={ingredient.name}>
                   <div className="i-img">
-                    <img src={`https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`} alt={ingredient.name}/>
+                    <img src={`https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`} alt={ingredient.name} />
                   </div>
                   <h1 className="i-title">{ingredient.name}</h1>
                 </div>
