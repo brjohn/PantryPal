@@ -68,7 +68,7 @@
   margin-top: 0px;
   background-color: rgba(61, 85, 92, 0.10);
   max-height: 820px;
-  /* border: solid; */
+  /* border: 1px solid red; */
   /* border-width: 2px; */
   border-color: lightgrey;
   flex-direction: column;
@@ -109,6 +109,7 @@
   border-top-right-radius: 36px;
   margin-bottom: 20px;
   align-items: center;
+
   /* border-bottom-style: solid; */
   /* border-bottom-width: 2px; */
   border-bottom-color: rgb(211, 211, 211);

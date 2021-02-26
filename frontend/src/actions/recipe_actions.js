@@ -1,4 +1,4 @@
-import * as SpoonacularAPIUtil from "../util/spoonacular_api_util";
+import * as SpoonacularAPIUtil from "../util/spoonacular_api/spoonacular_api";
 
 export const RECEIVE_INGREDIENTS = "RECEIVE_INGREDIENTS";
 
@@ -9,8 +9,9 @@ export const receiveIngredients = (ingredient) => {
   };
 };
 
-export const fetchRecipes = (details) => (dispatch) => {
-  return SpoonacularAPIUtil.getRecipesByIngredients(details).then((res) => {
+export const fetchRecipes = (ingredients) => (dispatch) => {
+  return SpoonacularAPIUtil.getRecipeByIngredients(ingredients).then((res) => {
     dispatch(receiveIngredients(res.data));
-  });
+  }).catch(err => console.log(err));    //getting undefined error
 };
+
