@@ -53,7 +53,9 @@
   border-radius: 36px;
   margin-right: 4px;
   min-height: 500px;
-  background-color: rgba(20, 107, 133, 0.37);
+  background: rgb(50, 82, 90);
+  background: linear-gradient(90deg, rgba(54, 114, 128, 0.288) 0%,
+   rgba(54, 114, 128, 0.774) 100%);
   max-height: 850px;
 }
 
@@ -66,7 +68,11 @@
   padding-top: 0px;
   border-radius: 36px;
   margin-top: 0px;
-  background-color: rgba(61, 85, 92, 0.10);
+  background: rgb(64,61,124);
+  background: linear-gradient(90deg, 
+  rgba(63, 60, 129, 0.425) 0%, 
+  rgba(122, 37, 131, 0.204) 16%, 
+  rgba(78, 140, 202, 0.19) 100%);
   max-height: 820px;
   /* border: 1px solid red; */
   /* border-width: 2px; */
@@ -80,7 +86,7 @@
 .ingredient {
   flex-basis:250px;
   display: flex;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   min-height: 150px;
   border-radius: 36px;
   flex-direction: column;
@@ -92,6 +98,9 @@
   border-color: lightgrey;
   max-height: 190px;
   max-width:160px;
+  -webkit-box-shadow: 0 16px 6px -6px rgba(119, 119, 119, 0.28);
+     -moz-box-shadow: 0 16px 6px -6px rgba(119, 119, 119, 0.28);
+          box-shadow: 0 16px 6px -6px rgba(119, 119, 119, 0.28);
 }
 
 .i-title {
@@ -141,6 +150,7 @@
   border-radius: 10px;
   flex-flow: column wrap;
   flex: 1;
+  margin-top: 15px;
 }
 
 .i-img img {
