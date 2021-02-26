@@ -1,6 +1,7 @@
 import React from 'react';
 import searchIngredient from './search_function';
 import './search.css'
+import { addIcon } from './search_icon';
 
 
 class Search extends React.Component {
@@ -42,10 +43,15 @@ class Search extends React.Component {
         <div className='search-values hide'>
           {searchIngredient(this.state.searching).map((el, idx) => {
             return (
-              <div key={el + idx}>
+              <div key={el + idx} className='search-result-div'>
                 <div className='search-results' 
                   onClick={this.addToPantry(el)}
                 >{el}</div>
+
+                <div className='plus-sign'>
+                  {addIcon}
+                </div>
+
               </div>
             )
           })}

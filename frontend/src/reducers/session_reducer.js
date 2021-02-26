@@ -9,7 +9,7 @@ const initialState = {
   currentUser: {}
 };
 
-export default function (state = initialState, action) {
+const session_reducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       // debugger
@@ -27,3 +27,5 @@ export default function (state = initialState, action) {
       return state;
   }
 }
+
+export default session_reducer;

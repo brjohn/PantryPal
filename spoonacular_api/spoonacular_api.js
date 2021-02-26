@@ -1,6 +1,6 @@
 const axios = require('axios');
 const spoonacular = require('./keys');
-const apiKeyToUse = spoonacular.apiKey3
+const apiKeyToUse = spoonacular.apiKey1
 
 
 
