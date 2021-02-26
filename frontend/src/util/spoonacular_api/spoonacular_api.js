@@ -1,8 +1,6 @@
 const axios = require('axios');
 const spoonacular = require('./keys');
-const apiKeyToUse = spoonacular.apiKey1
-
-
+const apiKeyToUse = spoonacular["apiKey" + Math.floor((Math.random() * 4) + 1)] //uses random apiKey between 1 and 4
 
 // 01. A function that gets ingredients
 const getIngredient = (query, printToFileFunction) => axios.get(
@@ -40,6 +38,7 @@ const getRecipeByIngredients = (ingredients) => axios.get(
   .then(payload => {
     console.log(payload.data[0])
     // we're gonna need to dispatch this through our reducers and middleware
+    
   })
 
   .catch(err => console.log(err))
@@ -76,6 +75,3 @@ module.exports = {
 // getRecipeByIngredients('apple')
 // getRecipeInformation(9003)
 // getIngredient('apple')
-
-
-

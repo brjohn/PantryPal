@@ -1,5 +1,8 @@
 import React from "react";
 import RecipeSearchContainer from './recipe_search_container'
+import './recipe.css'
+
+const INGREDIENT_LIST = ['apple', 'almond'];
 
 class Recipe extends React.Component {
   constructor(props) {
@@ -15,21 +18,20 @@ class Recipe extends React.Component {
   render() {
     return (
       <div className="recipe">
-        <hr></hr><h1>Recipe Component</h1>
-        <h2>{this.props.currentUser.username}'s pantry:</h2>
+        <h2>Your current pantry:</h2>
+
         <ul className="user-ingredients">
-          {["apple", "almonds"].map((ingredient, idx) => {
+          {INGREDIENT_LIST.map((ingredient, idx) => {
             return <li key={idx}>{ingredient}</li>;
           })}
         </ul>
-        {/* above [].map is test until we can add ingredients to user's ingredients array */}
+        {/* change above 4 lines to below 4 lines when we have user ingredients working 
         <ul className="user-ingredients">
           {this.props.currentUser.ingredients.map((ingredient, idx) => {
             return <li key={idx}>{ingredient.name}</li>;
           })}
-        </ul>
+        </ul> */}
         
-        <hr></hr><h1>Recipe Search Component</h1>
         <RecipeSearchContainer />
       </div>
     );
