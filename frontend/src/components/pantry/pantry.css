@@ -162,6 +162,8 @@ body {
 }
 
 .i-img img {
+  max-width: 100px;
+  max-height: 85px;
     align-items: center;
  }
 

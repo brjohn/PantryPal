@@ -85,6 +85,15 @@
   /* border: 1px solid red; */
 }
 
+
+.svg-circleminus { 
+  height: 30px; 
+  stroke: red; 
+  /* border: 1px solid red; */
+}
+
+
+
 .search-result-div:hover .svg-circleplus {
   stroke:rgba(28, 127, 28, 0.779);
 }
@@ -97,6 +106,10 @@
 
 .plus-sign {
   /* border: 1px solid red; */
+  cursor: pointer;
+}
+
+.remove-button-div {
   cursor: pointer;
 }
 
