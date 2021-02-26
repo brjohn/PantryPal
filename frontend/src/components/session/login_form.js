@@ -77,7 +77,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="modal-container">
-            <img className="nav-icon" src="/images/favicon.png" />
+            <img className="nav-icon" src="/images/favicon.png" alt='logo'/>
             <h1>Welcome to PantryPal</h1>
             
             <div className="form-container">
@@ -103,7 +103,7 @@ class LoginForm extends React.Component {
             {this.renderErrors()}
           </div>
               <hr />
-              <h6>By continuing, you agree to PantryPal’s <a className='tos' href="">Terms of Service</a>, <a className='tos' href="#">Privacy policy</a></h6>
+              <h6>By continuing, you agree to PantryPal’s <a className='tos' href="/">Terms of Service</a>, <a className='tos' href="/#">Privacy policy</a></h6>
         </form>
         </div>
       </div>

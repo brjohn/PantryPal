@@ -5,83 +5,48 @@ import SearchContainer from '../search/search_container';
 class Pantry extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
-  ingredientPlaceholder() {
-    return (
-      <div className="ingredient">
-        <div className="i-img">
-          <img src="https://i.ibb.co/7nP2ttk/apple.webp"></img>
-        </div>
-        <h1 className="i-title">Apple</h1>
-      </div>
-    )
-  };
 
-  
-   
 
   render() {
-    const ingredientPlaceholder = (
-      <div className="ingredient">
-        <div className="i-img">
-          <img src="https://i.ibb.co/7nP2ttk/apple.webp"></img>
-        <h1 className="i-title">Apple</h1>
-      </div>
-    </div> )
-     
- 
+    const ingredients = this.props.ingredients;
+    // if (ingredients === undefined) ingredients = []
+    // console.log(ingredients)
+
     return (
-        
+
       <div className="flex-container">
 
-      <div className="search">
-        <SearchContainer />
-      </div>
+        <div className="search">
+          <SearchContainer />
+        </div>
 
-    
 
-      <div className="pantry">
-        <div className="p-title">
+
+        <div className="pantry">
+          <div className="p-title">
             <h1>Pantry</h1>
+          </div>
+
+          <div className="row">
+            {ingredients.map(ingredient => {
+              return (
+                <div className="ingredient" key={ingredient.name}>
+                  <div className="i-img">
+                    <img src={`https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`} alt={ingredient.name} />
+                  </div>
+                  <h1 className="i-title">{ingredient.name}</h1>
+                </div>
+              )
+
+            })}
+          </div>
+
+
+
         </div>
-        <div className="row">
-          <div className="column">
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-          </div>
-          <div className="column">
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-          </div>
-          <div className="column">
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-          </div>
-          <div className="column">
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-          </div>
-          <div className="column">
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-          </div>
-        </div>
-       
-      </div>
-
-
-
       </div>
 
 

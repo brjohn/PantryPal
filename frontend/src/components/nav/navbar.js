@@ -30,7 +30,7 @@ class NavBar extends React.Component {
       return (
         <div className="nav-box">
         <div className="nav-left">
-            <img className="nav-icon" src="/images/favicon.png" />
+            <img className="nav-icon" src="/images/favicon.png" alt='nav-icon'/>
             <div className="nav-title-box">
               <h3 className="nav-title">PantryPal</h3>
             </div>
@@ -48,7 +48,7 @@ class NavBar extends React.Component {
          <div className="splash">
           <div className="nav-box">
             <div className="nav-left">
-              <img className="nav-icon" src="/images/favicon.png" />
+              <img className="nav-icon" src="/images/favicon.png" alt='nav-icon'/>
               <div className="nav-title-box"></div>
               <Link to='/'><h3 className="nav-title">PantryPal</h3></Link>
             </div>
