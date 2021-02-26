@@ -204,4 +204,12 @@ footer {
 
 }
 
+.splash-ani-container {
+  display: flex;
+}
+
+.splash-ani {
+ width: 100%;
+}
+
 

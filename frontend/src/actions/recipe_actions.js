@@ -1,4 +1,4 @@
-import * as SpoonacularAPIUtil from "../util/spoonacular_api_util";
+import * as SpoonacularAPIUtil from "../util/spoonacular_api/spoonacular_api";
 
 export const RECEIVE_INGREDIENTS = "RECEIVE_INGREDIENTS";
 
