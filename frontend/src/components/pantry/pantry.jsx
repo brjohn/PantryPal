@@ -41,7 +41,7 @@ class Pantry extends React.Component {
                     <img src={`https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`} alt={ingredient.name} />
                   </div>
                   <div className="i-title">
-                    <h1>{ingredient.name}</h1>
+                    <h1 >{ingredient.name}</h1>
                   </div>
                 </div>
               )
