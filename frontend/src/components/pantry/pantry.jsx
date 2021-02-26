@@ -10,16 +10,9 @@ class Pantry extends React.Component {
 
 
   render() {
-    // const ingredientPlaceholder = (
-    //   <div className="ingredient">
-    //     <div className="i-img">
-    //       <img src="https://i.ibb.co/7nP2ttk/apple.webp"></img>
-    //       <h1 className="i-title">Apple</h1>
-    //     </div>
-    //   </div>)
 
     const { ingredients } = this.props 
-    console.log(ingredients)
+
 
     return (
 
@@ -37,7 +30,11 @@ class Pantry extends React.Component {
           </div>
 
           <div className="row">
-
+            {ingredients.map(ingredient => {
+              return (
+                <div><img src={`https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`} alt={ingredient.name}/></div>
+              )
+            })}
           </div>
 
 
