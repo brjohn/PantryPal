@@ -10,8 +10,8 @@ export const receiveIngredients = (ingredient) => {
 };
 
 export const fetchRecipes = (ingredients) => (dispatch) => {
-  return SpoonacularAPIUtil.getRecipesByIngredients(ingredients).then((res) => {
+  return SpoonacularAPIUtil.getRecipeByIngredients(ingredients).then((res) => {
     dispatch(receiveIngredients(res.data));
-  });
+  }).catch(err => console.log(err));    //getting undefined error
 };
 

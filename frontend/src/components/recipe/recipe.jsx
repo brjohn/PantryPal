@@ -2,7 +2,7 @@ import React from "react";
 import RecipeSearchContainer from './recipe_search_container'
 import './recipe.css'
 
-const INGREDIENT_LIST = ['apple', 'almond'];
+const INGREDIENT_LIST = ['apple', 'blueberry'];
 
 class Recipe extends React.Component {
   constructor(props) {
