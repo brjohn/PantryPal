@@ -1,11 +1,6 @@
 const axios = require('axios');
 const spoonacular = require('./keys');
-const apiKeyToUse = spoonacular.apiKey3
-
-// example arrays:
-// const INGREDIENT_LIST = ['apple', 'almond'];
-// const PREFERENCES_LIST = ['Vegetarian', 'Vegan'];
-// const EXCLUSIONS_LIST = ['Seafood', 'Shellfish'];
+const apiKeyToUse = spoonacular["apiKey" + Math.floor((Math.random() * 4) + 1)] //uses random apiKey between 1 and 4
 
 // 01. A function that gets ingredients
 const getIngredient = (query, printToFileFunction) => axios.get(
@@ -43,6 +38,9 @@ const getRecipeByIngredients = (ingredients) => axios.get(
   .then(payload => {
     console.log(payload.data[0])
     // we're gonna need to dispatch this through our reducers and middleware
+    // OK, but for now lets just return it to recipe_search.js
+    return (payload)
+    
   })
 
   .catch(err => console.log(err))

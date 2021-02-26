@@ -13,7 +13,6 @@ export default class RecipeSearch extends React.Component {
   }
 
   componentDidMount() {
-    this.recipes = getRecipeByIngredients(INGREDIENT_LIST[0]);
   }
 
   render() {
@@ -23,7 +22,10 @@ export default class RecipeSearch extends React.Component {
         <div>
           <input placeholder="Ingredient Name" />
           <button className="blue-button">Search</button>
-          {console.log(this.recipes)}
+          <br></br>
+          Apple Ginger Kombucha Cocktail
+          <br></br>
+          <img src="https://spoonacular.com/recipeImages/987595-312x231.jpg" height="100" width="100" />
         </div>
       </div>
     )
