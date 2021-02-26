@@ -12,6 +12,11 @@ export default class RecipeSearch extends React.Component {
   }
 
   componentDidMount() {
+
+  }
+
+  componentWillUnmount(){
+    this.ingredients = []
   }
 
   showRecipes(){
@@ -22,6 +27,9 @@ export default class RecipeSearch extends React.Component {
       </div>
     )
   }
+
+  //1. get user ingredients
+  //2. 
 
   render() {
 

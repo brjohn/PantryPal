@@ -72,6 +72,116 @@ module.exports = {
 }
 
 
-// getRecipeByIngredients('apple')
+// getRecipeByIngredients('apple,blueberry')
 // getRecipeInformation(9003)
 // getIngredient('apple')
+
+
+
+// example result of "getRecipeByIngredients"
+// {
+//   id: 184501,
+//     title: 'Apple Turnover Smoothies',
+//       image: 'https://spoonacular.com/recipeImages/184501-312x231.jpg',
+//         imageType: 'jpg',
+//           usedIngredientCount: 3,
+//             missedIngredientCount: 2,
+//               missedIngredients:
+//   [{
+//     id: 1042035,
+//     amount: 2,
+//     unit: 'servings',
+//     unitLong: 'servings',
+//     unitShort: 'servings',
+//     aisle: 'Spices and Seasonings',
+//     name: 'apple pie spice',
+//     original: 'Apple pie spice',
+//     originalString: 'Apple pie spice',
+//     originalName: 'Apple pie spice',
+//     metaInformation: [],
+//     meta: [],
+//     image:
+//       'https://spoonacular.com/cdn/ingredients_100x100/garam-masala.jpg'
+//   },
+//   {
+//     id: 9019,
+//     amount: 0.5,
+//     unit: 'cup',
+//     unitLong: 'cups',
+//     unitShort: 'cup',
+//     aisle: 'Canned and Jarred',
+//     name: 'unsweetened applesauce',
+//     original: '1/2 cup unsweetened applesauce',
+//     originalString: '1/2 cup unsweetened applesauce',
+//     originalName: 'unsweetened applesauce',
+//     metaInformation: [Array],
+//     meta: [Array],
+//     image:
+//       'https://spoonacular.com/cdn/ingredients_100x100/applesauce.png'
+//   }],
+//     usedIngredients:
+//   [{
+//     id: 9003,
+//     amount: 1,
+//     unit: 'cup',
+//     unitLong: 'cup',
+//     unitShort: 'cup',
+//     aisle: 'Produce',
+//     name: 'apple',
+//     original: '1 cup chopped apple',
+//     originalString: '1 cup chopped apple',
+//     originalName: 'chopped apple',
+//     metaInformation: [Array],
+//     meta: [Array],
+//     image: 'https://spoonacular.com/cdn/ingredients_100x100/apple.jpg'
+//   },
+//   {
+//     id: 9003,
+//     amount: 1,
+//     unit: 'slices',
+//     unitLong: 'slice',
+//     unitShort: 'slice',
+//     aisle: 'Produce',
+//     name: 'apple',
+//     original: 'Apple slices',
+//     originalString: 'Apple slices',
+//     originalName: 'Apple',
+//     metaInformation: [],
+//     meta: [],
+//     image: 'https://spoonacular.com/cdn/ingredients_100x100/apple.jpg'
+//   },
+//   {
+//     id: 9003,
+//     amount: 12,
+//     unit: 'oz',
+//     unitLong: 'ounces',
+//     unitShort: 'oz',
+//     aisle: 'Produce',
+//     name: 'apple',
+//     original:
+//       '2 containers (6 oz each) Yoplait® Light Fat Free apple turnover yogurt',
+//     originalString:
+
+
+
+
+
+
+
+
+
+
+
+
+
+//       '2 containers (6 oz each) Yoplait® Light Fat Free apple turnover yogurt',
+//     originalName:
+//       'containers each) Yoplait® Light Fat Free apple turnover yogurt',
+//     metaInformation: [Array],
+//     meta: [Array],
+//     extendedName: 'fat free light apple',
+//     image: 'https://spoonacular.com/cdn/ingredients_100x100/apple.jpg'
+//   }],
+//     unusedIngredients: [],
+//       likes: 0
+// }
