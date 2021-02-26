@@ -1,32 +1,35 @@
-import axios from "axios";
+//Don't use this, except for reference.
+//Use the spoonacular api located in ../../../../spoonacular_api/spoonacular_api
 
-const API_KEY = "eb527cf585ea4f8f8e35d8b496da7862";
+// import axios from "axios";
 
-const INGREDIENT_LIST = ['apple', 'almond'];
-const PREFERENCES_LIST = ['Vegetarian', 'Vegan'];
-const EXCLUSIONS_LIST = ['Seafood', 'Shellfish'];
+// const API_KEY = "eb527cf585ea4f8f8e35d8b496da7862";
 
-const apiString = "apiKey=" + API_KEY;
+// const INGREDIENT_LIST = ['apple', 'almond'];
+// const PREFERENCES_LIST = ['Vegetarian', 'Vegan'];
+// const EXCLUSIONS_LIST = ['Seafood', 'Shellfish'];
 
-const ingredientsString = "ingredients=" + INGREDIENT_LIST.join('+');
+// const apiString = "apiKey=" + API_KEY;
 
-const findByIngredientString = "https://api.spoonacular.com/recipes/findByIngredients?" + apiString + '&' + ingredientsString;
+// const ingredientsString = "ingredients=" + INGREDIENT_LIST.join('+');
 
-export const getRecipesByIngredients = (details) => {
-  return axios.get(`${findByIngredientString}`, {
-    headers: { Authorization: "" },
-    params: {
-      ...details,
-      apiKey: API_KEY,
-    },
-  });
-};
+// const findByIngredientString = "https://api.spoonacular.com/recipes/findByIngredients?" + apiString + '&' + ingredientsString;
 
-export const getRecipeInfo = (recipeId) => {
-  return axios.get(`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=eb527cf585ea4f8f8e35d8b496da786`, {
-    headers: { Authorization: "" },
-    params: {
-      apiKey: API_KEY,
-    },
-  });
-};
+// export const getRecipesByIngredients = (details) => {
+//   return axios.get(`${findByIngredientString}`, {
+//     headers: { Authorization: "" },
+//     params: {
+//       ...details,
+//       apiKey: API_KEY,
+//     },
+//   });
+// };
+
+// export const getRecipeInfo = (recipeId) => {
+//   return axios.get(`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=eb527cf585ea4f8f8e35d8b496da786`, {
+//     headers: { Authorization: "" },
+//     params: {
+//       apiKey: API_KEY,
+//     },
+//   });
+// };
