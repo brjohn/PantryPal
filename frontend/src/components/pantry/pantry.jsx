@@ -67,49 +67,11 @@ class Pantry extends React.Component {
                   </div>
                 </div>
               )
-
             })}
-
           </div>
-
-
-
         </div>
       </div>
-
-
-
     )
   }
 }
 export default Pantry;
-
-
-// <div className="pantry">
-//   <div className="row">
-//     <div className="column">
-//       {this.placeholder()}
-//       {this.placeholder()}
-//       {this.placeholder()}
-//     </div>
-//     <div className="column">
-//       {this.placeholder()}
-//       {this.placeholder()}
-//       {this.placeholder()}
-//     </div>
-//     <div className="column">
-//       {this.placeholder()}
-//       {this.placeholder()}
-//       {this.placeholder()}
-//     </div>
-//     <div className="column">
-//       {this.placeholder()}
-//       {this.placeholder()}
-//       {this.placeholder()}
-//     </div>
-//     <div className="column">
-//       {this.placeholder()}
-//       {this.placeholder()}
-//       {this.placeholder()}
-//     </div>
-//   </div>

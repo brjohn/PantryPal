@@ -88,10 +88,14 @@
 
 .svg-circleminus { 
   height: 30px; 
-  stroke: red; 
+  width: 20px;
+  stroke: rgba(29, 29, 29, 0.295); 
   /* border: 1px solid red; */
 }
 
+.remove-button-div:hover .svg-circleminus {
+  stroke: red;
+}
 
 
 .search-result-div:hover .svg-circleplus {
