@@ -2,7 +2,10 @@ const axios = require('axios');
 const spoonacular = require('./keys');
 const apiKeyToUse = spoonacular.apiKey3
 
-
+// example arrays:
+// const INGREDIENT_LIST = ['apple', 'almond'];
+// const PREFERENCES_LIST = ['Vegetarian', 'Vegan'];
+// const EXCLUSIONS_LIST = ['Seafood', 'Shellfish'];
 
 // 01. A function that gets ingredients
 const getIngredient = (query, printToFileFunction) => axios.get(
@@ -76,6 +79,3 @@ module.exports = {
 // getRecipeByIngredients('apple')
 // getRecipeInformation(9003)
 // getIngredient('apple')
-
-
-

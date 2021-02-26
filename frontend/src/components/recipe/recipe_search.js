@@ -1,23 +1,31 @@
-import React from 'react'
+import React from 'react';
+import { getRecipeByIngredients } from './../../util/spoonacular_api/spoonacular_api'
+import './recipe.css'
 
-class RecipeSearch extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      recipes: []
-    }
+const INGREDIENT_LIST = ['apple', 'almond']; //test 
+
+export default class RecipeSearch extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.recipes = [];
+    this.ingredients = [];
   }
 
-  getRecipes(recipes) {
-    this.setState({ recipes })
+  componentDidMount() {
+    this.recipes = getRecipeByIngredients(INGREDIENT_LIST[0]);
   }
 
   render() {
+
     return (
-      <div>
+      <div id="recipe-search-container">
+        <div>
+          <input placeholder="Ingredient Name" />
+          <button className="blue-button">Search</button>
+          {console.log(this.recipes)}
+        </div>
       </div>
     )
   }
 }
-
-export default RecipeSearch;
