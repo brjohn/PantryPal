@@ -26,8 +26,8 @@ class Pantry extends React.Component {
       <div className="ingredient">
         <div className="i-img">
           <img src="https://i.ibb.co/7nP2ttk/apple.webp"></img>
+        </div>
         <h1 className="i-title">Apple</h1>
-      </div>
     </div> )
      
  
@@ -48,33 +48,33 @@ class Pantry extends React.Component {
         <div className="row">
           <div className="column">
               {ingredientPlaceholder}
+              {/* {ingredientPlaceholder}
               {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
+              {ingredientPlaceholder} */}
           </div>
           <div className="column">
               {ingredientPlaceholder}
+              {/* {ingredientPlaceholder}
               {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
+              {ingredientPlaceholder} */}
           </div>
           <div className="column">
               {ingredientPlaceholder}
+              {/* {ingredientPlaceholder}
               {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
+              {ingredientPlaceholder} */}
           </div>
           <div className="column">
               {ingredientPlaceholder}
+              {/* {ingredientPlaceholder}
               {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
+              {ingredientPlaceholder} */}
           </div>
           <div className="column">
+              {/* {ingredientPlaceholder} */}
+              {/* {ingredientPlaceholder}
               {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
-              {ingredientPlaceholder}
+              {ingredientPlaceholder} */}
           </div>
         </div>
        
