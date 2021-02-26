@@ -1,6 +1,7 @@
 import React from 'react';
 import './pantry.css'
 import SearchContainer from '../search/search_container';
+import { removeIcon } from '../search/search_icon';
 
 class Pantry extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class Pantry extends React.Component {
     this.setState = this.setState.bind(this)
 
   }
+
 
 
   removeIngredient(ingredientIndex) {
@@ -22,8 +24,8 @@ class Pantry extends React.Component {
 
 
 
-
   render() {
+
 
     const ingredients = this.props.ingredients;
     // if (ingredients === undefined) ingredients = []
@@ -49,7 +51,14 @@ class Pantry extends React.Component {
           <div className="row">
             {ingredients.map((ingredient, ingredientIndex) => {
               return (
-                <div className="ingredient" key={ingredient.name} onClick={this.removeIngredient(ingredientIndex)}>
+                <div className="ingredient" key={ingredient.name} >
+
+                  {/* Cole, this is the remove button ------------------------------- */}
+                  <div onClick={this.removeIngredient(ingredientIndex)} className="remove-button-div"> 
+                    {removeIcon}
+                  </div>
+                  {/* ----------------------------------------------------------------- */}
+
                   <div className="i-img">
                     <img src={`https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`} alt={ingredient.name} />
                   </div>
