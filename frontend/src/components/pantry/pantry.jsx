@@ -10,6 +10,18 @@ class Pantry extends React.Component {
   }
 
 
+  removeIngredient(ingredientIndex) {
+    return () => {
+      // console.log(this.props.ingredients[ingredientIndex])
+      this.props.ingredients.splice(ingredientIndex, 1)
+      this.props.updateUser({ id: this.props.currentUser.id, ingredients: this.props.ingredients })
+      this.setState({ ingredients: this.props.ingredients })
+
+    }
+  }
+
+
+
 
   render() {
 
@@ -35,9 +47,9 @@ class Pantry extends React.Component {
           </div>
 
           <div className="row">
-            {ingredients.map(ingredient => {
+            {ingredients.map((ingredient, ingredientIndex) => {
               return (
-                <div className="ingredient" key={ingredient.name}>
+                <div className="ingredient" key={ingredient.name} onClick={this.removeIngredient(ingredientIndex)}>
                   <div className="i-img">
                     <img src={`https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`} alt={ingredient.name} />
                   </div>
