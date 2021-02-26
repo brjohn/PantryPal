@@ -10,10 +10,10 @@ class Pantry extends React.Component {
   ingredientPlaceholder() {
     return (
       <div className="ingredient">
-      <div className="i-img">
-        <img src="https://i.ibb.co/7nP2ttk/apple.webp"></img>
-        <h1 className="i-title">Apple</h1>
+        <div className="i-img">
+          <img src="https://i.ibb.co/7nP2ttk/apple.webp"></img>
         </div>
+        <h1 className="i-title">Apple</h1>
       </div>
     )
   };
@@ -39,8 +39,12 @@ class Pantry extends React.Component {
         <SearchContainer />
       </div>
 
+    
+
       <div className="pantry">
-     
+        <div className="p-title">
+            <h1>Pantry</h1>
+        </div>
         <div className="row">
           <div className="column">
               {ingredientPlaceholder}
@@ -73,6 +77,7 @@ class Pantry extends React.Component {
               {ingredientPlaceholder}
           </div>
         </div>
+       
       </div>
 
 

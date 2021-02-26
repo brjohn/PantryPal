@@ -36,7 +36,7 @@ class Search extends React.Component {
     return (
       <div>
         <input type="text" className="search-bar"
-          placeholder="Search . . ."
+          placeholder="Search Ingredients . . . "
           onChange={this.updateSearch()} />
 
         <div className='search-values hide'>
