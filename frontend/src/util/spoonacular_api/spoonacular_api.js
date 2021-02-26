@@ -1,6 +1,8 @@
 const axios = require('axios');
 const spoonacular = require('./keys');
-const apiKeyToUse = spoonacular["apiKey" + Math.floor((Math.random() * 4) + 1)] //uses random apiKey between 1 and 4
+// const apiKeyToUse = spoonacular["apiKey" + Math.floor((Math.random() * 4) + 1)] //uses random apiKey between 1 and 4
+const apiKeyToUse = spoonacular.apiKey4 //uses random apiKey between 1 and 4
+
 
 // 01. A function that gets ingredients
 const getIngredient = (query, printToFileFunction) => axios.get(
@@ -72,116 +74,153 @@ module.exports = {
 }
 
 
-// getRecipeByIngredients('apple,blueberry')
+getRecipeByIngredients('apple,blueberry')
 // getRecipeInformation(9003)
 // getIngredient('apple')
 
 
 
-// example result of "getRecipeByIngredients"
+
+
+
+
+
 // {
-//   id: 184501,
-//     title: 'Apple Turnover Smoothies',
-//       image: 'https://spoonacular.com/recipeImages/184501-312x231.jpg',
+//   id: 423958,
+//     title: 'Fruit Salad with O.J. Reduction',
+//       image: 'https://spoonacular.com/recipeImages/423958-312x231.jpg',
 //         imageType: 'jpg',
 //           usedIngredientCount: 3,
-//             missedIngredientCount: 2,
+//             missedIngredientCount: 4,
 //               missedIngredients:
 //   [{
-//     id: 1042035,
+//     id: 9152,
 //     amount: 2,
-//     unit: 'servings',
-//     unitLong: 'servings',
-//     unitShort: 'servings',
-//     aisle: 'Spices and Seasonings',
-//     name: 'apple pie spice',
-//     original: 'Apple pie spice',
-//     originalString: 'Apple pie spice',
-//     originalName: 'Apple pie spice',
+//     unit: 'tablespoons',
+//     unitLong: 'tablespoons',
+//     unitShort: 'Tbsp',
+//     aisle: 'Produce',
+//     name: 'lemon juice',
+//     original: '2 tablespoons lemon juice',
+//     originalString: '2 tablespoons lemon juice',
+//     originalName: 'lemon juice',
 //     metaInformation: [],
 //     meta: [],
 //     image:
-//       'https://spoonacular.com/cdn/ingredients_100x100/garam-masala.jpg'
+//       'https://spoonacular.com/cdn/ingredients_100x100/lemon-juice.jpg'
 //   },
 //   {
-//     id: 9019,
-//     amount: 0.5,
-//     unit: 'cup',
-//     unitLong: 'cups',
-//     unitShort: 'cup',
-//     aisle: 'Canned and Jarred',
-//     name: 'unsweetened applesauce',
-//     original: '1/2 cup unsweetened applesauce',
-//     originalString: '1/2 cup unsweetened applesauce',
-//     originalName: 'unsweetened applesauce',
+//     id: 9202,
+//     amount: 2,
+//     unit: 'medium',
+//     unitLong: 'mediums',
+//     unitShort: 'medium',
+//     aisle: 'Produce',
+//     name: 'navel oranges',
+//     original: '2 medium navel oranges, peeled, sectioned and chopped',
+//     originalString: '2 medium navel oranges, peeled, sectioned and chopped',
+//     originalName: 'navel oranges, peeled, sectioned and chopped',
 //     metaInformation: [Array],
 //     meta: [Array],
 //     image:
-//       'https://spoonacular.com/cdn/ingredients_100x100/applesauce.png'
-//   }],
-//     usedIngredients:
-//   [{
-//     id: 9003,
+//       'https://spoonacular.com/cdn/ingredients_100x100/mandarin-or-tangerines-or-clementines.jpg'
+//   },
+//   {
+//     id: 9206,
 //     amount: 1,
 //     unit: 'cup',
 //     unitLong: 'cup',
 //     unitShort: 'cup',
-//     aisle: 'Produce',
-//     name: 'apple',
-//     original: '1 cup chopped apple',
-//     originalString: '1 cup chopped apple',
-//     originalName: 'chopped apple',
-//     metaInformation: [Array],
-//     meta: [Array],
-//     image: 'https://spoonacular.com/cdn/ingredients_100x100/apple.jpg'
+//     aisle: 'Beverages',
+//     name: 'orange juice',
+//     original: '1 cup orange juice',
+//     originalString: '1 cup orange juice',
+//     originalName: 'orange juice',
+//     metaInformation: [],
+//     meta: [],
+//     image:
+//       'https://spoonacular.com/cdn/ingredients_100x100/orange-juice.jpg'
 //   },
 //   {
+//     id: 9236,
+//     amount: 2,
+//     unit: 'medium',
+//     unitLong: 'mediums',
+//     unitShort: 'medium',
+//     aisle: 'Produce',
+//     name: 'peaches',
+//     original: '2 medium peaches, cubed',
+//     originalString: '2 medium peaches, cubed',
+//     originalName: 'peaches, cubed',
+//     metaInformation: [Array],
+//     meta: [Array],
+//     image: 'https://spoonacular.com/cdn/ingredients_100x100/peach.png'
+//   }],
+//     usedIngredients:
+//   [{
+//     id: 9050,
+//     amount: 2,
+//     unit: 'cups',
+//     unitLong: 'cups',
+//     unitShort: 'cup',
+//     aisle: 'Produce',
+//     name: 'blueberries',
+//     original: '2 cups fresh blueberries',
+//     originalString: '2 cups fresh blueberries',
+//     originalName: 'fresh blueberries',
+//     metaInformation: [Array],
+//     meta: [Array],
+//     extendedName: 'fresh blueberries',
+//     image:
+//       'https://spoonacular.com/cdn/ingredients_100x100/blueberries.jpg'
+//   },
+//   {
+//     id: 1069003,
+//     amount: 1,
+//     unit: 'medium',
+//     unitLong: 'medium',
+//     unitShort: 'medium',
+//     aisle: 'Produce',
+//     name: 'green apple',
+//     original: '1 medium green apple, cubed',
+//     originalString: '1 medium green apple, cubed',
+//     originalName: 'green apple, cubed',
+//     metaInformation: [Array],
+//     meta: [Array],
+//     image:
+//       'https://spoonacular.com/cdn/ingredients_100x100/grannysmith-apple.png'
+//   },
+//   {
+//     id: 1079003,
+//     amount: 2,
+//     unit: 'medium',
+//     unitLong: 'mediums',
+//     unitShort: 'medium',
+//     aisle: 'Produce',
+//     name: 'red apples',
+//     original: '2 medium red apples, cubed',
+//     originalString: '2 medium red apples, cubed',
+//     originalName: 'red apples, cubed',
+//     metaInformation: [Array],
+//     meta: [Array],
+//     image:
+//       'https://spoonacular.com/cdn/ingredients_100x100/red-delicious-apples.png'
+//   }],
+//     unusedIngredients:
+//   [{
 //     id: 9003,
 //     amount: 1,
-//     unit: 'slices',
-//     unitLong: 'slice',
-//     unitShort: 'slice',
+//     unit: 'serving',
+//     unitLong: 'serving',
+//     unitShort: 'serving',
 //     aisle: 'Produce',
 //     name: 'apple',
-//     original: 'Apple slices',
-//     originalString: 'Apple slices',
-//     originalName: 'Apple',
+//     original: 'apple',
+//     originalString: 'apple',
+//     originalName: 'apple',
 //     metaInformation: [],
 //     meta: [],
 //     image: 'https://spoonacular.com/cdn/ingredients_100x100/apple.jpg'
-//   },
-//   {
-//     id: 9003,
-//     amount: 12,
-//     unit: 'oz',
-//     unitLong: 'ounces',
-//     unitShort: 'oz',
-//     aisle: 'Produce',
-//     name: 'apple',
-//     original:
-//       '2 containers (6 oz each) Yoplait® Light Fat Free apple turnover yogurt',
-//     originalString:
-
-
-
-
-
-
-
-
-
-
-
-
-
-//       '2 containers (6 oz each) Yoplait® Light Fat Free apple turnover yogurt',
-//     originalName:
-//       'containers each) Yoplait® Light Fat Free apple turnover yogurt',
-//     metaInformation: [Array],
-//     meta: [Array],
-//     extendedName: 'fat free light apple',
-//     image: 'https://spoonacular.com/cdn/ingredients_100x100/apple.jpg'
 //   }],
-//     unusedIngredients: [],
-//       likes: 0
+//     likes: 0
 // }

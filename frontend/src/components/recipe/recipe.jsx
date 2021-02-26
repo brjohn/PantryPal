@@ -10,19 +10,32 @@ class Recipe extends React.Component {
   componentDidMount() {
   }
   
+
+  updateRecipes() {
+    return () => {
+      
+      
+    } 
+  }
+
+
   render() {
 
     return (
       <div className="recipe">
-        <h2>Your current pantry:</h2>
+        <h2>Your current recipes:</h2>
 
         <ul className="user-ingredients">
-          {this.props.ingredients.map((ingredient, idx) => {
-            return <li key={idx}>{ingredient.name}</li>;
+          {this.props.recipes.map((recipe, idx) => {
+            return <li key={idx}>{recipe.title}</li>;
           })}
         </ul>
+
+        <button onClick={this.updateRecipes()}>
+          Update Recipes
+        </button>
         
-        <RecipeSearchContainer />
+        {/* <RecipeSearchContainer /> */}
       </div>
     );
   }
