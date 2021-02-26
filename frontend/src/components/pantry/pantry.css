@@ -90,6 +90,7 @@
   margin-right: 8px;
   border-width: 5px;
   border-color: lightgrey;
+  max-height: 200px;
 }
 
 .i-title {
@@ -132,11 +133,18 @@
 
 .i-img {
   flex-basis:250px;
-  max-width:100%;
-  max-height:100%;
+  width:100px;
+  height:100px;
   border-radius: 10px;
   flex-flow: column wrap;
   flex: 1;
+  border: 1px solid lime;
+}
+
+.i-title {
+ width:100px;
+ height:10px;
+ border: 1px solid red;
 }
 
 
