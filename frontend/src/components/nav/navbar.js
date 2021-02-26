@@ -17,6 +17,14 @@ class NavBar extends React.Component {
   // TBD: Replace /test with Pantry nav components (not yet created)
   getLinks() {
     const { openModal } = this.props;
+    // let url = (window.location.href).slice(24);
+    // if (url === "recipe"){
+    //   url = "/pantry"
+    // }
+    // else {
+    //   url = "/recipe"
+    // }
+
 
     if (this.props.loggedIn) {
       return (
@@ -28,9 +36,9 @@ class NavBar extends React.Component {
             </div>
         </div>
         <div className="nav-right">
-          {/* <Link to={'/test'} className="text-link">Nav TBD</Link>
-          <Link to={'/test'} className="text-link">Nav TBD</Link>
-        <Link to={'/test'} className="text-link">Nav TBD</Link> */}
+          {/* <Link to={url}><button className="grey-button">{url[1].toUpperCase() + url.slice(2)}</button></Link> */}
+          <Link to='/pantry'><button className="grey-button">Pantry</button></Link>
+          <Link to='/recipe'><button className="grey-button">Recipes</button></Link>
           <button className="blue-button" onClick={this.logoutUser}>Logout</button>
         </div>
         </div>

@@ -1,15 +1,22 @@
 import { connect } from "react-redux";
-import { fetchUser } from "../../actions/user_actions";
+import { getUserInfo } from "../../actions/session_actions"
+// import { fetchUser } from "../../actions/user_actions"
 
 import Recipe from "./recipe";
 
 const mapStateToProps = (state) => ({
-  user: state.session.user,
+  currentUser: state.users,
 });
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     fetchUser: (userId) => dispatch(fetchUser(userId)),
+//   };
+// };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchUser: () => dispatch(fetchUser()),
+    getUserInfo: () => dispatch(getUserInfo()),
   };
 };
 

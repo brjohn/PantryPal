@@ -1,14 +1,14 @@
 import { connect } from "react-redux";
-import { fetchUser } from "../../actions/user_actions";
+import { getUserInfo } from "../../actions/session_actions";
 import RecipeSearch from "./recipe_search";
 
 const mapStateToProps = (state) => ({
-  user: state.session.user,
+  currentUser: state.users,
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchUser: () => dispatch(fetchUser()),
+    getUserInfo: () => dispatch(getUserInfo()),
   };
 };
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class RecipeSearch extends React.Component {
+class RecipeSearch extends React.Component {
   constructor() {
     super()
     this.state = {
