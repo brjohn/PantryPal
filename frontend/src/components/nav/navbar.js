@@ -47,11 +47,17 @@ class NavBar extends React.Component {
 
 
 
-  // componentDidUpdate() {
-  // debugger
-  // const url = window.location.hash.slice(2)
-  // if (['pantry', 'recipe'].includes(url)) this.indicatorAnimation()(document.getElementById(window.location.hash.slice(2)))
-  // }
+  componentDidUpdate() {
+  
+    let url = window.location.hash.slice(2)
+    if (url === "" && this.props.loggedIn) {
+      // debugger
+      url = 'pantry'
+    }
+    // console.log(url)
+    // debugger
+    if (['pantry', 'recipe'].includes(url)) this.indicatorAnimation()(document.getElementById(url))
+  }
 
 
 
