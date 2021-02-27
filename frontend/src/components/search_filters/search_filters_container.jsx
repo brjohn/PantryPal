@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchUser, updateUser } from '../../actions/user_actions';
-import SearchFilters from './search_filters';
+import SearchFilters from './exclusion_search';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,

@@ -1,5 +1,6 @@
 import React from "react";
 import RecipeSearchContainer from './recipe_search_container'
+import SearchFiltersContainer from '../search_filters/search_filters_container';
 import './recipe.css'
 
 const INGREDIENT_LIST = ['apple', 'blueberry'];
@@ -33,6 +34,7 @@ class Recipe extends React.Component {
         </ul> */}
         
         <RecipeSearchContainer />
+        <SearchFiltersContainer />
       </div>
     );
   }

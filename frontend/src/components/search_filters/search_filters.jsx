@@ -1,69 +1,48 @@
 import React from 'react';
-import { addIcon } from '../search/search_icon';
+import { removeIcon } from '../search/search_icon';
+import ExclusionSearch from './exclusion_search';
+import ExclusionSearchContainer from './exclusion_search_container';
 
-class Preferences extends React.Component {
+class SearchFilters extends React.Component {
     constructor(props) {
         super(props);
-        
+        this.setState = this.setState.bind(this)
     }
 
-    updateSearch() {
-    return (e) => {
-      if (e.target.value === '') {
-        e.target.nextElementSibling.classList.add('hide')
-      } else {
-        e.target.nextElementSibling.classList.remove('hide')
-      }
-      this.setState({ searching: e.target.value })
-    }
-  }
-
-  addToExclusions(ingredient) {
-    return () => { 
-        if (!this.props.exclusions.include(ingredient) {
-          this.props.ingredients.push(res.data)
+    removeExclusion(exclusionIdx){
+        return () => {
+            this.props.exclusions.splice(exclusionIdx, 1)
+            this.props.updateUser({ id: this.props.currentUser, exclusions: this.props.exclusions})
+            this.setState({exclusions: this.props.exclusions})
         }
-
-        this.props.setPantryState({ingredients: this.props.ingredients}) // this updates the pantry since search and pantry are two different components
-        this.props.updateUser({ id: this.props.currentUser.id, ingredients: this.props.ingredients }) // this updates MongoDB
-      })
     }
-  }
-
 
     render(){
 
-        <div className="search-filter-box">
-            <div className="preferences-box">
-                <form>
-                    
-                </form>
-            </div>
-            <div className="exclusions-box">
-                <div></div>
-                <div>
-                    <input type="text" className="search-bar"
-                        placeholder="Search Ingredients . . . "
-                        onChange={this.updateSearch()} />
+        return(
 
-                    <div className='search-values hide'>
-                        {searchIngredient(this.state.searching).map((el, idx) => {
-                            return (
-                                <div key={el + idx} className='search-result-div'>
-                                    <div className='search-results' 
-                                    >{el}</div>
-                                    <div className='plus-sign' onClick={this.addToExclusions(el)}>
-                                        {addIcon}
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
+        <div>
+            <ExclusionSearchContainer setFilterState={this.setState}/>
+            <div className="my-exclusions">
+                {ExclusionSearch.map((exclusion, exclusionIdx) => {
+                    return (
+                        <div className="exclusion" key={exclusion}>
+                            <h1>{exclusion}</h1>
+                            <div onClick={this.removeExclusion(exclusionIdx)}>
+                                {removeIcon}
+                            </div>
+                        </div>
+                    )
+                })}
+                
             </div>
-
         </div>
+
+        )
+
+
     }
+
 
 }
 
