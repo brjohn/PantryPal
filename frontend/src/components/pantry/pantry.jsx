@@ -14,7 +14,6 @@ class Pantry extends React.Component {
 
   removeIngredient(ingredientIndex) {
     return () => {
-      // console.log(this.props.ingredients[ingredientIndex])
       this.props.ingredients.splice(ingredientIndex, 1)
       this.props.updateUser({ id: this.props.currentUser.id, ingredients: this.props.ingredients })
       this.setState({ ingredients: this.props.ingredients })
