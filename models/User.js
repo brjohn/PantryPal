@@ -36,6 +36,10 @@ const UserSchema = new Schema({
     "default": []
     // references recipes
   },
+  saved_recipes: {
+    type: Array,
+    "default": []
+  }
 
 }, {
   timestamps: true
