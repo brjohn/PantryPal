@@ -27,10 +27,12 @@ class NavBar extends React.Component {
     return (e) => {
 
       
-      // const el = e.target.parentElement.parentElement;
+      // const el = e.target;
       // debugger
+      console.log(e.currentTarget)
+      console.log(e.target === e.currentTarget)
 
-      const el = (e.target) ? (e.target.parentElement.parentElement) : (e.parentElement.parentElement)
+      const el = (e.target) ? (e.currentTarget.parentElement) : (e.parentElement.parentElement)
 
       items.forEach(function (item) {
         item.classList.remove('is-active');
@@ -49,10 +51,8 @@ class NavBar extends React.Component {
 
 
   componentDidMount() {
-    // this.indicatorAnimation()(document.getElementById('pantry'))
     const url = window.location.hash.slice(2)
     if (['pantry', 'recipe'].includes(url)) this.indicatorAnimation()(document.getElementById(window.location.hash.slice(2)))
-    // debugger
   }
 
 
@@ -90,11 +90,11 @@ class NavBar extends React.Component {
 
   
             <div className="nav-item is-active" active-color="orange">
-              <Link to='/pantry'><button id="pantry" onClick={this.indicatorAnimation()} className="grey-button" >Pantry</button></Link>
+              <Link to='/pantry' onClick={this.indicatorAnimation()} ><button id="pantry"  className="grey-button" >Pantry</button></Link>
             </div>
 
-            <div  className="nav-item" active-color="green">
-              <Link to='/recipe'><button id="recipe" onClick={this.indicatorAnimation()} className="grey-button" >Recipes</button></Link>
+            <div className="nav-item" active-color="green">
+              <Link to='/recipe' onClick={this.indicatorAnimation()} ><button id="recipe" className="grey-button" >Recipes</button></Link>
             </div>
             <span className="nav-indicator"></span>
 
