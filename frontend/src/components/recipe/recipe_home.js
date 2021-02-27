@@ -1,6 +1,7 @@
 import React from 'react';
 import './recipe.css'
 import RecipeMain from './recipe_container'
+import SearchFiltersContainer from '../search_filters/search_filters_container';
 
 
 class RecipeHome extends React.Component {
@@ -9,7 +10,7 @@ class RecipeHome extends React.Component {
 
       <div id='recipe-home'>
         <div id='recipe-sidebar'>
-          
+          <SearchFiltersContainer />
         </div>
 
         <div id='recipe-main'>
