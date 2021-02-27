@@ -8,6 +8,7 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+    
   }
 
   logoutUser(e) {
@@ -17,19 +18,28 @@ class NavBar extends React.Component {
   // TBD: Replace /test with Pantry nav components (not yet created)
 
 
+
   indicatorAnimation() {
+    const indicator = document.querySelector('.nav-indicator');
+    const items = document.querySelectorAll('.nav-item');
+
+    // debugger
     return (e) => {
-      Array.from(document.getElementsByClassName('nav-button-div')).forEach(button => {
-        button.classList.remove('underlined')
-      })
-      e.currentTarget.classList.add('underlined')
+      const el = e.target.parentElement.parentElement;
+      // debugger
+      items.forEach(function (item) {
+        item.classList.remove('is-active');
+        item.removeAttribute('style');
+      });
+      indicator.style.width = "".concat(el.offsetWidth, "px");
+      indicator.style.left = "".concat(el.offsetLeft, "px");
+      indicator.style.backgroundColor = el.getAttribute('active-color');
+      el.classList.add('is-active');
+      el.style.color = el.getAttribute('active-color');
 
 
-      // e.currentTarget.classList.toggle('underlined')
-      // console.log(e.currentTarget)
     }
   }
-
 
 
 
@@ -54,6 +64,7 @@ class NavBar extends React.Component {
 
 
     if (this.props.loggedIn) {
+
       return (
         <div className="nav-box">
         <div className="nav-left">
@@ -62,24 +73,33 @@ class NavBar extends React.Component {
               <h3 className="nav-title">PantryPal</h3>
             </div>
         </div>
-        <div className="nav-right">
+        <div className="nav-right">{/* <div className="nav-right"></div> */}
           {/* <Link to={url}><button className="grey-button">{url[1].toUpperCase() + url.slice(2)}</button></Link> */}
           
-          
-          <div onClick={this.indicatorAnimation()} className="nav-button-div underlined">
-            <Link to='/pantry'><button className="grey-button" >Pantry</button></Link>
-          </div>
 
-            <div onClick={this.indicatorAnimation()} className="nav-button-div">
-            <Link to='/recipe'><button className="grey-button" >Recipes</button></Link>
-          </div>
+
+  
+            <div className="nav-item is-active" active-color="orange">
+              <Link to='/pantry'><button onClick={this.indicatorAnimation()} className="grey-button" >Pantry</button></Link>
+            </div>
+
+            <div  className="nav-item" active-color="green">
+              <Link to='/recipe'><button onClick={this.indicatorAnimation()} className="grey-button" >Recipes</button></Link>
+            </div>
+            <span class="nav-indicator"></span>
+
+
 
 
           <button className="blue-button" onClick={this.logoutUser}>Logout</button>
         </div>
         </div>
       );
-    } else {
+    } 
+    
+    
+    
+    else {
       return (
          <div className="splash">
           <div className="nav-box">
@@ -105,6 +125,7 @@ class NavBar extends React.Component {
 
 
   render() {
+    
     return (
       <div>
         {/* <h1><Link to={'/'}>PantryPal</Link></h1> */}
