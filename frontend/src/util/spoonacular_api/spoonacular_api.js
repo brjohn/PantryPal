@@ -1,7 +1,7 @@
 const axios = require('axios');
 const spoonacular = require('./keys');
 // const apiKeyToUse = spoonacular["apiKey" + Math.floor((Math.random() * 4) + 1)] //uses random apiKey between 1 and 4
-const apiKeyToUse = spoonacular.apiKey4 //uses random apiKey between 1 and 4
+const apiKeyToUse = spoonacular.apiKey5
 
 
 // 01. A function that gets ingredients
@@ -17,7 +17,7 @@ const getIngredient = (query, printToFileFunction) => axios.get(
 })
   .then(payload => {
     console.log(payload.data.results)
-    debugger
+    // debugger
     printToFileFunction(payload.data.results)
   })
 
@@ -27,7 +27,7 @@ const getIngredient = (query, printToFileFunction) => axios.get(
 
 
 // 02. A function that gets recipes given ingredients
-const getRecipeByIngredients = (ingredients) => axios.get(
+const getRecipeByIngredients = (ingredients, cbFunction) => axios.get(
   spoonacular.getRecipesByIngredientsURL,
   {
     params: { // params is the body parameters
@@ -37,29 +37,21 @@ const getRecipeByIngredients = (ingredients) => axios.get(
     }
 
   })
-  .then(payload => {
-    console.log(payload.data[0])
-    // we're gonna need to dispatch this through our reducers and middleware
-    
-  })
 
+  .then(payload => cbFunction(payload))
   .catch(err => console.log(err))
 
 
 
 // 03. A function that gets information on a particular recipe
-const getRecipeInformation = (id) => axios.get(
+const getRecipeInformation = (id, cbFunction) => axios.get(
   spoonacular.getRecipeInformationURL(id),
   { params: {
     apiKey: apiKeyToUse,
   }}
 
 
-).then(payload => {
-  console.log(payload.data.extendedIngredients)
-  // we're gonna need to dispatch this through our reducers and middleware
-})
-
+).then(payload => cbFunction(payload)) // we're gonna need to dispatch this through our reducers and middleware)
   .catch(err => console.log(err))
 
 
@@ -74,8 +66,8 @@ module.exports = {
 }
 
 
-getRecipeByIngredients('apple,blueberry')
-// getRecipeInformation(9003)
+// getRecipeByIngredients('apple,blueberry', console.log)
+getRecipeInformation(9003, console.log)
 // getIngredient('apple')
 
 

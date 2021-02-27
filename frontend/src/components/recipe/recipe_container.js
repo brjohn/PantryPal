@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { updateUser } from "../../actions/user_actions"
-// import { fetchUser } from "../../actions/user_actions"
+
 
 import Recipe from "./recipe";
 

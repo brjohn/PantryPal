@@ -1,6 +1,7 @@
 import React from "react";
 import RecipeSearchContainer from './recipe_search_container'
 import './recipe.css'
+import { getRecipeByIngredients } from "../../util/spoonacular_api/spoonacular_api"
 
 class Recipe extends React.Component {
   constructor(props) {
@@ -12,10 +13,11 @@ class Recipe extends React.Component {
   
 
   updateRecipes() {
-    let ingreds = this.props.ingredients.map(el => el.name);
-     
+    
     return () => {
-      console.log(ingreds.join(','))   
+      let ingredientsString = (this.props.ingredients.map(el => el.name)).join(',');
+      getRecipeByIngredients(ingredientsString, )
+      // this.props.updateUser({ id: this.props.currentUser.id, recipes: this.props.recipes })
     } 
   }
 
