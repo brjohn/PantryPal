@@ -27,18 +27,18 @@ const getIngredient = (query, printToFileFunction) => axios.get(
 
 
 // 02. A function that gets recipes given ingredients
-const getRecipeByIngredients = (ingredients, cbFunction) => axios.get(
+const getRecipeByIngredients = (ingredients, cbFunction, recipeCount=15) => axios.get(
   spoonacular.getRecipesByIngredientsURL,
   {
     params: { // params is the body parameters
       ingredients,
       apiKey: apiKeyToUse,
-      number: 100, //100 is the maximum
+      number: recipeCount, //100 is the maximum
     }
 
   })
 
-  .then(payload => cbFunction(payload))
+  .then(payload => cbFunction(payload.data))
   .catch(err => console.log(err))
 
 
@@ -51,7 +51,7 @@ const getRecipeInformation = (id, cbFunction) => axios.get(
   }}
 
 
-).then(payload => cbFunction(payload)) // we're gonna need to dispatch this through our reducers and middleware)
+).then(payload => cbFunction(payload.data)) // we're gonna need to dispatch this through our reducers and middleware)
   .catch(err => console.log(err))
 
 
@@ -67,7 +67,7 @@ module.exports = {
 
 
 // getRecipeByIngredients('apple,blueberry', console.log)
-getRecipeInformation(9003, console.log)
+// getRecipeInformation(9003, console.log)
 // getIngredient('apple')
 
 
