@@ -20,19 +20,13 @@ class NavBar extends React.Component {
 
 
   indicatorAnimation() {
-    const indicator = document.querySelector('.nav-indicator');
-    const items = document.querySelectorAll('.nav-item');
-
     // debugger
     return (e) => {
-
-      
-      // const el = e.target;
+      const indicator = document.querySelector('.nav-indicator');
+      const items = document.querySelectorAll('.nav-item');
+      if (!e) return;
       // debugger
-      console.log(e.currentTarget)
-      console.log(e.target === e.currentTarget)
-
-      const el = (e.target) ? (e.currentTarget.parentElement) : (e.parentElement.parentElement)
+      const el = (e.currentTarget) ? (e.currentTarget.parentElement) : (e.parentElement.parentElement)
 
       items.forEach(function (item) {
         item.classList.remove('is-active');
@@ -50,13 +44,14 @@ class NavBar extends React.Component {
 
 
 
-  componentDidMount() {
-    const url = window.location.hash.slice(2)
-    if (['pantry', 'recipe'].includes(url)) this.indicatorAnimation()(document.getElementById(window.location.hash.slice(2)))
-  }
 
 
 
+  // componentDidUpdate() {
+    // debugger
+    // const url = window.location.hash.slice(2)
+    // if (['pantry', 'recipe'].includes(url)) this.indicatorAnimation()(document.getElementById(window.location.hash.slice(2)))
+  // }
 
 
 
@@ -74,7 +69,8 @@ class NavBar extends React.Component {
 
 
     if (this.props.loggedIn) {
-
+      const url = window.location.hash.slice(2)
+      if (['pantry', 'recipe'].includes(url)) this.indicatorAnimation()(document.getElementById(window.location.hash.slice(2)))
       return (
         <div className="nav-box">
         <div className="nav-left">
