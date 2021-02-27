@@ -15,6 +15,33 @@ class NavBar extends React.Component {
     this.props.logout();
   }
   // TBD: Replace /test with Pantry nav components (not yet created)
+
+
+  indicatorAnimation() {
+    return (e) => {
+      Array.from(document.getElementsByClassName('nav-button-div')).forEach(button => {
+        button.classList.remove('underlined')
+      })
+      e.currentTarget.classList.add('underlined')
+
+
+      // e.currentTarget.classList.toggle('underlined')
+      // console.log(e.currentTarget)
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
   getLinks() {
     const { openModal } = this.props;
     // let url = (window.location.href).slice(24);
@@ -37,8 +64,17 @@ class NavBar extends React.Component {
         </div>
         <div className="nav-right">
           {/* <Link to={url}><button className="grey-button">{url[1].toUpperCase() + url.slice(2)}</button></Link> */}
-          <Link to='/pantry'><button className="grey-button">Pantry</button></Link>
-          <Link to='/recipe'><button className="grey-button">Recipes</button></Link>
+          
+          
+          <div onClick={this.indicatorAnimation()} className="nav-button-div underlined">
+            <Link to='/pantry'><button className="grey-button" >Pantry</button></Link>
+          </div>
+
+            <div onClick={this.indicatorAnimation()} className="nav-button-div">
+            <Link to='/recipe'><button className="grey-button" >Recipes</button></Link>
+          </div>
+
+
           <button className="blue-button" onClick={this.logoutUser}>Logout</button>
         </div>
         </div>
@@ -65,6 +101,8 @@ class NavBar extends React.Component {
       );
     }
   }
+
+
 
   render() {
     return (
