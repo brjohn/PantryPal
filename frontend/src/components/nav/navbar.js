@@ -91,7 +91,7 @@ class NavBar extends React.Component {
 
 
 
-            <div className="nav-item is-active" active-color="orange">
+            <div className="nav-item is-active" active-color="#1c4966">
               <Link to='/pantry' onClick={this.indicatorAnimation()} ><button id="pantry" className="grey-button" >Pantry</button></Link>
             </div>
 
