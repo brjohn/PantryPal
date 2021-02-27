@@ -11,6 +11,6 @@ export const addIcon = (
 
 export const removeIcon = (
   <svg className="svg-circleminus" viewBox="0 0 100 100">
-    <line x1="32.5" y1="50" x2="67.5" y2="50" strokeWidth="13" stroke-linecap="round"></line>
+    <line x1="32.5" y1="50" x2="67.5" y2="50" strokeWidth="13" strokeLinecap="round"></line>
   </svg>
 )

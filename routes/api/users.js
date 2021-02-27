@@ -138,15 +138,20 @@ router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) 
   // }
 
   let filter = {_id: req.user.id};
-  debugger
-  User.findOneAndUpdate(filter, {$set: {
-    id: filter,
-    preferences: req.body.preferences,
-    exclusions: req.body.exclusions,
-    ingredients: req.body.ingredients,
-    recipes: req.body.recipes,
-    username: req.body.username
-  }}, {new: true})
+  let { preferences, exclusions, ingredients, recipes } = req.body;
+  // debugger
+
+  let newInfo = {};
+  if (preferences) newInfo.preferences = preferences;
+  if (exclusions) newInfo.exclusions = exclusions;
+  if (ingredients) newInfo.ingredients = ingredients;
+  if (recipes) newInfo.recipes = recipes;
+  console.log(newInfo)
+
+
+
+
+  User.findOneAndUpdate(filter, {$set: newInfo}, {new: true})
     .then(user => {
       let updateUser = {
         id: user._id,
