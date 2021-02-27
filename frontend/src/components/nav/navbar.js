@@ -50,7 +50,8 @@ class NavBar extends React.Component {
 
   componentDidMount() {
     // this.indicatorAnimation()(document.getElementById('pantry'))
-    this.indicatorAnimation()(document.getElementById(window.location.hash.slice(2)))
+    const url = window.location.hash.slice(2)
+    if (['pantry', 'recipe'].includes(url)) this.indicatorAnimation()(document.getElementById(window.location.hash.slice(2)))
     // debugger
   }
 
