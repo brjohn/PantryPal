@@ -8,7 +8,7 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
-    
+    // debugger
   }
 
   logoutUser(e) {
@@ -25,8 +25,13 @@ class NavBar extends React.Component {
 
     // debugger
     return (e) => {
-      const el = e.target.parentElement.parentElement;
+
+      
+      // const el = e.target.parentElement.parentElement;
       // debugger
+
+      const el = (e.target) ? (e.target.parentElement.parentElement) : (e.parentElement.parentElement)
+
       items.forEach(function (item) {
         item.classList.remove('is-active');
         item.removeAttribute('style');
@@ -43,7 +48,11 @@ class NavBar extends React.Component {
 
 
 
-
+  componentDidMount() {
+    // this.indicatorAnimation()(document.getElementById('pantry'))
+    this.indicatorAnimation()(document.getElementById(window.location.hash.slice(2)))
+    // debugger
+  }
 
 
 
@@ -80,13 +89,13 @@ class NavBar extends React.Component {
 
   
             <div className="nav-item is-active" active-color="orange">
-              <Link to='/pantry'><button onClick={this.indicatorAnimation()} className="grey-button" >Pantry</button></Link>
+              <Link to='/pantry'><button id="pantry" onClick={this.indicatorAnimation()} className="grey-button" >Pantry</button></Link>
             </div>
 
             <div  className="nav-item" active-color="green">
-              <Link to='/recipe'><button onClick={this.indicatorAnimation()} className="grey-button" >Recipes</button></Link>
+              <Link to='/recipe'><button id="recipe" onClick={this.indicatorAnimation()} className="grey-button" >Recipes</button></Link>
             </div>
-            <span class="nav-indicator"></span>
+            <span className="nav-indicator"></span>
 
 
 
