@@ -14,7 +14,6 @@ class Pantry extends React.Component {
 
   removeIngredient(ingredientIndex) {
     return () => {
-      // console.log(this.props.ingredients[ingredientIndex])
       this.props.ingredients.splice(ingredientIndex, 1)
       this.props.updateUser({ id: this.props.currentUser.id, ingredients: this.props.ingredients })
       this.setState({ ingredients: this.props.ingredients })
@@ -67,49 +66,11 @@ class Pantry extends React.Component {
                   </div>
                 </div>
               )
-
             })}
-
           </div>
-
-
-
         </div>
       </div>
-
-
-
     )
   }
 }
 export default Pantry;
-
-
-// <div className="pantry">
-//   <div className="row">
-//     <div className="column">
-//       {this.placeholder()}
-//       {this.placeholder()}
-//       {this.placeholder()}
-//     </div>
-//     <div className="column">
-//       {this.placeholder()}
-//       {this.placeholder()}
-//       {this.placeholder()}
-//     </div>
-//     <div className="column">
-//       {this.placeholder()}
-//       {this.placeholder()}
-//       {this.placeholder()}
-//     </div>
-//     <div className="column">
-//       {this.placeholder()}
-//       {this.placeholder()}
-//       {this.placeholder()}
-//     </div>
-//     <div className="column">
-//       {this.placeholder()}
-//       {this.placeholder()}
-//       {this.placeholder()}
-//     </div>
-//   </div>

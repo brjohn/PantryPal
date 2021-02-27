@@ -2,6 +2,8 @@ import React from 'react';
 import { removeIcon } from '../search/search_icon';
 import ExclusionSearch from './exclusion_search';
 import ExclusionSearchContainer from './exclusion_search_container';
+import PreferencesContainer from './preferences_container';
+import "./search_filters.css"
 
 class SearchFilters extends React.Component {
     constructor(props) {
@@ -21,10 +23,11 @@ class SearchFilters extends React.Component {
 
         return(
 
-        <div>
+        <div className="search-filters-box">
+            <PreferencesContainer setFilterState={this.setState}/>
             <ExclusionSearchContainer setFilterState={this.setState}/>
             <div className="my-exclusions">
-                {ExclusionSearch.map((exclusion, exclusionIdx) => {
+                {this.props.exclusions.map((exclusion, exclusionIdx) => {
                     return (
                         <div className="exclusion" key={exclusion}>
                             <h1>{exclusion}</h1>

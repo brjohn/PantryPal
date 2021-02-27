@@ -1,6 +1,8 @@
 import React from 'react';
 import { addIcon } from '../search/search_icon';
 import searchIngredient from '../search/search_function';
+import "./search_filters.css";
+import "./../search/search.css";
 
 class ExclusionSearch extends React.Component {
     constructor(props) {
@@ -24,28 +26,24 @@ class ExclusionSearch extends React.Component {
 
     addToExclusions(ingredient) {
         return () => { 
+            // console.log('clicked')
+
             if (!this.props.exclusions.includes(ingredient)){
                 this.props.exclusions.push(ingredient)
             }
 
-            this.props.setFilterState({exclusions: this.props.exclusions}) 
+            this.props.setFilterState({ exclusions: this.props.exclusions }); 
             this.props.updateUser({ id: this.props.currentUser.id, exclusions: this.props.exclusions }) 
         }
     }
 
 
     render(){
-
+        // debugger
         return (
 
-        <div className="search-filter-box">
-            <div className="preferences-box">
-                <form>
-                    
-                </form>
-            </div>
-            <div className="exclusions-box">
-                <div></div>
+        <div className="exclusion-search-box">
+            
                 <div>
                     <input type="text" className="search-bar"
                         placeholder="Search Ingredients . . . "
@@ -65,7 +63,7 @@ class ExclusionSearch extends React.Component {
                         })}
                     </div>
                 </div>
-            </div>
+            
 
         </div>)
     }

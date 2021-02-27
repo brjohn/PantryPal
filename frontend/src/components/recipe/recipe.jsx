@@ -2,42 +2,85 @@ import React from "react";
 import RecipeSearchContainer from './recipe_search_container'
 import SearchFiltersContainer from '../search_filters/search_filters_container';
 import './recipe.css'
-
-const INGREDIENT_LIST = ['apple', 'blueberry'];
+import { getRecipeByIngredients } from "../../util/spoonacular_api/spoonacular_api"
 
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
-    this.user = '';
+
+    this.state = { recipes: this.props.recipes }
+    this.updateRecipes = this.updateRecipes.bind(this);
   }
 
   componentDidMount() {
-    this.props.getUserInfo();
+    this.setState({ recipes: this.props.recipes})
+  }
+  
+
+  updateRecipes() {
+    
+    return () => {
+
+      let ingredientsString = (this.props.ingredients.map(el => el.name)).join(',');
+      getRecipeByIngredients(ingredientsString, (returnedRecipes) => { 
+        this.props.updateUser({ id: this.props.currentUser.id, recipes: returnedRecipes })
+        this.setState({ recipes: returnedRecipes})
+      })
+      
+      // this.props.updateUser({ id: this.props.currentUser.id, recipes: this.props.recipes })
+    } 
   }
 
 
   render() {
+    let recipesArray;
+
+    // debugger
+    if (this.state.recipes.length === 0) {
+      recipesArray = this.props.recipes
+    } else {
+      recipesArray = this.state.recipes
+    }
+
+    // debugger
     return (
       <div className="recipe">
-        <h2>Your current pantry:</h2>
+        <h2>Your current recipes:</h2>
 
         <ul className="user-ingredients">
-          {INGREDIENT_LIST.map((ingredient, idx) => {
-            return <li key={idx}>{ingredient}</li>;
+          {recipesArray.map((recipe, idx) => {
+            return <li key={idx}>{recipe.title} - {recipe.missedIngredientCount}</li>;
           })}
         </ul>
-        {/* change above 4 lines to below 4 lines when we have user ingredients working 
-        <ul className="user-ingredients">
-          {this.props.currentUser.ingredients.map((ingredient, idx) => {
-            return <li key={idx}>{ingredient.name}</li>;
-          })}
-        </ul> */}
+
+
+        {/*  Example of what is returned inside an array
+              { id: 604331,
+          title: '4th of July Fruit Salad Cones',
+          image: 'https://spoonacular.com/recipeImages/604331-312x231.jpg',
+          imageType: 'jpg',
+          usedIngredientCount: 2,
+          missedIngredientCount: 2,
+          missedIngredients: [ [Object], [Object] ],
+          usedIngredients: [ [Object], [Object] ],
+          unusedIngredients: [],
+          likes: 172 }, */}
+
+
+
+
+
+
+
+        <button onClick={this.updateRecipes()}>
+          Update Recipes
+        </button>
         
-        <RecipeSearchContainer />
-        <SearchFiltersContainer />
+        {/* <RecipeSearchContainer /> */}
       </div>
     );
   }
+  
 }
 
 export default Recipe;

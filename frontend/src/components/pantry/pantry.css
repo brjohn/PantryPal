@@ -107,9 +107,13 @@ body {
   max-height: 190px;
   max-width:160px;
   -webkit-box-shadow: 0 16px 6px -6px rgba(119, 119, 119, 0.28);
-     -moz-box-shadow: 0 16px 6px -6px rgba(119, 119, 119, 0.28);
-          box-shadow: 0 16px 6px -6px rgba(119, 119, 119, 0.28);
+  -moz-box-shadow: 0 16px 6px -6px rgba(119, 119, 119, 0.28);
+  box-shadow: 0 16px 6px -6px rgba(119, 119, 119, 0.28);
+  overflow: hidden;
+  max-height: 60px;
+  padding-bottom: 35px;
 }
+
 
 .i-title {
   flex-basis:250px;
@@ -145,6 +149,7 @@ body {
   text-align: center;
   align-items: center;
   font-style: normal;
+  
 }
 
 .i-img {
@@ -158,19 +163,19 @@ body {
   border-radius: 10px;
   flex-flow: column wrap;
   flex: 1;
-  margin-top: 15px;
 }
 
 .i-img img {
   max-width: 100px;
   max-height: 85px;
-    align-items: center;
+  align-items: center;
  }
 
 
 .i-title {
  width:100px;
  height:25px;
+
 }
 
 .i-title h1 {
@@ -182,4 +187,10 @@ body {
   text-align: center;
   font-style: normal;
 }
+
+.remove-button-div {
+  /* justify-content: flex-end; */
+  margin-left: 110px;
+}
+
 
