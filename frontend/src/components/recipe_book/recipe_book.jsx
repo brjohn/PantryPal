@@ -47,7 +47,8 @@ class RecipeBook extends React.Component {
                   {this.recipeTriedStatus(saved_recipe.recipe_tried)}
                 </div>
 
-                <div className="saved-recipe-title">
+                <div className="saved-recipe-title"
+                  onClick={() => this.props.openModal(saved_recipe)}>
                   {saved_recipe.title}
                 </div>
               </div>
