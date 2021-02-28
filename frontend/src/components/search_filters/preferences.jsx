@@ -68,11 +68,12 @@ class Preferences extends React.Component {
     render(){
         // debugger
         return (
-          <div>
+          <div className='p-grid'>
             <form onSubmit={this.handleSubmit}>
-              <label>
+              <label className='p-grid-item'>
                 Gluten Free
                 <input
+                  className='p-grid-button'
                   name="glutenFree"
                   type="checkbox"
                   checked={this.props.preferences.includes("Gluten Free")}

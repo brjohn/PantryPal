@@ -14,6 +14,8 @@ class Recipe extends React.Component {
   }
 
   componentDidMount() {
+    // console.log('Recipe main mounted')
+    // debugger
     this.setState({ recipes: this.props.recipes})
   }
   

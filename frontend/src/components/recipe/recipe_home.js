@@ -2,19 +2,21 @@ import React from 'react';
 import './recipe.css'
 import '../recipe_book/recipe_book.css'
 import '../search_filters/search_filters.css'
-import RecipeMain from './recipe_container'
+import RecipeMainContainer from './recipe_container'
 import SearchFiltersContainer from '../search_filters/search_filters_container';
 import RecipeBookContainer from '../recipe_book/recipe_book_container';
 
 
 class RecipeHome extends React.Component {
+
   render() {
+    // debugger
     return (
 
       <div id='recipe-home'>
         <div id='recipe-sidebar'>
           <div className='recipe-book'>
-            <RecipeBookContainer />
+            <RecipeBookContainer saved_recipes={this.props.users.saved_recipes}/>
           </div> 
           <div className='search-filters'>
             <SearchFiltersContainer />
@@ -22,7 +24,7 @@ class RecipeHome extends React.Component {
         </div>
 
         <div id='recipe-main'>
-          <RecipeMain />
+          <RecipeMainContainer/>
         </div>
 
 
