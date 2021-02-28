@@ -1,9 +1,11 @@
 import React from "react";
 import SearchFiltersContainer from '../search_filters/search_filters_container';
 import './recipe.css'
-import { getRecipeByIngredients } from "../../util/spoonacular_api/spoonacular_api"
+import { getRecipeByIngredients, getRecipeInformation } from "../../util/spoonacular_api/spoonacular_api"
 import { listIcon, tilesIcon } from "./recipe_icons";
 import RecipeShow from './recipe_show'
+
+// import { openModal } from "../../actions/modal_actions";
 
 class Recipe extends React.Component {
   constructor(props) {
@@ -65,7 +67,10 @@ class Recipe extends React.Component {
         <ul className="user-ingredients">
           {recipesArray.map((recipe, idx) => {
             return (                          
-              <li key={idx} className="recipe-results" onClick={newRecipeShow.getRecipe(recipe.id)}>
+              <li key={idx} className="recipe-results" 
+                // onClick={newRecipeShow.getRecipe(recipe.id)}
+                onClick={() => this.props.openModal(recipe)}
+              >
                 <img src={recipe.image} height="25" width="25"></img> {recipe.title} - {recipe.missedIngredientCount}
              </li>
             );

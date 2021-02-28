@@ -3,9 +3,10 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
+import RecipeShowContainer from '../recipe/recipe_show_container';
 
 
-function Modal({ modal, closeModal }) {
+function Modal({ modal, closeModal}) {
     if (!modal) {
         return null;
     }
@@ -19,7 +20,8 @@ function Modal({ modal, closeModal }) {
             component = <SignupFormContainer />;
             break;
       default:
-            return null;
+            component = <RecipeShowContainer recipeObject={modal}/>;
+            break;
     }
     return (
         <div className="modal-background" onClick={closeModal}>

@@ -36,7 +36,7 @@ const UserSchema = new Schema({
     "default": []
     // references recipes
   },
-  saved_recipes: {
+  savedRecipes: {
     type: Array,
     "default": []
   }

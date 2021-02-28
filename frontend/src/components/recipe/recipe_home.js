@@ -28,9 +28,9 @@ class RecipeHome extends React.Component {
           <RecipeMainContainer/>
         </div>
 
-        <div id='recipe-show'>
+        {/* <div id='recipe-show'>
           <RecipeShowContainer />
-        </div>
+        </div> */}
       </div>
 
 
