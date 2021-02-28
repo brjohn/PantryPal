@@ -26,6 +26,10 @@ class RecipeBook extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.setState({ saved_recipes: this.props.saved_recipes  })
+  }
+
 
   render() {
     let saved_recipes = this.props.saved_recipes || [];
