@@ -10,6 +10,7 @@ import { fetchIngredient } from './util/user_api_util';
 import {fetchRecipeFromMongoDB, addRecipe} from './util/recipe_util';
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchRecipeFromMongoDB = fetchRecipeFromMongoDB;
   window.addRecipe = addRecipe;
   window.user = () => window.getState().users
+
 
 
   // window.fetchUser = fetchUser

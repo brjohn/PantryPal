@@ -5,6 +5,8 @@ import { getRecipeByIngredients, getRecipeInformationBulk } from "../../util/spo
 import { listIcon, tilesIcon } from "./recipe_icons";
 import RecipeShow from './recipe_show'
 
+// import { openModal } from "../../actions/modal_actions";
+
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
@@ -108,7 +110,10 @@ class Recipe extends React.Component {
         <ul className="user-ingredients">
           {recipesArray.map((recipe, idx) => {
             return (                          
-              <li key={idx} className="recipe-results" onClick={newRecipeShow.getRecipe(recipe.id)}>
+              <li key={idx} className="recipe-results" 
+                // onClick={newRecipeShow.getRecipe(recipe.id)}
+                onClick={() => this.props.openModal(recipe)}
+              >
                 <img src={recipe.image} height="25" width="25"></img> {recipe.title} - {recipe.missedIngredientCount}
              </li>
             );
