@@ -2,7 +2,7 @@ const axios = require('axios');
 const { get } = require('mongoose');
 const spoonacular = require('./keys');
 // const apiKeyToUse = spoonacular["apiKey" + Math.floor((Math.random() * 4) + 1)] //uses random apiKey between 1 and 4
-const apiKeyToUse = spoonacular.apiKey1
+const apiKeyToUse = spoonacular.apiKey2
 
 
 // 01. A function that gets ingredients
@@ -27,7 +27,7 @@ const getIngredient = (query, printToFileFunction) => axios.get(
 
 
 // 02. A function that gets recipes given ingredients
-const getRecipeByIngredients = (ingredients, cbFunction, recipeCount = 15) => axios.get(
+const getRecipeByIngredients = (ingredients, cbFunction, recipeCount = 100) => axios.get(
   spoonacular.getRecipesByIngredientsURL,
   {
     params: { // params is the body parameters
