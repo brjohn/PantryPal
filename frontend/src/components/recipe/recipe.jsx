@@ -10,7 +10,7 @@ class Recipe extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { recipes: this.props.recipes, view: 'list' }
+    this.state = { recipes: this.props.recipes, view: 'tiles' }
     this.updateRecipes = this.updateRecipes.bind(this);
   }
 

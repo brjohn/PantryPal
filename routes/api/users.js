@@ -138,7 +138,7 @@ router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) 
   // }
 
   let filter = {_id: req.user.id};
-  let { preferences, exclusions, ingredients, recipes } = req.body;
+  let { preferences, exclusions, ingredients, recipes, saved_recipes } = req.body;
   // debugger
 
   let newInfo = {};
@@ -146,6 +146,8 @@ router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) 
   if (exclusions) newInfo.exclusions = exclusions;
   if (ingredients) newInfo.ingredients = ingredients;
   if (recipes) newInfo.recipes = recipes;
+  if (saved_recipes) newInfo.saved_recipes = saved_recipes;
+
   console.log(newInfo)
 
 
@@ -159,7 +161,8 @@ router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) 
         preferences: user.preferences,
         exclusions: user.exclusions,
         ingredients: user.ingredients,
-        recipes: user.recipes
+        recipes: user.recipes,
+        saved_recipes: user.saved_recipes
       }
       res.json(updateUser)
     })
@@ -179,7 +182,8 @@ router.get('/:id', passport.authenticate('jwt', {session: false}), (req, res) =>
         preferences: user.preferences,
         exclusions: user.exclusions,
         ingredients: user.ingredients,
-        recipes: user.recipes
+        recipes: user.recipes,
+        saved_recipes: user.saved_recipes
       }
       res.json(returnedUser);
     })
