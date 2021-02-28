@@ -1,6 +1,6 @@
 import React from "react";
-import RecipeSearchContainer from './recipe_search_container'
-import SearchFiltersContainer from '../search_filters/search_filters_container';
+// import RecipeSearchContainer from './recipe_search_container'
+// import SearchFiltersContainer from '../search_filters/search_filters_container';
 import './recipe.css'
 import { getRecipeByIngredients } from "../../util/spoonacular_api/spoonacular_api"
 import { listIcon, tilesIcon } from "./recipe_icons";
@@ -15,6 +15,8 @@ class Recipe extends React.Component {
   }
 
   componentDidMount() {
+    // console.log('Recipe main mounted')
+    // debugger
     this.setState({ recipes: this.props.recipes})
   }
   
