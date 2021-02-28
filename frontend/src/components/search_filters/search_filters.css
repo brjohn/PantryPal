@@ -1,3 +1,17 @@
 .exclusion-search-box {
     border: green solid 6px;
 }
+
+.p-grid {
+  display: flex;
+}
+
+.p-grid-item {
+   font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  border-bottom-color: rgb(0, 0, 0);
+}
+
+.p-grid-button {
+  height: 10px;
+}

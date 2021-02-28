@@ -8,16 +8,12 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
-    // debugger
   }
 
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
   }
-  // TBD: Replace /test with Pantry nav components (not yet created)
-
-
 
   indicatorAnimation() {
     // debugger
