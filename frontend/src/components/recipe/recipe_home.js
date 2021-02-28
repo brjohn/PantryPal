@@ -15,6 +15,7 @@ class RecipeHome extends React.Component {
     return (
 
       <div id='recipe-home'>
+        
         <div id='recipe-sidebar'>
           <div className='recipe-book'>
             <RecipeBookContainer/>
