@@ -6,39 +6,40 @@ class RecipeShow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { recipeObject: {} }
-    // this.showRecipe = this.showRecipe.bind(this);
+    this.state = {recipe: {}};
+    this.recipe = {};
   }
 
-  componentDidMount() {
-  }
-
-  componentWillUnmount(){
-    // this.ingredients = []
-  }
-
-  showRecipe(recipeId) {
-    // getRecipeInformation
+  getRecipe(recipeId) {
     return (e => {
-      alert("recipeId " + recipeId)
+      getRecipeInformation(recipeId, (returnedRecipe) => {
+        // this.props.updateRecipe({  })
+        this.setState({ recipe: returnedRecipe });
+        this.recipe = returnedRecipe;
+      })
     })
   }
 
-  //1. get user ingredients
-  //2. 
+  showRecipe(){
+    if (this.recipe === {}){
+      return(
+        <>
+          Click a recipe.        
+        </>
+      )
+    } else {
+      return (
+        <>
+          <img src="{this.recipe.image}"></img>
+        </>
+      )
+    }    
+  }
 
   render() {
-
     return (
-      <div id="recipe-search-container">
-        <div>
-          <input placeholder="Ingredient Name" />
-          <button className="blue-button">Search</button>
-          <br></br>
-          Apple Ginger Kombucha Cocktail
-          <br></br>
-          <img src="https://spoonacular.com/recipeImages/987595-312x231.jpg" height="100" width="100" />
-        </div>
+      <div>
+        {this.showRecipe()}
       </div>
     )
   }

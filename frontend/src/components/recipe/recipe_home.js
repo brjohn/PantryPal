@@ -3,6 +3,7 @@ import './recipe.css'
 import '../recipe_book/recipe_book.css'
 import '../search_filters/search_filters.css'
 import RecipeMainContainer from './recipe_container'
+import RecipeShowContainer from './recipe_show_container'
 import SearchFiltersContainer from '../search_filters/search_filters_container';
 import RecipeBookContainer from '../recipe_book/recipe_book_container';
 
@@ -27,7 +28,9 @@ class RecipeHome extends React.Component {
           <RecipeMainContainer/>
         </div>
 
-
+        <div id='recipe-show'>
+          <RecipeShowContainer />
+        </div>
       </div>
 
 

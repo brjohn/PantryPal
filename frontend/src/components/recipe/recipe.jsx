@@ -29,7 +29,6 @@ class Recipe extends React.Component {
         this.props.updateUser({ id: this.props.currentUser.id, recipes: returnedRecipes })
         this.setState({ recipes: returnedRecipes})
       })
-      
       // this.props.updateUser({ id: this.props.currentUser.id, recipes: this.props.recipes })
     } 
   }
@@ -66,7 +65,7 @@ class Recipe extends React.Component {
         <ul className="user-ingredients">
           {recipesArray.map((recipe, idx) => {
             return (                          
-              <li key={idx} className="recipe-results" onClick={newRecipeShow.showRecipe(recipe.id)}>
+              <li key={idx} className="recipe-results" onClick={newRecipeShow.getRecipe(recipe.id)}>
                 <img src={recipe.image} height="25" width="25"></img> {recipe.title} - {recipe.missedIngredientCount}
              </li>
             );
