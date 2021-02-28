@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.newUser = () => ({id: window.getState().users.id})
   window.fetchRecipeFromMongoDB = fetchRecipeFromMongoDB;
   window.addRecipe = addRecipe;
+  window.user = () => window.getState().users
 
 
   // window.fetchUser = fetchUser

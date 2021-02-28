@@ -27,7 +27,7 @@ const getIngredient = (query, printToFileFunction) => axios.get(
 
 
 // 02. A function that gets recipes given ingredients
-const getRecipeByIngredients = (ingredients, cbFunction, recipeCount = 100) => axios.get(
+const getRecipeByIngredients = (ingredients, cbFunction, recipeCount = 15) => axios.get(
   spoonacular.getRecipesByIngredientsURL,
   {
     params: { // params is the body parameters
