@@ -23,7 +23,7 @@ class SearchFilters extends React.Component {
 
         return(
 
-        <div className="search-filters-box">
+        <>
             <PreferencesContainer setFilterState={this.setState}/>
             <ExclusionSearchContainer setFilterState={this.setState}/>
             <div className="my-exclusions">
@@ -39,7 +39,7 @@ class SearchFilters extends React.Component {
                 })}
                 
             </div>
-        </div>
+        </>
 
         )
 

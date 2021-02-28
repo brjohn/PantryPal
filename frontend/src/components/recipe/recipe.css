@@ -12,12 +12,6 @@
   flex-direction: row;
 }
 
-#recipe-sidebar {
-  border: 1px solid green;
-  width: 300px;
-  height: 100%;
-}
-
 #recipe-main {
   border: 1px solid blue;
   width: 500px;
