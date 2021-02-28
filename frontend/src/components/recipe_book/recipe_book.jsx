@@ -21,7 +21,18 @@ class RecipeBook extends React.Component {
           // debugger
           return (
             <div>
-              {saved_recipe.recipe_tried.toString()}
+              <div>
+                {saved_recipe.id}
+              </div>
+
+              <div>
+                {saved_recipe.name}
+              </div>
+
+
+              <div>
+                {saved_recipe.recipe_tried.toString()}
+              </div>
             </div>
           )})}
       </div>
