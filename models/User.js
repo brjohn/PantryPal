@@ -38,7 +38,7 @@ const UserSchema = new Schema({
   },
   saved_recipes: {
     type: Array,
-    "default": []
+    "default": [] // {recipe_id: 2, recipe_tried: boolean}
   }
 
 }, {
