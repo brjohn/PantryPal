@@ -5,6 +5,7 @@ import RecipeBook from './recipe_book';
 const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
+    saved_recipes: state.users.saved_recipes || []
   }
 };
 

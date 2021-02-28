@@ -25,10 +25,10 @@ class AlternateShow extends React.Component {
     }
 
     saveRecipe(){
-        if (!this.props.savedRecipes.includes(this.props.recipeObject)){
-            this.props.savedRecipes.push(this.props.recipeObject)
-                .then(this.setState({savedRecipes: this.props.savedRecipes}))
-                .then(this.props.updateUser({ id: this.props.currentUser.id, savedRecipes: this.props.savedRecipes }) )
+        if (!this.props.saved_recipes.includes(this.props.recipeObject)){
+            this.props.saved_recipes.push(this.props.recipeObject)
+                .then(this.setState({saved_recipes: this.props.saved_recipes}))
+                .then(this.props.updateUser({ id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes }) )
         } 
     }
 

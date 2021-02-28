@@ -6,7 +6,7 @@ import {updateUser} from '../../actions/user_actions';
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
   recipes: state.users.recipes || [],
-  savedRecipes: state.users.savedRecipes || []
+  saved_recipes: state.users.saved_recipes || []
 });
 
 const mapDispatchToProps = (dispatch) => ({

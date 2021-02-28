@@ -25,7 +25,7 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
     preferences: req.user.preferences,
     exclusions: req.user.exclusions,
     recipes: req.user.recipes,
-    savedRecipes: req.user.savedRecipes
+    saved_recipes: req.user.saved_recipes
   });
 })
 
@@ -102,7 +102,7 @@ router.post('/login', (req, res) => {
                     exclusions: user.exclusions,
                     ingredients: user.ingredients,
                     preferences: user.preferences,
-                    savedRecipes: user.savedRecipes
+                    saved_recipes: user.saved_recipes
                   },
 
                   success: true,

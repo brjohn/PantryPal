@@ -17,7 +17,7 @@ class RecipeHome extends React.Component {
       <div id='recipe-home'>
         <div id='recipe-sidebar'>
           <div className='recipe-book'>
-            <RecipeBookContainer saved_recipes={this.props.users.saved_recipes}/>
+            <RecipeBookContainer/>
           </div> 
           <div className='search-filters'>
             <SearchFiltersContainer />
