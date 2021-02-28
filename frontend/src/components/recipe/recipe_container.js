@@ -15,7 +15,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   updateUser: data => dispatch(updateUser(data)),
-  openModal: (modal, prop) => dispatch(openModal(modal, prop))
+  openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipe);
