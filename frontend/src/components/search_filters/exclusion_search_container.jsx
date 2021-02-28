@@ -4,7 +4,7 @@ import ExclusionSearch from './exclusion_search';
 
 const mapStateToProps = ({users, session}) => ({
     currentUser: session.currentUser,
-    exclusions: users.exclusions
+    exclusions: users.exclusions || []
 });
 
 const mapDispatchToProps = (dispatch) => ({
