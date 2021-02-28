@@ -6,11 +6,9 @@ import Modal from './modal/modal';
 import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
-// import SearchContainer from './search/search_container';
 import PantryContainer from './pantry/pantry_container';
-import RecipeConstainer from './recipe/recipe_container';
 import RecipeHomeContainer from './recipe/recipe_home_container';
-import ExclusionSearchContainer from './search_filters/exclusion_search_container';
+
 
 
 const App = () => (
