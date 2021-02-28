@@ -1,19 +1,50 @@
 .recipe-book {
-  /* border: 5px solid rgb(235, 17, 224); */
-  width: 300px;
+  border: 1px solid rgb(23, 114, 28);
   height: 50%;
-}
-
-#recipe-sidebar {
-  border: 1px solid green;
-  width: 300px;
-  height: 100%;
 }
 
 .search-filters {
-  border: 5px solid rgb(17, 241, 29);
-  width: 300px;
+  border: 1px solid rgb(23, 114, 28);
   height: 50%;
+}
+
+#saved-recipes {
+  display: flex;
+  flex-direction: column;
+}
+
+#saved-recipes > div {
+  display: flex;
+  flex-direction: row;
+ 
+}
+
+.saved-recipe-status {
+
+  width: 20px;
+}
+
+.saved-recipe-title {
+
+}
+
+.saved-recipe {
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.saved-recipe-left {
+ 
+  display: flex;
+  flex-direction: row;
+}
+
+.saved-recipe-right {
+  width: 20px;
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: row;
 }
 
 
