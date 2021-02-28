@@ -3,7 +3,7 @@ import SearchFiltersContainer from '../search_filters/search_filters_container';
 import './recipe.css'
 import { getRecipeByIngredients, getRecipeInformationBulk } from "../../util/spoonacular_api/spoonacular_api"
 import { listIcon, tilesIcon } from "./recipe_icons";
-import RecipeShow from './recipe_show'
+
 
 // import { openModal } from "../../actions/modal_actions";
 
@@ -101,7 +101,6 @@ class Recipe extends React.Component {
 
 
   listview(recipesArray) {
-    let newRecipeShow = new RecipeShow();
     return (
       <div className="recipe">
         <h2>RECIPE.JSX</h2>
@@ -111,7 +110,6 @@ class Recipe extends React.Component {
           {recipesArray.slice(0, 15).map((recipe, idx) => {
             return (                          
               <li key={idx} className="recipe-results" 
-                // onClick={newRecipeShow.getRecipe(recipe.id)}
                 onClick={() => this.props.openModal(recipe)}
               >
                 <img src={recipe.image} height="25" width="25"></img> {recipe.title} - {recipe.missedIngredientCount}
