@@ -8,7 +8,6 @@ import RecipeShow from './recipe_show'
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = { recipes: this.props.recipes, view: 'list' }
     this.updateRecipes = this.updateRecipes.bind(this);
   }
@@ -103,10 +102,11 @@ class Recipe extends React.Component {
     let newRecipeShow = new RecipeShow();
     return (
       <div className="recipe">
+        <h2>RECIPE.JSX</h2>
         <h2>Your current recipes:</h2>
 
         <ul className="user-ingredients">
-          {recipesArray.map((recipe, idx) => {
+          {recipesArray.slice(0, 15).map((recipe, idx) => {
             return (                          
               <li key={idx} className="recipe-results" onClick={newRecipeShow.getRecipe(recipe.id)}>
                 <img src={recipe.image} height="25" width="25"></img> {recipe.title} - {recipe.missedIngredientCount}
@@ -124,7 +124,9 @@ class Recipe extends React.Component {
 
 
   tilesView(recipesArray){
-    return (<div>
+    return (
+    <div>
+      <h2>RECIPE.JSX</h2>
       {this.switchButton()}
     </div>)
   }
@@ -132,6 +134,8 @@ class Recipe extends React.Component {
 
 
   render() {
+
+
     let recipesArray;
 
     // debugger
@@ -142,7 +146,8 @@ class Recipe extends React.Component {
     }
 
     // debugger
-    return ((this.state.view === 'list')? this.listview(recipesArray) : this.tilesView(recipesArray))
+    return (
+      (this.state.view === 'list')? this.listview(recipesArray) : this.tilesView(recipesArray))
   }
   
 }

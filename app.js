@@ -20,7 +20,7 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.json({ limit: '50mb' })); // this solved the 413 error (Too much info is sent at the same time)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
