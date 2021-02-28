@@ -1,16 +1,15 @@
 import React from "react";
-import RecipeSearchContainer from './recipe_search_container'
 import SearchFiltersContainer from '../search_filters/search_filters_container';
 import './recipe.css'
 import { getRecipeByIngredients } from "../../util/spoonacular_api/spoonacular_api"
 import { listIcon, tilesIcon } from "./recipe_icons";
-
+import RecipeShow from './recipe_show'
 
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { recipes: this.props.recipes, view: 'tiles' }
+    this.state = { recipes: this.props.recipes, view: 'list' }
     this.updateRecipes = this.updateRecipes.bind(this);
   }
 
@@ -55,14 +54,20 @@ class Recipe extends React.Component {
   }
 
 
+
   listview(recipesArray) {
+    let newRecipeShow = new RecipeShow();
     return (
       <div className="recipe">
         <h2>Your current recipes:</h2>
 
         <ul className="user-ingredients">
           {recipesArray.map((recipe, idx) => {
-            return <li key={idx}>{recipe.title} - {recipe.missedIngredientCount}</li>;
+            return (                          
+              <li key={idx} className="recipe-results" onClick={newRecipeShow.showRecipe(recipe.id)}>
+                <img src={recipe.image} height="25" width="25"></img> {recipe.title} - {recipe.missedIngredientCount}
+             </li>
+            );
           })}
         </ul>
         <button onClick={this.updateRecipes()}>
@@ -71,7 +76,6 @@ class Recipe extends React.Component {
         {this.switchButton()}
       </div>
     );
-
   }
 
 

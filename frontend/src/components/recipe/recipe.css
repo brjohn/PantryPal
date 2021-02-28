@@ -35,3 +35,11 @@
 .svg-icon {
   height: 20px;
 }
+
+.user-ingredients{
+  list-style-type: none;
+}
+
+.recipe-results:hover{
+  cursor: pointer;
+}
