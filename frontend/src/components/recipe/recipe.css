@@ -1,50 +1,45 @@
 #recipe-home {
+  display: flex;
   border: 1px solid red;
   width: 98vw;
   height: 88vh;
-  display: flex;
   flex-direction: row;
   padding: 8px;
 }
 
 #recipe-sidebar {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   border: 1px solid blue;
-  padding: 8px;
-  margin-right: 8px;
+  padding: 4px;
+  margin-right: 4px;
 }
 
 #recipe-main {
-  flex: 2;
-  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(23, 114, 28);
+  margin-bottom: 4px;
+  padding: 4px;
+  display: flex;
+  flex-grow: 1;
+  border-radius: 36px;
+  background: rgb(64,61,124);
+  background: linear-gradient(90deg, 
+  rgba(63, 60, 129, 0.425) 0%, 
+  rgba(122, 37, 131, 0.204) 16%, 
+  rgba(78, 140, 202, 0.19) 100%);
+  max-height: 820px;
+  border-color: lightgrey;
+  flex-direction: column;
+  text-align: center;
   padding: 8px;
 }
 
-.recipe-book {
-  border: 1px solid rgb(23, 114, 28);
-  height: 50%;
-  margin-bottom: 8px;
-  padding: 4px;
-}
-
-.search-filters {
-  border: 1px solid rgb(23, 114, 28);
-  height: 50%;
-  padding: 4px;
-}
 
 
-
-
-
-
-
-
-
-
-
-
-/* ------------------------------------------------------ */
+/* -------------------------------------- */
 
 #view-switch-buttons {
   display: flex;
