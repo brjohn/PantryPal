@@ -90,7 +90,7 @@ module.exports = {
 // getRecipeByIngredients('apple,blueberry', console.log)
 // getRecipeInformation(9003, console.log)
 // getIngredient('apple', console.log)
-getRecipeInformationBulk('661322,643857', console.log)
+// getRecipeInformationBulk('661322,643857', console.log)
 
 
 
