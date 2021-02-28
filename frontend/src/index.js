@@ -7,6 +7,7 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import { fetchUserRefresh, updateUser } from './actions/user_actions';
 import { fetchIngredient } from './util/user_api_util';
+import {fetchRecipeFromMongoDB, addRecipe} from './util/recipe_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateUser = updateUser;
   window.fetchIngredient = fetchIngredient;
   window.newUser = () => ({id: window.getState().users.id})
+  window.fetchRecipeFromMongoDB = fetchRecipeFromMongoDB;
+  window.addRecipe = addRecipe;
 
 
   // window.fetchUser = fetchUser

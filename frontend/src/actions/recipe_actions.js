@@ -9,6 +9,8 @@ export const receiveIngredients = (ingredient) => {
   };
 };
 
+
+
 export const fetchRecipes = (ingredients) => (dispatch) => {
   return SpoonacularAPIUtil.getRecipeByIngredients(ingredients).then((res) => {
     dispatch(receiveIngredients(res.data));
