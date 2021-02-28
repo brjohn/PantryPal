@@ -16,4 +16,44 @@
   height: 50%;
 }
 
+#saved-recipes {
+  display: flex;
+  flex-direction: column;
+}
+
+#saved-recipes > div {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  /* border: 1px solid green */
+}
+
+.saved-recipe-status {
+  /* border: 1px solid red; */
+  width: 20px;
+}
+
+.saved-recipe-title {
+
+}
+
+.saved-recipe {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.saved-recipe-left {
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: row;
+}
+
+.saved-recipe-right {
+  width: 20px;
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: row;
+}
+
 
