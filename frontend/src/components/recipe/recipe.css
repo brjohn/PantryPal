@@ -6,20 +6,32 @@
 
 #recipe-home {
   border: 1px solid red;
-  width: 100vw;
-  height: 90vh;
+  width: 98vw;
+  height: 88vh;
   display: flex;
   flex-direction: row;
-}
-
-#recipe-sidebar {
-  border: 1px solid green;
-  width: 300px;
-  height: 100%;
 }
 
 #recipe-main {
   border: 1px solid blue;
   width: 500px;
   height: 100%;
+}
+
+#view-switch-buttons {
+  /* border: 1px solid red; */
+  display: flex;
+}
+
+
+#view-switch-buttons > div{
+  border: 1px solid red;
+  cursor: pointer;
+  /* display: flex; */
+}
+
+
+
+.svg-icon {
+  height: 20px;
 }

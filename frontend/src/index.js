@@ -33,7 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.updateUser = updateUser;
-  window.fetchIngredient = fetchIngredient
+  window.fetchIngredient = fetchIngredient;
+  window.newUser = () => ({id: window.getState().users.id})
+
 
   // window.fetchUser = fetchUser
   // window.fetchUser = fetchUser;

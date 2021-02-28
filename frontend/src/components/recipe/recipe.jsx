@@ -3,12 +3,14 @@ import RecipeSearchContainer from './recipe_search_container'
 import SearchFiltersContainer from '../search_filters/search_filters_container';
 import './recipe.css'
 import { getRecipeByIngredients } from "../../util/spoonacular_api/spoonacular_api"
+import { listIcon, tilesIcon } from "./recipe_icons";
+
 
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { recipes: this.props.recipes }
+    this.state = { recipes: this.props.recipes, view: 'tiles' }
     this.updateRecipes = this.updateRecipes.bind(this);
   }
 
@@ -31,6 +33,55 @@ class Recipe extends React.Component {
     } 
   }
 
+  switchButton() {
+    return (
+      <div id="view-switch-buttons">
+        <div id="list-view-button" onClick={this.clickSwitchButton('list')}>
+          {listIcon}
+        </div>
+
+        <div id="tiles-view-button" onClick={this.clickSwitchButton('tiles')}>
+          {tilesIcon}
+        </div>
+      </div>
+    )
+  }
+
+
+  clickSwitchButton(chosenView) {
+    return (e => {
+      this.setState({ view: chosenView })
+    })
+  }
+
+
+  listview(recipesArray) {
+    return (
+      <div className="recipe">
+        <h2>Your current recipes:</h2>
+
+        <ul className="user-ingredients">
+          {recipesArray.map((recipe, idx) => {
+            return <li key={idx}>{recipe.title} - {recipe.missedIngredientCount}</li>;
+          })}
+        </ul>
+        <button onClick={this.updateRecipes()}>
+          Update Recipes
+        </button>
+        {this.switchButton()}
+      </div>
+    );
+
+  }
+
+
+  tilesView(recipesArray){
+    return (<div>
+      {this.switchButton()}
+    </div>)
+  }
+
+
 
   render() {
     let recipesArray;
@@ -43,42 +94,7 @@ class Recipe extends React.Component {
     }
 
     // debugger
-    return (
-      <div className="recipe">
-        <h2>Your current recipes:</h2>
-
-        <ul className="user-ingredients">
-          {recipesArray.map((recipe, idx) => {
-            return <li key={idx}>{recipe.title} - {recipe.missedIngredientCount}</li>;
-          })}
-        </ul>
-
-
-        {/*  Example of what is returned inside an array
-              { id: 604331,
-          title: '4th of July Fruit Salad Cones',
-          image: 'https://spoonacular.com/recipeImages/604331-312x231.jpg',
-          imageType: 'jpg',
-          usedIngredientCount: 2,
-          missedIngredientCount: 2,
-          missedIngredients: [ [Object], [Object] ],
-          usedIngredients: [ [Object], [Object] ],
-          unusedIngredients: [],
-          likes: 172 }, */}
-
-
-
-
-
-
-
-        <button onClick={this.updateRecipes()}>
-          Update Recipes
-        </button>
-        
-        {/* <RecipeSearchContainer /> */}
-      </div>
-    );
+    return ((this.state.view === 'list')? this.listview(recipesArray) : this.tilesView(recipesArray))
   }
   
 }
