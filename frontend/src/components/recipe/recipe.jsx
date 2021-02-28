@@ -58,15 +58,18 @@ class Recipe extends React.Component {
       getRecipeByIngredients(ingredientsString, (returnedRecipes) => {
         let bulkRequestString = returnedRecipes.map(recipe => recipe.id.toString()).join()
         getRecipeInformationBulk(bulkRequestString, (returnedRecipeInformation) => {
-          let combinedArr = this.combine(returnedRecipeInformation, returnedRecipes)
-          debugger
+          let combinedRecipesArr = this.combine(returnedRecipeInformation, returnedRecipes)
+
+          this.props.updateUser({ id: this.props.currentUser.id, recipes: combinedRecipesArr })
+          this.setState({ recipes: combinedRecipesArr })
+
+          // debugger
         })
 
 
         // debugger
 
-        this.props.updateUser({ id: this.props.currentUser.id, recipes: returnedRecipes })
-        this.setState({ recipes: returnedRecipes })
+
       })
     } 
 
