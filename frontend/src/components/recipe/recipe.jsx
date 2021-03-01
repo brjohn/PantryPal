@@ -100,7 +100,7 @@ class Recipe extends React.Component {
                   <img src={recipe.image} height="25" width="25" /> {recipe.title} - {recipe.missedIngredientCount}
                 </div>
 
-                <div className="recipe-main-add" onClick={this.addRecipeToFavorite('added')}> 
+                <div className="recipe-main-add" onClick={this.addRecipeToFavorite(recipe)}> 
                   Add to Favorite
                 </div>
 
