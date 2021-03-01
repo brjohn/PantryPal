@@ -21,7 +21,8 @@ class SearchFilters extends React.Component {
 
     render(){
 
-        return(
+        return (
+            // null
         // <div className='fiterbox'>
         //     <ExclusionSearchContainer setFilterState={this.setState}/>
         //     <div className="my-exclusions">
