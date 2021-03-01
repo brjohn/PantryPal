@@ -1,0 +1,159 @@
+body {
+  margin: 0px;
+}
+
+.dev-page {
+  overflow-y: hidden;
+  margin-top: 100px;
+}
+
+#dev-design-container {
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+#dev-logo {
+  position: absolute;
+  width: 90px;
+}
+
+.scroll-logo {
+  bottom: 0;
+  margin-bottom: 10px;
+  border: 6px solid rgba(224,136,131,0.9561200923787528);
+  border-radius: 50%;
+  position: absolute;
+  animation: down 1.0s infinite;
+  -webkit-animation: down 1.0s infinite;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+.scroll-logo:hover  {
+  border: 6px solid rgba(236,180,179,1);
+}
+
+@keyframes down {
+	0% {
+		transform: translate(0);
+	}
+	20% {
+		transform: translateY(14px);
+	}
+	40% {
+		transform: translate(0);
+	}
+}
+
+@-webkit-keyframes down {
+	0% {
+		transform: translate(0);
+	}
+	20% {
+		transform: translateY(15px);
+	}
+	40% {
+		transform: translate(0);
+	}
+}
+
+.footer {
+  height: 100vh;
+  width: 100%;
+  background: rgb(236,180,179);
+  background: radial-gradient(circle, rgba(236,180,179,1) 0%, rgba(224,136,131,0.9561200923787528) 79%);
+}
+
+#team-intro {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  position: relative;
+  font-weight: 700;
+  font-size: 70px;
+  color: white;
+  text-align: center;
+}
+
+.about-us-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 220px;
+  margin-top: 10px;
+  list-style-type:none;
+  padding-inline-start: 0px;
+  padding: 10px;
+}
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: 100px;
+}
+
+.developer-name {
+  color: white;
+  font-weight: 700;
+  font-size: 27px;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+.fa-icon {
+  color: #FEFEFE;
+  font-size: 40px;
+  transition: 0.2s;
+}
+
+.fa-icon:hover {
+  color: navy;
+}
+
+.developer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  transition: 0.2s;
+}
+
+.developer:hover {
+  transform: scale(1.2);
+}
+
+.dev-pic {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1px;
+}
+
+.dev-pic > img {
+  height: inherit;
+  width: inherit;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.dev-container {
+  display: flex;
+}
+
+#top-logo {
+  position: absolute;
+  width: 75px;
+}
+
+.top-scroll-logo {
+  bottom: 1;
+  margin-top: 20px;
+  position: absolute;
+  animation: down 1.0s infinite;
+  -webkit-animation: down 1.0s infinite;
+  cursor: pointer;
+}

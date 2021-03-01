@@ -92,8 +92,7 @@ class Recipe extends React.Component {
   listview(recipesArray) {
     return (
       <div className="recipe">
-        <h2>RECIPE.JSX</h2>
-        <h2>Your current recipes:</h2>
+        <h1 className="r-title">Recipes</h1>
 
         <ul className="user-ingredients">
           {recipesArray.slice(0, 15).map((recipe, idx) => {
@@ -123,10 +122,11 @@ class Recipe extends React.Component {
 
   tilesView(recipesArray) {
     return (
-      <div>
-        <h2>RECIPE.JSX</h2>
-        {this.switchButton()}
-      </div>)
+
+    <div>
+      <h1 className="r-title">RECIPE.JSX</h1>
+      {this.switchButton()}
+    </div>)
   }
 
 

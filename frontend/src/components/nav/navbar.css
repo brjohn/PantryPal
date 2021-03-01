@@ -188,6 +188,12 @@ button:active {
   margin: 6px;
 }
 
+.pink-button {
+  background-color: rgba(224,136,131,1);
+  color: rgb(255, 255, 255);
+  margin: 6px;
+}
+
 
 .grey-button {
   background-color: white;
