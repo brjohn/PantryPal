@@ -5,6 +5,7 @@
   height: 88vh;
   flex-direction: row;
   padding: 8px;
+  padding-top: 0px;
 }
 
 #recipe-sidebar {
@@ -12,14 +13,18 @@
   flex-direction: column;
   flex: 1;
   padding: 8px;
+  padding-top: 0px;
 }
 
 .recipe {
+  
+  display: flex;
+  flex-direction: column;
   background: rgb(64,61,124);
   background: linear-gradient(90deg, 
-  rgba(63, 60, 129, 0.425) 0%, 
-  rgba(122, 37, 131, 0.204) 16%, 
-  rgba(78, 140, 202, 0.19) 100%);
+  rgba(206, 132, 132, 0.315) 0%, 
+  rgba(108, 118, 214, 0.204) 16%, 
+  rgba(219, 138, 138, 0.623) 100%);
   height: 100%;
   border-radius: 36px;
 }
@@ -29,7 +34,7 @@
   flex-direction: column;
   flex: 2;
   padding: 8px;
-  
+  padding-top: 0px;
 }
 
 .recipe-book {
@@ -68,14 +73,13 @@
   background-color: #1c4966 ;
   border-top-left-radius: 36px;
   border-top-right-radius: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   align-items: center;
 
   /* border-bottom-style: solid; */
   /* border-bottom-width: 2px; */
   border-bottom-color: rgb(211, 211, 211);
-  padding-bottom: 4px;
-  padding-top: 5px;
+  
   max-height: 40px;
 }
 
@@ -87,6 +91,8 @@
   text-align: center;
   align-items: center;
   font-style: normal;
+  padding-top: 16px;
+  margin-bottom: 0px;
 }
 
 /* ------------------------------------------------------ */
@@ -96,7 +102,6 @@
 }
 
 #view-switch-buttons > div{
-  border: 1px solid red;
   cursor: pointer;
 }
 
@@ -106,8 +111,17 @@
 
 .user-ingredients{
   list-style-type: none;
-  width: 90%;
-  border: 1px solid red;
+
+   font-family: 'Roboto', sans-serif;
+   font-size: 15px;
+    max-height: 426px;
+  width: 85%;
+    overflow: hidden;
+
+  color: white;
+  font-weight: 500;
+  padding-left: 20px;
+
 }
 
 .recipe-result-modal {
@@ -131,6 +145,23 @@
   margin: 6px;
 }
 
-.recipe-main-add {
-  cursor: pointer;
+
+.switch-buttons {
+  display: flex;
+    align-items: flex-end;
+
+}
+
+.switch-buttons #view-switch-buttons {
+  position: relative;
+
+}
+
+.recipe button {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+  
+
 }
