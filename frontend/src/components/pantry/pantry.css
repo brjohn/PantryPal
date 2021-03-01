@@ -61,10 +61,7 @@
 
 .pantry{
   display: flex;
-  /* flex-flow: column wrap; */
   flex-grow: 1;
-  /* flex-wrap: wrap; */
-
   padding-top: 0px;
   border-radius: 36px;
   margin-top: 0px;
@@ -74,15 +71,13 @@
   rgba(122, 37, 131, 0.204) 16%, 
   rgba(78, 140, 202, 0.19) 100%);
   max-height: 820px;
-  /* border: 1px solid red; */
-  /* border-width: 2px; */
   border-color: lightgrey;
   flex-direction: column;
   text-align: center;
 }
 
 body {
-   background: rgba(64, 61, 124, 0.615);
+  background: rgba(64, 61, 124, 0.615);
   background: linear-gradient(90deg, 
   rgba(63, 60, 129, 0.24) 0%, 
   rgba(122, 37, 131, 0.293) 16%, 
