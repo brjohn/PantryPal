@@ -2,7 +2,7 @@
   display: flex;
     background-color: white;
     background: rgb(236,180,179);
-  background: radial-gradient(circle, rgba(236,180,179,1) 0%, rgba(224,136,131,0.9561200923787528) 79%);
+  background: radial-gradient(circle, rgba(236, 180, 179, 0.603) 0%, rgba(224, 136, 131, 0.733) 79%);
     font-family: 'Roboto', sans-serif;
   align-items: center;
   flex-direction: column;
@@ -24,7 +24,7 @@
 
 
 .recipe-ingredients {
-  background-color: rgba(192, 186, 185, 0.336);
+  background-color: rgba(192, 186, 185, 0.377);
   width: 100%;
   border-bottom-left-radius: 36px;
   border-bottom-right-radius: 36px;
@@ -38,6 +38,7 @@
 .recipe-title {
   font-family: 'Roboto', sans-serif;
   color: white;
+  justify-content: center;
 }
 
 .r-img-container {
@@ -47,7 +48,7 @@
   align-items: center;
   border-top-left-radius: 36px;
   border-top-right-radius: 36px;
-  background-color: rgba(192, 186, 185, 0.336);
+  background-color: rgba(192, 186, 185, 0.377);
   justify-content: space-around;
 }
 
@@ -60,7 +61,7 @@
   }
 
 .recipe-instructions {
-  background-color: rgba(192, 186, 185, 0.336);
+  background-color: rgba(192, 186, 185, 0.377);
   width: 100%;
   border-radius: 20px;
   color: #1c4966;
