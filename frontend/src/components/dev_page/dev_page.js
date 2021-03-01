@@ -44,7 +44,7 @@ class DevPage extends React.Component {
                 <p className="developer-name">Cole Wendling</p>
                 <ul className="about-us-links">
                   <li>
-                    <a href="https://github.com/" target="_blank">
+                    <a href="https://github.com/colewendling" target="_blank">
                       <i className="fa fa-github fa-icon"></i>
                     </a>
                   </li>
@@ -72,7 +72,7 @@ class DevPage extends React.Component {
                 <p className="developer-name">Tului Gantulga</p>
                 <ul className="about-us-links">
                   <li>
-                    <a href="https://github.com/" target="_blank">
+                    <a href="https://github.com/Tului2020" target="_blank">
                       <i className="fa fa-github fa-icon"></i>
                     </a>
                   </li>
@@ -100,7 +100,7 @@ class DevPage extends React.Component {
                 <p className="developer-name">Brynn Johnson</p>
                 <ul className="about-us-links">
                   <li>
-                    <a href="https://github.com/" target="_blank">
+                    <a href="https://github.com/brjohn" target="_blank">
                       <i className="fa fa-github fa-icon"></i>
                     </a>
                   </li>
@@ -128,7 +128,7 @@ class DevPage extends React.Component {
                 <p className="developer-name">Alex Lang</p>
                 <ul className="about-us-links">
                   <li>
-                    <a href="https://github.com/" target="_blank">
+                    <a href="https://github.com/droid4alex" target="_blank">
                       <i className="fa fa-github fa-icon"></i>
                     </a>
                   </li>
