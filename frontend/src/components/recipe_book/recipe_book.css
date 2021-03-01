@@ -41,6 +41,7 @@
   text-align: center;
   align-items: center;
   font-style: normal;
+  padding: 16px;
 }
 
 .saved-recipe {
@@ -60,6 +61,13 @@
   border: 1px solid blue;
   display: flex;
   flex-direction: row;
+}
+
+.exclusion h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: white;
+  font-weight: 300;
 }
 
 
