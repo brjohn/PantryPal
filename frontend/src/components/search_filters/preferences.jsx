@@ -52,9 +52,18 @@ class Preferences extends React.Component {
     return (
       <div className='p-grid'>
         <form onSubmit={this.handleSubmit}>
-          {this.preferenceList.map(pref => {
-            return this.preferenceComponent(pref)
-          })}
+          <div>
+            {this.preferenceList.slice(0,5).map(pref => {
+              return this.preferenceComponent(pref)
+            })}
+          </div>
+
+          <div>
+            {this.preferenceList.slice(5, 10).map(pref => {
+              return this.preferenceComponent(pref)
+            })}
+          </div>
+
           <input type="submit" value="Update Pref" />
         </form>
       </div>

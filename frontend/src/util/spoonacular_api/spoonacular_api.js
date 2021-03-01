@@ -16,11 +16,7 @@ const getIngredient = (query, printToFileFunction) => axios.get(
     }
 
   })
-  .then(payload => {
-    console.log(payload.data.results)
-    printToFileFunction(payload.data.results)
-  })
-
+  .then(payload => printToFileFunction(payload.data.results))
   .catch(err => console.log(err))
 
 
@@ -37,7 +33,6 @@ const getRecipeByIngredients = (ingredients, cbFunction, recipeCount = 100) => a
     }
 
   })
-
   .then(payload => cbFunction(payload.data))
   .catch(err => console.log(err))
 
@@ -51,7 +46,6 @@ const getRecipeInformation = (id, cbFunction) => axios.get(
       apiKey: apiKeyToUse,
     }
   })
-
   .then(payload => cbFunction(payload.data)) // we're gonna need to dispatch this through our reducers and middleware)
   .catch(err => console.log(err))
 
@@ -65,7 +59,6 @@ const getRecipeInformationBulk = (ids, cbFunction) => axios.get(
       ids
     }
   })
-
   .then(payload => cbFunction(payload.data)) // we're gonna need to dispatch this through our reducers and middleware)
   .catch(err => console.log(err))
 

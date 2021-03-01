@@ -14,12 +14,6 @@ class Recipe extends React.Component {
     this.updateRecipes = this.updateRecipes.bind(this);
   }
 
-  componentDidMount() {
-    // console.log('Recipe main mounted')
-    // debugger
-    this.setState({ recipes: this.props.recipes})
-  }
-  
 
   combine(recipeInfoArr, recipesArr) {
     let combinedArr = [];
@@ -44,38 +38,19 @@ class Recipe extends React.Component {
 
 
   updateRecipes() {
-    
-    // return () => {
-    //   let ingredientsString = (this.props.ingredients.map(el => el.name)).join(',');
-    //   getRecipeByIngredients(ingredientsString, (returnedRecipes) => { 
-    //     this.props.updateUser({ id: this.props.currentUser.id, recipes: returnedRecipes })
-    //     this.setState({ recipes: returnedRecipes})
-    //   })
-    // } 
-
-
     return () => {
       let ingredientsString = (this.props.ingredients.map(el => el.name)).join(',');
       getRecipeByIngredients(ingredientsString, (returnedRecipes) => {
         let bulkRequestString = returnedRecipes.map(recipe => recipe.id.toString()).join()
         getRecipeInformationBulk(bulkRequestString, (returnedRecipeInformation) => {
           let combinedRecipesArr = this.combine(returnedRecipeInformation, returnedRecipes)
-
           this.props.updateUser({ id: this.props.currentUser.id, recipes: combinedRecipesArr })
           this.setState({ recipes: combinedRecipesArr })
-
-          // debugger
         })
-
-
-        // debugger
-
-
       })
-    } 
-
-
+    }
   }
+
 
   switchButton() {
     return (
@@ -99,6 +74,16 @@ class Recipe extends React.Component {
   }
 
 
+  addRecipeToFavorite(recipeToBeSaved) {
+    // let that = this
+    return () => {
+      this.props.saved_recipes.push(recipeToBeSaved)
+      console.log(this.props.saved_recipes)
+    }
+  }
+
+
+
 
   listview(recipesArray) {
     return (
@@ -108,12 +93,18 @@ class Recipe extends React.Component {
 
         <ul className="user-ingredients">
           {recipesArray.slice(0, 15).map((recipe, idx) => {
-            return (                          
-              <li key={idx} className="recipe-results" 
-                onClick={() => this.props.openModal(recipe)}
-              >
-                <img src={recipe.image} height="25" width="25"></img> {recipe.title} - {recipe.missedIngredientCount}
-             </li>
+            return (
+              <li key={idx} className="recipe-results" >
+
+                <div className="recipe-result-modal" onClick={() => this.props.openModal(recipe)}>
+                  <img src={recipe.image} height="25" width="25" /> {recipe.title} - {recipe.missedIngredientCount}
+                </div>
+
+                <div className="recipe-main-add" onClick={this.addRecipeToFavorite('added')}> 
+                  Add to Favorite
+                </div>
+
+              </li>
             );
           })}
         </ul>
@@ -126,33 +117,29 @@ class Recipe extends React.Component {
   }
 
 
-  tilesView(recipesArray){
+  tilesView(recipesArray) {
     return (
-    <div>
-      <h2>RECIPE.JSX</h2>
-      {this.switchButton()}
-    </div>)
+      <div>
+        <h2>RECIPE.JSX</h2>
+        {this.switchButton()}
+      </div>)
   }
 
 
 
   render() {
-
-
     let recipesArray;
 
-    // debugger
     if (this.state.recipes.length === 0) {
       recipesArray = this.props.recipes
     } else {
       recipesArray = this.state.recipes
     }
 
-    // debugger
     return (
-      (this.state.view === 'list')? this.listview(recipesArray) : this.tilesView(recipesArray))
+      (this.state.view === 'list') ? this.listview(recipesArray) : this.tilesView(recipesArray))
   }
-  
+
 }
 
 export default Recipe;
