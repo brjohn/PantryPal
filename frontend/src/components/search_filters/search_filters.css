@@ -5,23 +5,32 @@
 .p-grid {
   display: flex;
   flex-direction: column;
-  height: 50%;
+  height: 100%;
 }
 
 .p-col-container {
   display: flex;
   flex-direction: row;
+  min-height: 72%;
+  flex-flow: wrap;
 }
 
 .p-col {
   display: flex;
   flex-direction: column;
+  margin-left: 16px;
 }
 
-.p-text text {
+.p-text {
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  color: rgb(243, 17, 17);
+  font-size: 20px;
+  color: white;
+  padding-bottom: 40px;
+}
+
+.p-text input {
+  margin-left: 8px;
+  margin-right: 22px;
 }
 
 .p-grid-button {
@@ -88,14 +97,16 @@
 
 .p-sub {
   border-bottom-left-radius: 36px;
-    border-bottom-right-radius: 36px;
-      font-family: 'Roboto', sans-serif;
-        font-family: 'Roboto', sans-serif;
+  border-bottom-right-radius: 36px;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
   border-width: 0px;
   background-color: rgb(239, 239, 239);
--ms-flex-align: end;
-          color: rgb(0,0,0) ;
-          font-weight: 450;
+  -ms-flex-align: end;
+  color: rgb(0,0,0) ;
+  font-weight: 450;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 .e-title {
@@ -106,26 +117,33 @@
   border-top-left-radius: 36px;
   border-top-right-radius: 36px;
   align-items: center;
-
+  /* margin-bottom: 25px; */
+  align-items: center;
+  padding-bottom: 0px;
   /* border-bottom-style: solid; */
   /* border-bottom-width: 2px; */
   border-bottom-color: rgb(211, 211, 211);
-  padding-bottom: 4px;
-  padding-top: 5px;
   max-height: 40px;
+  
 }
 
 .e-title {
-   font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: white;
   font-weight: 500;
   text-align: center;
   align-items: center;
   font-style: normal;
-  padding: 16px;
+  padding-top: 16px;
+  margin-bottom: 20px;
 }
 
 .e-title h1 {
-  padding-bottom: ;
+  margin-bottom: 16px;
+}
+
+.filterbox {
+  display: flex;
+  height: 100%;
 }

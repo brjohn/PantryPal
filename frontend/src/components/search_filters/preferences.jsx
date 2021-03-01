@@ -69,20 +69,21 @@ class Preferences extends React.Component {
 
     return (
       <div className="p-grid">
+        <h1 className="e-title">Filters</h1>
         <form className='p-col-container' onSubmit={this.handleSubmit}>
           <div className="p-col">
-            {this.state.preferenceList.slice(0, 5).map(pref => {
+            {this.state.preferenceList.slice(0, 4).map(pref => {
               return this.preferenceComponent(pref)
             })}
           </div>
           <div className="p-col">
-            {this.state.preferenceList.slice(5, 10).map(pref => {
+            {this.state.preferenceList.slice(4, 8).map(pref => {
               return this.preferenceComponent(pref)
             })}
           </div>
         </form>
-        <input className='p-sub' type="submit" value="Update Pref" />
-        <button onClick={this.getDiets}>Click</button>
+        <button className='p-sub' type="submit" value="Update Pref">Add Filters</button>
+        {/* <button onClick={this.getDiets}>Click</button> */}
       </div>
     );
   }

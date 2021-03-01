@@ -11,7 +11,7 @@ class RecipeBook extends React.Component {
   }
 
   recipeTriedStatus(status) {
-    return (status === true) ? (checkMark): (loadingHourglass)
+    return (status === true) ? (checkMark): ''
     // return (loadingHourglass)
   }
 

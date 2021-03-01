@@ -46,7 +46,7 @@ class ExclusionSearch extends React.Component {
             
                 <div>
                     <h1 className="e-title">Filters</h1>
-                    <input type="text" className="e-search-bar"
+                    {/* <input type="text" className="e-search-bar"
                         placeholder="Search Ingredient to Exclude . . . "
                         onChange={this.updateSearch()} />
 
@@ -62,7 +62,7 @@ class ExclusionSearch extends React.Component {
                                 </div>
                             )
                         })}
-                    </div>
+                    </div> */}
                 </div>
             
 

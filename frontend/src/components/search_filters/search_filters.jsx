@@ -23,23 +23,23 @@ class SearchFilters extends React.Component {
 
         return(
 
-        <div>
-            <ExclusionSearchContainer setFilterState={this.setState}/>
-            <div className="my-exclusions">
-                {this.props.exclusions.map((exclusion, exclusionIdx) => {
-                  return (
-                    <div className="exclusion" key={exclusion}>
-                            <h1>{exclusion}</h1>
-                            <div onClick={this.removeExclusion(exclusionIdx)}>
-                                {removeIcon}
-                            </div>
-                        </div>
-                    )
-                  })}
+        // <div className='fiterbox'>
+        //     <ExclusionSearchContainer setFilterState={this.setState}/>
+        //     <div className="my-exclusions">
+        //         {this.props.exclusions.map((exclusion, exclusionIdx) => {
+        //           return (
+        //             <div className="exclusion" key={exclusion}>
+        //                     <h1>{exclusion}</h1>
+        //                     <div onClick={this.removeExclusion(exclusionIdx)}>
+        //                         {removeIcon}
+        //                     </div>
+        //                 </div>
+        //             )
+        //           })}
                 
-            </div>
+        //     </div>
             <PreferencesContainer setFilterState={this.setState}/>
-        </div>
+        // </div>
 
         )
 
