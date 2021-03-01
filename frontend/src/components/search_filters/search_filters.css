@@ -4,14 +4,94 @@
 
 .p-grid {
   display: flex;
+  flex-direction: column;
+  height: 50%;
 }
 
-.p-grid-item {
-   font-family: 'Roboto', sans-serif;
+.p-col-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.p-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-text text {
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  border-bottom-color: rgb(0, 0, 0);
+  color: rgb(243, 17, 17);
 }
 
 .p-grid-button {
   height: 10px;
+}
+
+.e-search-bar {
+  border-width: 0px;
+  height: 30px;
+  width: 99%;
+  background-color: #5a51515b;
+  border-top-left-radius: 36px;
+  border-top-right-radius: 36px;
+  text-align: center;
+}
+
+.e-search-bar::placeholder {
+  color: rgba(255, 255, 255, 0.61);
+  /* color: rgb(51, 51, 51); */
+}
+
+.e-search-bar {
+  text-decoration: none;
+  border-color: none;
+}
+
+.e-search-bar:focus{
+  outline: none;
+}
+
+.search-values > div{
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+}
+
+.search-values > div:hover {
+  cursor: grab;
+  background-color: rgba(61, 85, 92, 0.1);
+  color: #1c4966;
+}
+
+
+
+.e-search-bar {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  /* color: rgb(51, 51, 51); */
+  /* border: 2px solid #ddd; */
+  font-size: 16px;
+  overflow: visible;
+  outline: none;
+}
+
+.my-exclusions {
+  background-color: rgba(255, 255, 255, 0.24);
+  height: 50%;
+}
+.exclusion h1{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.p-sub {
+  border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
+      font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto', sans-serif;
+  border-width: 0px;
+  background-color: #1c4966; 
+-ms-flex-align: end;
+          color: white;
 }
