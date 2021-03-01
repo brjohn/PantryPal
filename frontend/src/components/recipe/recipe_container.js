@@ -4,11 +4,13 @@ import { updateUser } from "../../actions/user_actions"
 import Recipe from "./recipe";
 
 
-const mapStateToProps = (state) => ({
-  currentUser: state.session.currentUser,
-  ingredients: state.users.ingredients || [],
-  recipes: state.users.recipes || [],
-  saved_recipes: state.users.saved_recipes || []
+const mapStateToProps = ({session, users}) => ({
+  currentUser: session.currentUser,
+  ingredients: users.ingredients || [],
+  recipes: users.recipes || [],
+  saved_recipes: users.saved_recipes || [],
+  exclusions: users.exclusions || [],
+  preferences: users.preferences || []
 });
 
 
