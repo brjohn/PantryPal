@@ -146,7 +146,16 @@
   padding-left: 20px;
   padding-right: 20px;
   min-height:78%;
-  overflow: hidden;
+  overflow: scroll;
+}
+ul.user-ingredients::-webkit-scrollbar {
+    color: #d19da5;
+}
+.user-ingredients::-webkit-scrollbar-track-piece {
+  color: none;
+}
+.user-ingredients::-webkit-scrollbar-corner {
+  color: #d19da5;
 }
 
 .recipe-result-modal {

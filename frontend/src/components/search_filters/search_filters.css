@@ -13,6 +13,16 @@
   flex-direction: row;
   min-height: 72%;
   flex-flow: wrap;
+  overflow: scroll;
+}
+.p-col-container::-webkit-scrollbar {
+    color: #d19da5;
+}
+.p-col-container::-webkit-scrollbar-track-piece {
+  color: none;
+}
+.p-col-container::-webkit-scrollbar-corner {
+  color: #d19da5;
 }
 
 .p-col {
