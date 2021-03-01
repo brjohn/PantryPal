@@ -10,6 +10,7 @@ import Cole from './cole.jpg';
 import Tului from './tului.png';
 import Brynn from './brynn.png';
 import Alex from './alex.jpg';
+import Top from './back-to-top.png';
 import './dev_page.css'
 
 class DevPage extends React.Component {
@@ -17,6 +18,13 @@ class DevPage extends React.Component {
   scrollToBottom = function () {
     window.scroll({
       top: document.body.offsetHeight,
+      behavior: 'smooth',
+    });
+  }
+
+  scrollToTop = function () {
+    window.scroll({
+      top: 0,
       behavior: 'smooth',
     });
   }
@@ -143,6 +151,9 @@ class DevPage extends React.Component {
                   </li>
                 </ul>
               </div>
+            </div>
+            <div id="dev-design-container">
+              <img id="top-logo" src={Top} alt="Back" onClick={() => this.scrollToTop()} className="top-scroll-logo" />
             </div>
           </div>
         </div>
