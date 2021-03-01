@@ -120,7 +120,7 @@
 }
 
 .e-title {
-  flex: 1; 
+   
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #1c4966 ;
@@ -133,7 +133,7 @@
   /* border-bottom-style: solid; */
   /* border-bottom-width: 2px; */
   border-bottom-color: rgb(211, 211, 211);
-  max-height: 40px;
+  max-height: 51px;
   
 }
 
@@ -145,7 +145,7 @@
   text-align: center;
   align-items: center;
   font-style: normal;
-  padding-top: 16px;
+  padding: 16px;
   margin-bottom: 20px;
 }
 

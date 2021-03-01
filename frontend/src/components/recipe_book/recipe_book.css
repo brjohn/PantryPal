@@ -2,6 +2,16 @@
 #saved-recipes {
   display: flex;
   flex-direction: column;
+  overflow: scroll;
+}
+#saved-recipes::-webkit-scrollbar {
+    color: #d19da5;
+}
+#saved-recipes::-webkit-scrollbar-track-piece {
+  color: none;
+}
+#saved-recipes::-webkit-scrollbar-corner {
+  color: #d19da5;
 }
 
 #saved-recipes > div {
@@ -15,7 +25,7 @@
 }
 
 .rb-title {
-  flex: 1; 
+   
   margin-top: 0px;
   margin-bottom: 0px;
   background-color: #1c4966 ;

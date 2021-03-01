@@ -24,6 +24,7 @@ class RecipeBook extends React.Component {
     return (
       <div id='saved-recipes'>
         <h1 className="rb-title">Recipe Book</h1>
+        {/* <div className="saved-list"> */}
         {saved_recipes.map((saved_recipe, saved_recipe_index) => {
           return (
             <div className="saved-recipe" key={saved_recipe.title}>
@@ -48,6 +49,7 @@ class RecipeBook extends React.Component {
 
             </div>
           )})}
+          {/* </div> */}
       </div>
 
     )
