@@ -33,13 +33,13 @@ class Preferences extends React.Component {
 
   preferenceComponent(fieldName) {
     return (
-      <label key={fieldName}>
-        {fieldName}
+      <label className="p-text" key={fieldName}>
         <input
           type="checkbox"
           checked={this.props.preferences.includes(fieldName)}
           onChange={this.handleChange(fieldName)}
         />
+        {fieldName}
       </label>
     );
   }
@@ -48,18 +48,24 @@ class Preferences extends React.Component {
 
 
   render() {
-    // debugger
-    return (
-      <div className='p-grid'>
-        <form onSubmit={this.handleSubmit}>
-          {this.preferenceList.map(pref => {
-            return this.preferenceComponent(pref)
-          })}
-          <input type="submit" value="Update Pref" />
-        </form>
-      </div>
-    );
-  }
+      return (
+        <div className="p-grid">
+          <form className='p-col-container' onSubmit={this.handleSubmit}>
+            <div className="p-col">
+              {this.preferenceList.slice(0, 5).map(pref => {
+                return this.preferenceComponent(pref)
+              })}
+            </div>
+            <div className="p-col">
+              {this.preferenceList.slice(5, 10).map(pref => {
+                return this.preferenceComponent(pref)
+              })}
+            </div>
+          </form>
+          <input className= 'p-sub' type="submit" value="Update Pref" />
+        </div>
+      );
+    }
 }
 
 export default Preferences;

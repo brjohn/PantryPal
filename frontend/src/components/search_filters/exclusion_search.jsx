@@ -45,8 +45,8 @@ class ExclusionSearch extends React.Component {
         <div className="exclusion-search-box">
             
                 <div>
-                    <input type="text" className="search-bar"
-                        placeholder="Search Ingredients . . . "
+                    <input type="text" className="e-search-bar"
+                        placeholder="Search Ingredient to Exclude . . . "
                         onChange={this.updateSearch()} />
 
                     <div className='search-values hide'>
