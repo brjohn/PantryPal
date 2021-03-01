@@ -1,16 +1,14 @@
 import React from 'react';
 import About from './Dev_team_page_icon_2.png';
 // alternative dev-team icons to choose from:
-// import About from './developers-icon-16.jpg';
 // import About from './about_us.png';
 // import About from './Dev_team_page_icon_2.png';
-// import About from './team-svgrepo-com.svg';
 // import About from './team-icon-png-picture.png';
 import Cole from './cole.jpg';
 import Tului from './tului.png';
 import Brynn from './brynn.png';
 import Alex from './alex.jpg';
-import Top from './back-to-top.png';
+import Top from './top.png';
 import './dev_page.css'
 
 class DevPage extends React.Component {

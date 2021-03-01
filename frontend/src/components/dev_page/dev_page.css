@@ -21,7 +21,7 @@ body {
 .scroll-logo {
   bottom: 0;
   margin-bottom: 10px;
-  border: 6px solid rgba(224,136,131,0.9561200923787528);
+  border: 6px solid rgba(161,165,217,1);
   border-radius: 50%;
   position: absolute;
   animation: down 1.0s infinite;
@@ -31,7 +31,7 @@ body {
 }
 
 .scroll-logo:hover  {
-  border: 6px solid rgba(236,180,179,1);
+  border: 6px solid rgba(11,13,63,1);
 }
 
 @keyframes down {
