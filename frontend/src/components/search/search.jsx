@@ -24,7 +24,6 @@ class Search extends React.Component {
           this.props.ingredients.push(res.data)
         }
 
-        this.props.setPantryState({ingredients: this.props.ingredients}) // this updates the pantry since search and pantry are two different components
         this.props.updateUser({ id: this.props.currentUser.id, ingredients: this.props.ingredients }) // this updates MongoDB
       })
     }
