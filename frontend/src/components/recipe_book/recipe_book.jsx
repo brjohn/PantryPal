@@ -19,15 +19,11 @@ class RecipeBook extends React.Component {
   clickRemove(saved_recipe_index) {
     return e => {
       this.props.saved_recipes.splice(saved_recipe_index, 1)
-      this.setState({ saved_recipes: this.props.saved_recipes })
+      // this.setState({ saved_recipes: this.props.saved_recipes })
 
       // do not add the following line yet, or else it will modify the database
-      // this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes})
+      this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes})
     }
-  }
-
-  componentDidMount() {
-    this.setState({ saved_recipes: this.props.saved_recipes  })
   }
 
 
