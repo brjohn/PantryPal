@@ -72,20 +72,19 @@ class Recipe extends React.Component {
 
 
   clickSwitchButton(chosenView) {
-    return (e => {
+    return (() => {
       this.setState({ view: chosenView })
     })
   }
 
 
   addRecipeToFavorite(recipeToBeSaved) {
-    // let that = this
     return () => {
       if (!this.props.saved_recipes.some(recipe => recipe.title === recipeToBeSaved.title)) {
 
         this.props.saved_recipes.push(recipeToBeSaved)
         this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes})
-        this.props.setRecipeHomeState({addedToFavorite: true})
+        // this.props.setRecipeHomeState({addedToFavorite: true})
       }
     }
   }
@@ -125,7 +124,12 @@ class Recipe extends React.Component {
               <li key={idx} className="recipe-results" >
 
                 <div className="recipe-result-modal" onClick={() => this.props.openModal(recipe)}>
-                  <img src={recipe.image} height="25" width="25" /> {recipe.title} - {recipe.missedIngredientCount}
+                  <div>
+                    <img src={recipe.image} height="25" width="25"  />
+                  </div>
+                  <div>
+                    {recipe.title}
+                  </div>
                 </div>
 
                 <div className="recipe-main-add" onClick={this.addRecipeToFavorite(recipe)}> 
@@ -159,16 +163,10 @@ class Recipe extends React.Component {
 
 
   render() {
-    let recipesArray;
-
-    if (this.state.recipes.length === 0) {
-      recipesArray = this.props.recipes
-    } else {
-      recipesArray = this.state.recipes
-    }
-
+    const {recipes} = this.props;
+    
     return (
-      (this.state.view === 'list') ? this.listview(recipesArray) : this.tilesView(recipesArray))
+      (this.state.view === 'list') ? this.listview(recipes) : this.tilesView(recipes))
   }
 
 }

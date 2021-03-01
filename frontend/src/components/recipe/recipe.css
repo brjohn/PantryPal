@@ -17,7 +17,6 @@
 }
 
 .recipe {
-  
   display: flex;
   flex-direction: column;
   background: rgb(64,61,124);
@@ -28,7 +27,6 @@
   height: 100%;
   border-radius: 36px;
   background-color: rgba(206, 132, 132, 0.315);
-
 }
 
 #recipe-main {
@@ -59,7 +57,7 @@
   display: flex;
   flex-direction: column;
   height: 50%;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   background: rgb(64,61,124);
   background: linear-gradient(90deg, 
   rgba(63, 60, 129, 0.425) 0%, 
@@ -95,13 +93,14 @@
   border-top-right-radius: 36px;
   margin-bottom: 18px;
   align-items: center;
-
+  padding-bottom: 16px;
   /* border-bottom-style: solid; */
   /* border-bottom-width: 2px; */
   border-bottom-color: rgb(211, 211, 211);
-  
   max-height: 40px;
 }
+
+
 
 .r-title {
   font-family: 'Roboto', sans-serif;
@@ -138,34 +137,62 @@
 
 .user-ingredients{
   list-style-type: none;
-
-   font-family: 'Roboto', sans-serif;
-   font-size: 15px;
-    max-height: 426px;
-  
-    overflow: hidden;
-
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  /* max-height: 1200px; */
+  /* border: 1px solid red; */
   color: white;
   font-weight: 500;
   padding-left: 20px;
   padding-right: 20px;
-
+  min-height:78%;
+  overflow: scroll;
+}
+ul.user-ingredients::-webkit-scrollbar {
+    color: #d19da5;
+}
+.user-ingredients::-webkit-scrollbar-track-piece {
+  color: none;
+}
+.user-ingredients::-webkit-scrollbar-corner {
+  color: #d19da5;
 }
 
 .recipe-result-modal {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid blue; */
 }
+
+.recipe-result-modal > div > img{
+  /* border: 1px solid blue; */
+  /* height: 30px; */
+}
+
+
 
 .recipe-results {
   display: flex;
   justify-content: space-between;
   align-items: center;
+    /* border: 1px solid red; */
   background-color: rgba(78, 140, 202, 0.19);
   margin-bottom: 4px;
   border-radius: 30px;
   padding-bottom: 0px;
   text-align: center;
   padding-right: 8px;
+}
+
+.recipe-results:hover {
+  filter: brightness(95%);
+  transform: scale(0.98);
+  transition-delay: 0s;
+  transition-duration: 0.025s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  vertical-align: middle;
 }
 
 .recipe-result-modal img {
@@ -176,9 +203,14 @@
   height: 32px;
 }
 
+.recipe-result-modal text {
+  padding-bottom: 10px;
+}
+
 
 .recipe {
   width: 100%;
+  /* border: 1px solid blue; */
 }
 
 .blue-button {
@@ -205,5 +237,5 @@
   border-bottom-left-radius: 36px;
   border-bottom-right-radius: 36px;
   
-
 }
+

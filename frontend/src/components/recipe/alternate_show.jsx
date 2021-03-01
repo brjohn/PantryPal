@@ -25,7 +25,9 @@ class AlternateShow extends React.Component {
     }
 
     saveRecipe(){
-        if (!this.props.saved_recipes.includes(this.props.recipeObject)){
+        // debugger
+        if (!this.props.saved_recipes.some(recipe => this.props.recipeObject.title === recipe.title)){
+            // debugger
             this.props.saved_recipes.push(this.props.recipeObject);
             this.setState({saved_recipes: this.props.saved_recipes});
             this.props.updateUser({ id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes }); 
@@ -35,12 +37,16 @@ class AlternateShow extends React.Component {
     render(){
         // debugger
         return (
-            <div className="recipe-show-box">This is the Recipe Show 
+            <div className="recipe-show-box">
                 <h1 className="recipe-title">{this.props.recipeObject.title}</h1>
+                {/* <div className="show-content-div"> */}
+                <div className='r-img-container'>
                 <img src={this.props.recipeObject.image} height="100" width="100"></img>
+                </div>
                 <div className="recipe-ingredients">{this.listIngredients()}</div>
                 <p className="recipe-instructions">{this.props.recipeObject.instructions}</p>
-                <div className="save-recipe-div" onClick={this.saveRecipe}>Save Icon</div>
+                {/* </div> */}
+                <button className="save-recipe-div" onClick={this.saveRecipe}>Save</button>
             </div>
         )
     }

@@ -16,30 +16,25 @@ class Search extends React.Component {
   }
 
 
-
   addToPantry(ingredient) {
     return () => { 
       fetchIngredient(ingredient).then(res => {
         if (!this.props.ingredients.some(el => el.name === res.data.name)) {
           this.props.ingredients.push(res.data)
+          this.props.updateUser({ id: this.props.currentUser.id, ingredients: this.props.ingredients }) // this updates MongoDB
         }
-
-        this.props.setPantryState({ingredients: this.props.ingredients}) // this updates the pantry since search and pantry are two different components
-        this.props.updateUser({ id: this.props.currentUser.id, ingredients: this.props.ingredients }) // this updates MongoDB
       })
     }
   }
 
 
-  updateSearch() {
-    return (e) => {
-      if (e.target.value === '') {
-        e.target.nextElementSibling.classList.add('hide')
-      } else {
-        e.target.nextElementSibling.classList.remove('hide')
-      }
-      this.setState({ searching: e.target.value })
+  updateSearch(e) {
+    if (e.target.value === '') {
+      e.target.nextElementSibling.classList.add('hide')
+    } else {
+      e.target.nextElementSibling.classList.remove('hide')
     }
+    this.setState({ searching: e.target.value })
   }
 
 
@@ -51,7 +46,7 @@ class Search extends React.Component {
       <div>
         <input type="text" className="search-bar"
           placeholder="Search Ingredients . . . "
-          onChange={this.updateSearch()} />
+          onChange={this.updateSearch} />
 
         <div className='search-values hide'>
           {searchIngredient(this.state.searching).map((el, idx) => {

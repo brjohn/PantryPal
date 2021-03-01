@@ -21,7 +21,7 @@ body {
 .scroll-logo {
   bottom: 0;
   margin-bottom: 10px;
-  border: 6px solid rgba(236,180,179,1);
+  border: 6px solid  rgba(224,136,131,1);
   border-radius: 50%;
   position: absolute;
   animation: down 1.0s infinite;
@@ -31,7 +31,7 @@ body {
 }
 
 .scroll-logo:hover  {
-  border: 6px solid rgba(224,136,131,1);
+  border: 6px solid rgb(91,104,196);
 }
 
 @keyframes down {
@@ -62,7 +62,7 @@ body {
   height: 100vh;
   width: 100%;
   background: rgb(236,180,179);
-  background: radial-gradient(circle, rgba(236,180,179,1) 0%, rgba(224,136,131,0.9561200923787528) 79%);
+  background: radial-gradient(circle, rgba(236,180,179,1) 0%, rgba(224,136,131,1) 79%);
 }
 
 #team-intro {
@@ -84,6 +84,7 @@ body {
   list-style-type:none;
   padding-inline-start: 0px;
   padding: 10px;
+  font-size: 40px;
 }
 
 .about-us {
@@ -110,7 +111,7 @@ body {
 }
 
 .fa-icon:hover {
-  color: #1c4966;
+  color: rgb(91,104,196);
 }
 
 .developer {
@@ -157,6 +158,11 @@ body {
   animation: down 1.0s infinite;
   -webkit-animation: down 1.0s infinite;
   cursor: pointer;
+}
+
+.top-scroll-logo:hover {
+  background-color: rgba(224,136,131,1);
+  border-radius: 50%;
 }
 
 .developer-name {

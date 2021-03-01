@@ -4,37 +4,27 @@ import { checkMark, loadingHourglass } from './recipe_book_icons';
 import { removeIcon } from '../search/search_icon'
 
 class RecipeBook extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { saved_recipes: this.props.saved_recipes }
-    // debugger
-  }
 
   recipeTriedStatus(status) {
-    return (status === true) ? (checkMark): (loadingHourglass)
-    // return (loadingHourglass)
+    return (status === true) ? (checkMark) : ''
   }
 
 
   clickRemove(saved_recipe_index) {
-    return e => {
+    return () => {
       this.props.saved_recipes.splice(saved_recipe_index, 1)
-      // this.setState({ saved_recipes: this.props.saved_recipes })
-
-      // do not add the following line yet, or else it will modify the database
       this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes})
     }
   }
 
 
   render() {
-    let saved_recipes = this.props.saved_recipes || [];
+    const {saved_recipes} = this.props;
 
     return (
       <div id='saved-recipes'>
         <h1 className="rb-title">Recipe Book</h1>
         {saved_recipes.map((saved_recipe, saved_recipe_index) => {
-          // debugger
           return (
             <div className="saved-recipe" key={saved_recipe.title}>
               <div className="saved-recipe-left">
