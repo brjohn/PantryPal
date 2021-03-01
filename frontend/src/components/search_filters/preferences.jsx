@@ -3,29 +3,31 @@ import "./search_filters.css"
 
 
 class Preferences extends React.Component {
-
+  constructor(props) {
+    super(props)
+    this.state = { count: 0, myPreferences: [], availablePreferences: []}
+    this.getDiets = this.getDiets.bind(this)
+    this.preferenceComponent = this.preferenceComponent.bind(this)
+  }
 
   handleChange(diet) {
     return () => {
-      (this.state.preferenceList.includes(diet) ?
-        (this.state.preferenceList.splice(this.state.preferenceList.indexOf(diet), 1)) :
-        (this.state.preferenceList.push(diet)))
-      this.setState({ preferenceList: this.state.preferenceList })
+      (this.state.myPreferences.includes(diet) ?
+        (this.state.myPreferences.splice(this.state.myPreferences.indexOf(diet), 1)) :
+        (this.state.myPreferences.push(diet)))
+      this.setState({ myPreferences: this.state.myPreferences })
+      this.props.updateUser({ id: this.props.currentUser.id, preferences: this.state.myPreferences })
     }
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.setFilterState({ preferences: this.state.preferenceList })
-    this.props.updateUser({ id: this.props.currentUser.id, preferences: this.state.preferenceList })
-  }
 
   preferenceComponent(fieldName) {
+    debugger
     return (
       <label className="p-text" key={fieldName}>
         <input
           type="checkbox"
-          checked={!this.state.preferenceList.includes(fieldName)}
+          checked={this.state.myPreferences.includes(fieldName)}
           onChange={this.handleChange(fieldName)}
         />
         {fieldName}
@@ -38,31 +40,31 @@ class Preferences extends React.Component {
     let diets = [];
     this.props.recipes.forEach(recipe => {
       diets = diets.concat(recipe.diets)
+      // debugger
     })
     return Array.from(new Set(diets));
   }
 
 
-
   render() {
     // debugger
-    const { preferences } = this.props;
-    const prefLength = preferences.length
-    const prefHalfLength = parseInt(prefLength / 2)
-
+    const availablePreferences = this.getDiets();
+    const availPrefLength = availablePreferences.length
+    const availPrefHalfLength = parseInt(availPrefLength / 2)
+    // debugger
 
     return (
       <div className="p-grid">
         <h1 className="e-title">Filters</h1>
         <form className='p-col-container' onSubmit={this.handleSubmit}>
           <div className="p-col">
-            {preferences.slice(0, prefHalfLength).map(pref => {
+            {availablePreferences.slice(0, availPrefHalfLength).map(pref => {
               return this.preferenceComponent(pref)
             })}
           </div>
 
           <div className="p-col">
-            {preferences.slice(prefHalfLength, prefLength).map(pref => {
+            {availablePreferences.slice(availPrefHalfLength, availPrefLength).map(pref => {
               return this.preferenceComponent(pref)
             })}
           </div>
