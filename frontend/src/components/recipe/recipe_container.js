@@ -16,6 +16,7 @@ const mapStateToProps = ({session, users}) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   updateUser: data => dispatch(updateUser(data)),
+  openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipe);
