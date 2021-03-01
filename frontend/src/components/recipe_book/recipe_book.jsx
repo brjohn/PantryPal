@@ -1,7 +1,7 @@
 import React from 'react';
 import "./recipe_book.css";
 import { checkMark, loadingHourglass } from './recipe_book_icons';
-
+import { removeIcon } from '../search/search_icon'
 
 class RecipeBook extends React.Component {
   constructor(props) {
@@ -54,7 +54,9 @@ class RecipeBook extends React.Component {
               </div>
 
               <div className="saved-recipe-right">
-                <span onClick={this.clickRemove(saved_recipe_index)}>d</span>
+                <span className='svg-circleminus' onClick={this.clickRemove(saved_recipe_index)}>
+                  {removeIcon}
+                </span>
               </div>
 
 
