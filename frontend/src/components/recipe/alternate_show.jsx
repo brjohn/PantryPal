@@ -39,11 +39,13 @@ class AlternateShow extends React.Component {
         return (
             <div className="recipe-show-box">
                 <h1 className="recipe-title">{this.props.recipeObject.title}</h1>
+                {/* <div className="show-content-div"> */}
                 <div className='r-img-container'>
                 <img src={this.props.recipeObject.image} height="100" width="100"></img>
                 </div>
                 <div className="recipe-ingredients">{this.listIngredients()}</div>
                 <p className="recipe-instructions">{this.props.recipeObject.instructions}</p>
+                {/* </div> */}
                 <button className="save-recipe-div" onClick={this.saveRecipe}>Save</button>
             </div>
         )
