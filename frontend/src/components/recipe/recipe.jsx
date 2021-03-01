@@ -106,7 +106,7 @@ class Recipe extends React.Component {
                 </div>
 
                 <div className="recipe-main-add" onClick={this.addRecipeToFavorite(recipe)}> 
-                  Add to Favorite
+                  Save
                 </div>
 
               </li>

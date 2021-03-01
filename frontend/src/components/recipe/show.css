@@ -1,9 +1,32 @@
 .recipe-show-box {
+  display: flex;
     background-color: white;
+    background: rgb(236,180,179);
+  background: radial-gradient(circle, rgba(236,180,179,1) 0%, rgba(224,136,131,0.9561200923787528) 79%);
+    font-family: 'Roboto', sans-serif;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 36px;
+  min-height: 400px;
+  padding: 20px 10px;
+  
 }
 
 .save-recipe-div {
     background-color: tomato;
     width: min-content;
     cursor: pointer;
+}
+
+
+
+
+.recipe-show-box img {
+  background-color: white;
+}
+
+.recipe-ingredients {
+  background-color: white;
+  width: 100%;
 }
