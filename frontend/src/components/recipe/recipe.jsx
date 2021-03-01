@@ -13,6 +13,9 @@ class Recipe extends React.Component {
     super(props);
     this.state = { recipes: this.props.recipes, view: 'list' }
     this.updateRecipes = this.updateRecipes.bind(this);
+    this.filterRecipes = this.filterRecipes.bind(this);
+
+
   }
 
 
@@ -44,9 +47,9 @@ class Recipe extends React.Component {
       getRecipeByIngredients(ingredientsString, (returnedRecipes) => {
         let bulkRequestString = returnedRecipes.map(recipe => recipe.id.toString()).join()
         getRecipeInformationBulk(bulkRequestString, (returnedRecipeInformation) => {
-          let combinedRecipesArr = this.combine(returnedRecipeInformation, returnedRecipes)
-          this.props.updateUser({ id: this.props.currentUser.id, recipes: combinedRecipesArr })
-          this.setState({ recipes: combinedRecipesArr })
+          let filteredRecipesArr = this.combine(returnedRecipeInformation, returnedRecipes)
+          this.props.updateUser({ id: this.props.currentUser.id, recipes: filteredRecipesArr, preferences: [] })
+          this.setState({ recipes: filteredRecipesArr })
         })
       })
     }
@@ -88,6 +91,24 @@ class Recipe extends React.Component {
   }
 
 
+  filterRecipes(recipes) {
+    const { exclusions, preferences } = this.props
+    let filteredRecipes = [];
+
+    recipes.forEach(recipe => {
+      if (preferences.every(pref => recipe.diets.includes(pref))) {
+        let recipeIngredients = recipe.extendedIngredients.map(ingrediet => ingrediet.name)
+        if (!exclusions.some(exc => recipeIngredients.includes(exc))) {
+          filteredRecipes.push(recipe)}
+        }
+        
+    })
+    return filteredRecipes
+  }
+
+
+
+
 
 
   listview(recipesArray) {
@@ -97,7 +118,9 @@ class Recipe extends React.Component {
           {this.switchButton()}
 
         <ul className="user-ingredients">
-          {recipesArray.slice(0, 15).map((recipe, idx) => {
+
+
+          {this.filterRecipes(recipesArray).map((recipe, idx) => {
             return (
               <li key={idx} className="recipe-results" >
 
@@ -112,10 +135,13 @@ class Recipe extends React.Component {
               </li>
             );
           })}
+
+
         </ul>
         <button onClick={this.updateRecipes()}>
           Update Recipes
         </button>
+
       </div>
     );
   }

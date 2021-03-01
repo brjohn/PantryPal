@@ -5,30 +5,31 @@ import "./search_filters.css"
 class Preferences extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { preferences: this.props.preferences }
+    this.state = { preferenceList: [] }
     // debugger
-    this.preferenceList = ['Gluten Free', 'Ketogenic', 'Vegetarian', 'Lacto-Vegetarian', 'Ovo-Vegetarian', 'Vegan', 'Pescetarian', 'Paleo', 'Primal', 'Whole30']
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.getDiets = this.getDiets.bind(this);
   }
 
 
+  componentDidMount() {
+    this.setState({ preferenceList: this.getDiets()})
+  }
+
   handleChange(diet) {
-    const { preferences } = this.props;
-    return (e) => {
-      console.log(this.props.preferences.includes(diet) ? 
-      (preferences.splice(preferences.indexOf(diet), 1)) : 
-      (preferences.push(diet)))
-      this.setState({preferences: preferences})
+    return () => {
+      (this.state.preferenceList.includes(diet) ?
+        (this.state.preferenceList.splice(this.state.preferenceList.indexOf(diet), 1)) :
+        (this.state.preferenceList.push(diet)))
+      this.setState({ preferenceList: this.state.preferenceList })
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.setFilterState({ preferences: this.state.preferences })
-    this.props.updateUser({ id: this.props.currentUser.id, preferences: this.state.preferences })
+    this.props.setFilterState({ preferences: this.state.preferenceList })
+    this.props.updateUser({ id: this.props.currentUser.id, preferences: this.state.preferenceList })
   }
 
   preferenceComponent(fieldName) {
@@ -36,7 +37,7 @@ class Preferences extends React.Component {
       <label className="p-text" key={fieldName}>
         <input
           type="checkbox"
-          checked={this.props.preferences.includes(fieldName)}
+          checked={!this.state.preferenceList.includes(fieldName)}
           onChange={this.handleChange(fieldName)}
         />
         {fieldName}
@@ -45,28 +46,41 @@ class Preferences extends React.Component {
   }
 
 
+  getDiets() {
+    let diets = [];
+
+    this.props.recipes.forEach(recipe => {
+      // console.log(recipe.diets)
+      diets = diets.concat(recipe.diets)
+    })
+    console.log(Array.from(new Set(diets)))
+    return Array.from(new Set(diets));
+  }
+
 
 
   render() {
+    // this.state.preferenceList = this.getDiets();
 
-      return (
-        <div className="p-grid">
-          <form className='p-col-container' onSubmit={this.handleSubmit}>
-            <div className="p-col">
-              {this.preferenceList.slice(0, 5).map(pref => {
-                return this.preferenceComponent(pref)
-              })}
-            </div>
-            <div className="p-col">
-              {this.preferenceList.slice(5, 10).map(pref => {
-                return this.preferenceComponent(pref)
-              })}
-            </div>
-          </form>
-          <input className= 'p-sub' type="submit" value="Update Pref" />
-        </div>
-      );
-    }
+    return (
+      <div className="p-grid">
+        <form className='p-col-container' onSubmit={this.handleSubmit}>
+          <div className="p-col">
+            {this.state.preferenceList.slice(0, 5).map(pref => {
+              return this.preferenceComponent(pref)
+            })}
+          </div>
+          <div className="p-col">
+            {this.state.preferenceList.slice(5, 10).map(pref => {
+              return this.preferenceComponent(pref)
+            })}
+          </div>
+        </form>
+        <input className='p-sub' type="submit" value="Update Pref" />
+        <button onClick={this.getDiets}>Click</button>
+      </div>
+    );
+  }
 
 }
 
