@@ -3,15 +3,19 @@ import './recipe.css'
 import '../recipe_book/recipe_book.css'
 import '../search_filters/search_filters.css'
 import RecipeMainContainer from './recipe_container'
-import RecipeShowContainer from './recipe_show_container'
 import SearchFiltersContainer from '../search_filters/search_filters_container';
 import RecipeBookContainer from '../recipe_book/recipe_book_container';
 
 
 class RecipeHome extends React.Component {
-  
+  constructor(props){
+    super(props);
+    this.setState = this.setState.bind(this);
+
+  }
+
+
   render() {
-    // debugger
     return (
 
       <div id='recipe-home'>
@@ -26,7 +30,7 @@ class RecipeHome extends React.Component {
         </div>
 
         <div id='recipe-main'>
-          <RecipeMainContainer/>
+          <RecipeMainContainer setRecipeHomeState={this.setState} />
         </div>
 
         {/* <div id='recipe-show'>

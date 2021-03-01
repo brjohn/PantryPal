@@ -77,8 +77,12 @@ class Recipe extends React.Component {
   addRecipeToFavorite(recipeToBeSaved) {
     // let that = this
     return () => {
-      this.props.saved_recipes.push(recipeToBeSaved)
-      console.log(this.props.saved_recipes)
+      if (!this.props.saved_recipes.some(recipe => recipe.title === recipeToBeSaved.title)) {
+
+        this.props.saved_recipes.push(recipeToBeSaved)
+        this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes})
+        this.props.setRecipeHomeState({addedToFavorite: true})
+      }
     }
   }
 
