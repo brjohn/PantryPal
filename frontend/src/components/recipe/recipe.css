@@ -106,14 +106,31 @@
 
 .user-ingredients{
   list-style-type: none;
+  width: 90%;
+  border: 1px solid red;
 }
 
-.recipe-results:hover{
+.recipe-result-modal {
   cursor: pointer;
+}
+
+.recipe-results {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe {
+  border: 1px solid blue;
+  width: 100%;
 }
 
 .blue-button {
   background-color: #1c4966;
   color: rgb(255, 255, 255);
   margin: 6px;
+}
+
+.recipe-main-add {
+  cursor: pointer;
 }
