@@ -13,8 +13,13 @@ class Preferences extends React.Component {
   }
 
 
+  // UNSAFE_componentWillReceiveProps() {
+  //   this.setState({ preferenceList: this.getDiets() })
+  // }
+
   componentDidMount() {
     this.setState({ preferenceList: this.getDiets()})
+    debugger
   }
 
   handleChange(diet) {
@@ -53,14 +58,14 @@ class Preferences extends React.Component {
       // console.log(recipe.diets)
       diets = diets.concat(recipe.diets)
     })
-    console.log(Array.from(new Set(diets)))
+    // console.log(Array.from(new Set(diets)))
     return Array.from(new Set(diets));
   }
 
 
 
   render() {
-    // this.state.preferenceList = this.getDiets();
+    this.state.preferenceList = this.getDiets();
 
     return (
       <div className="p-grid">
