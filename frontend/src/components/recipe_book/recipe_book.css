@@ -46,6 +46,7 @@
 .saved-recipe {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-left: 8px;
   padding-right: 8px;
    background-color: rgba(179, 28, 103, 0.19);
