@@ -25,7 +25,9 @@ class AlternateShow extends React.Component {
     }
 
     saveRecipe(){
-        if (!this.props.saved_recipes.includes(this.props.recipeObject)){
+        // debugger
+        if (!this.props.saved_recipes.some(recipe => this.props.recipeObject.title === recipe.title)){
+            // debugger
             this.props.saved_recipes.push(this.props.recipeObject);
             this.setState({saved_recipes: this.props.saved_recipes});
             this.props.updateUser({ id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes }); 
