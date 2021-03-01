@@ -158,16 +158,10 @@ class Recipe extends React.Component {
 
 
   render() {
-    let recipesArray;
-
-    if (this.state.recipes.length === 0) {
-      recipesArray = this.props.recipes
-    } else {
-      recipesArray = this.state.recipes
-    }
-
+    const {recipes} = this.props;
+    
     return (
-      (this.state.view === 'list') ? this.listview(recipesArray) : this.tilesView(recipesArray))
+      (this.state.view === 'list') ? this.listview(recipes) : this.tilesView(recipes))
   }
 
 }
