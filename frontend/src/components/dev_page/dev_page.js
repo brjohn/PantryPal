@@ -49,7 +49,7 @@ class DevPage extends React.Component {
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/" target="_blank">
+                    <a href="https://www.linkedin.com/in/colewendling/" target="_blank">
                       <i className="fa fa-linkedin-square fa-icon"></i>
                     </a>
                   </li>
@@ -77,7 +77,7 @@ class DevPage extends React.Component {
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/" target="_blank">
+                    <a href="https://www.linkedin.com/in/tului/" target="_blank">
                       <i className="fa fa-linkedin-square fa-icon"></i>
                     </a>
                   </li>
