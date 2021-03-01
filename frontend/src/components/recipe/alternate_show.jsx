@@ -42,7 +42,7 @@ class AlternateShow extends React.Component {
                 </div>
                 <div className="recipe-ingredients">{this.listIngredients()}</div>
                 <p className="recipe-instructions">{this.props.recipeObject.instructions}</p>
-                <div className="save-recipe-div" onClick={this.saveRecipe}>Save Icon</div>
+                <button className="save-recipe-div" onClick={this.saveRecipe}>Save</button>
             </div>
         )
     }

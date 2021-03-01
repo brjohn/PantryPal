@@ -172,6 +172,10 @@
   height: 32px;
 }
 
+.recipe-result-modal text {
+  padding-bottom: 10px;
+}
+
 
 .recipe {
   width: 100%;

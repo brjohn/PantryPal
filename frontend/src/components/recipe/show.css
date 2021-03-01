@@ -13,10 +13,10 @@
   
 }
 
-.save-recipe-div {
-    background-color: tomato;
+.save-recipe-div text{
     width: min-content;
     cursor: pointer;
+    color: white; 
 }
 
 
@@ -24,10 +24,11 @@
 
 
 .recipe-ingredients {
-  background-color: rgba(192, 186, 185, 0.671);
+  background-color: rgba(192, 186, 185, 0.336);
   width: 100%;
   border-bottom-left-radius: 36px;
   border-bottom-right-radius: 36px;
+  text-align: center;
 }
 
 .ingredient-item {
@@ -41,21 +42,27 @@
 
 .r-img-container {
   display: flex;
+  flex-flow: wrap;
   width: 100%;
   align-items: center;
   border-top-left-radius: 36px;
   border-top-right-radius: 36px;
-  background-color: rgba(192, 186, 185, 0.671);
+  background-color: rgba(192, 186, 185, 0.336);
+  justify-content: space-around;
 }
 
  .recipe-show-box img {
-   align-self: center;
+   display: block;
     background-color: white;
+    /* margin-left: 280px; */
+    border-radius: 30px;
+    /* align-content:space-around; */
   }
 
 .recipe-instructions {
-  background-color: rgba(192, 186, 185, 0.671);
+  background-color: rgba(192, 186, 185, 0.336);
   width: 100%;
   border-radius: 20px;
-  color: white;
+  color: #1c4966;
+  text-align: center;
 }
