@@ -41,7 +41,9 @@
 
 }
 
-
+.recipe-main {
+  margin-right: 8px;
+}
 
 .recipe-main-add:hover {
   cursor: pointer;
@@ -158,7 +160,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(78, 140, 202, 0.19);
+  margin-bottom: 4px;
+  border-radius: 30px;
+  padding-bottom: 0px;
+  text-align: center;
+  padding-right: 8px;
 }
+
+.recipe-result-modal img {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  width: 35px;
+  margin-right: 8px;
+  height: 32px;
+}
+
 
 .recipe {
   width: 100%;

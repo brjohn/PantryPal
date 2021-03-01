@@ -50,6 +50,12 @@
   justify-content: space-between;
   padding-left: 8px;
   padding-right: 8px;
+   background-color: rgba(78, 140, 202, 0.19);
+  margin-bottom: 4px;
+  border-radius: 30px;
+  padding-bottom: 0px;
+  text-align: center;
+  padding-right: 8px;
 }
 
 .saved-recipe-left {
