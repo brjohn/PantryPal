@@ -21,21 +21,19 @@ class RecipeHome extends React.Component {
       <div id='recipe-home'>
         
         <div id='recipe-sidebar'>
+
           <div className='recipe-book'>
             <RecipeBookContainer/>
           </div> 
           <div className='search-filters'>
             <SearchFiltersContainer />
           </div>
+          
         </div>
 
         <div id='recipe-main'>
-          <RecipeMainContainer setRecipeHomeState={this.setState} />
+          <RecipeMainContainer />
         </div>
-
-        {/* <div id='recipe-show'>
-          <RecipeShowContainer />
-        </div> */}
       </div>
 
 

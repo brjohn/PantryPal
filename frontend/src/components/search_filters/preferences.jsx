@@ -6,7 +6,6 @@ class Preferences extends React.Component {
   constructor(props) {
     super(props);
     this.state = { preferenceList: [] }
-    // debugger
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getDiets = this.getDiets.bind(this);
