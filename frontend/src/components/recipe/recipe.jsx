@@ -104,6 +104,9 @@ class Recipe extends React.Component {
     return (
       <div className="recipe">
         <h1 className="r-title">Recipes</h1>
+         <div className='switch-buttons'>
+          {this.switchButton()}
+         </div>
 
         <ul className="user-ingredients">
           {recipesArray.slice(0, 15).map((recipe, idx) => {
@@ -119,7 +122,6 @@ class Recipe extends React.Component {
         <button onClick={this.updateRecipes()}>
           Update Recipes
         </button>
-        {this.switchButton()}
       </div>
     );
   }
