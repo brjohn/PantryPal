@@ -35,9 +35,11 @@ class AlternateShow extends React.Component {
     render(){
         // debugger
         return (
-            <div className="recipe-show-box">This is the Recipe Show 
+            <div className="recipe-show-box">
                 <h1 className="recipe-title">{this.props.recipeObject.title}</h1>
+                <div className='r-img-container'>
                 <img src={this.props.recipeObject.image} height="100" width="100"></img>
+                </div>
                 <div className="recipe-ingredients">{this.listIngredients()}</div>
                 <p className="recipe-instructions">{this.props.recipeObject.instructions}</p>
                 <div className="save-recipe-div" onClick={this.saveRecipe}>Save Icon</div>
