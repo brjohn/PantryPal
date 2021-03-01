@@ -1,3 +1,4 @@
+
 import React from "react";
 import SearchFiltersContainer from '../search_filters/search_filters_container';
 import './recipe.css'
@@ -14,12 +15,6 @@ class Recipe extends React.Component {
     this.updateRecipes = this.updateRecipes.bind(this);
   }
 
-  componentDidMount() {
-    // console.log('Recipe main mounted')
-    // debugger
-    this.setState({ recipes: this.props.recipes})
-  }
-  
 
   combine(recipeInfoArr, recipesArr) {
     let combinedArr = [];
@@ -44,38 +39,19 @@ class Recipe extends React.Component {
 
 
   updateRecipes() {
-    
-    // return () => {
-    //   let ingredientsString = (this.props.ingredients.map(el => el.name)).join(',');
-    //   getRecipeByIngredients(ingredientsString, (returnedRecipes) => { 
-    //     this.props.updateUser({ id: this.props.currentUser.id, recipes: returnedRecipes })
-    //     this.setState({ recipes: returnedRecipes})
-    //   })
-    // } 
-
-
     return () => {
       let ingredientsString = (this.props.ingredients.map(el => el.name)).join(',');
       getRecipeByIngredients(ingredientsString, (returnedRecipes) => {
         let bulkRequestString = returnedRecipes.map(recipe => recipe.id.toString()).join()
         getRecipeInformationBulk(bulkRequestString, (returnedRecipeInformation) => {
           let combinedRecipesArr = this.combine(returnedRecipeInformation, returnedRecipes)
-
           this.props.updateUser({ id: this.props.currentUser.id, recipes: combinedRecipesArr })
           this.setState({ recipes: combinedRecipesArr })
-
-          // debugger
         })
-
-
-        // debugger
-
-
       })
-    } 
-
-
+    }
   }
+
 
   switchButton() {
     return (
@@ -99,6 +75,20 @@ class Recipe extends React.Component {
   }
 
 
+  addRecipeToFavorite(recipeToBeSaved) {
+    // let that = this
+    return () => {
+      if (!this.props.saved_recipes.some(recipe => recipe.title === recipeToBeSaved.title)) {
+
+        this.props.saved_recipes.push(recipeToBeSaved)
+        this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes})
+        this.props.setRecipeHomeState({addedToFavorite: true})
+      }
+    }
+  }
+
+
+
 
   listview(recipesArray) {
     return (
@@ -107,12 +97,18 @@ class Recipe extends React.Component {
 
         <ul className="user-ingredients">
           {recipesArray.slice(0, 15).map((recipe, idx) => {
-            return (                          
-              <li key={idx} className="recipe-results" 
-                onClick={() => this.props.openModal(recipe)}
-              >
-                <img src={recipe.image} height="25" width="25"></img> {recipe.title} - {recipe.missedIngredientCount}
-             </li>
+            return (
+              <li key={idx} className="recipe-results" >
+
+                <div className="recipe-result-modal" onClick={() => this.props.openModal(recipe)}>
+                  <img src={recipe.image} height="25" width="25" /> {recipe.title} - {recipe.missedIngredientCount}
+                </div>
+
+                <div className="recipe-main-add" onClick={this.addRecipeToFavorite(recipe)}> 
+                  Add to Favorite
+                </div>
+
+              </li>
             );
           })}
         </ul>
@@ -125,8 +121,9 @@ class Recipe extends React.Component {
   }
 
 
-  tilesView(recipesArray){
+  tilesView(recipesArray) {
     return (
+
     <div>
       <h1 className="r-title">RECIPE.JSX</h1>
       {this.switchButton()}
@@ -136,22 +133,18 @@ class Recipe extends React.Component {
 
 
   render() {
-
-
     let recipesArray;
 
-    // debugger
     if (this.state.recipes.length === 0) {
       recipesArray = this.props.recipes
     } else {
       recipesArray = this.state.recipes
     }
 
-    // debugger
     return (
-      (this.state.view === 'list')? this.listview(recipesArray) : this.tilesView(recipesArray))
+      (this.state.view === 'list') ? this.listview(recipesArray) : this.tilesView(recipesArray))
   }
-  
+
 }
 
 export default Recipe;

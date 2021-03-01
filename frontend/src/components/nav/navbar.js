@@ -38,8 +38,28 @@ class NavBar extends React.Component {
     }
   }
 
+  demoButton() {
+    return (
+      <button type="submit" className="pink-button"
+        onClick={() => this.setState({ email: "demo@gmail.com", password: '123456' })}>
+        Demo
+      </button>
+    )
+  }
 
 
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    let user = {
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    this.props.login(user)
+   
+  }
 
 
 
@@ -54,7 +74,7 @@ class NavBar extends React.Component {
     // debugger
     if (['pantry', 'recipe'].includes(url)) this.indicatorAnimation()(document.getElementById(url))
   }
-
+  
 
 
 
@@ -91,8 +111,8 @@ class NavBar extends React.Component {
               <Link to='/pantry' onClick={this.indicatorAnimation()} ><button id="pantry" className="grey-button" >Pantry</button></Link>
             </div>
 
-            <div className="nav-item" active-color="green">
-              <Link to='/recipe' onClick={this.indicatorAnimation()} ><button id="recipe" className="grey-button" >Recipes</button></Link>
+            <div className="nav-item" active-color="#1c4966">
+              <Link to='/recipe' onClick={this.indicatorAnimation()} ><button id="recipe" className="pink-button" >Recipes</button></Link>
             </div>
             <span className="nav-indicator"></span>
 
@@ -119,6 +139,10 @@ class NavBar extends React.Component {
             <div className="nav-right">
               <button className="grey-button" onClick={() => openModal('signup')}>Sign up</button>
               <button className="blue-button" onClick={() => openModal('login')}>Log in</button>
+              <button className="pink-button" onClick={() => this.demoButton('login')}>Demo</button>
+              {/* <div>
+                {this.demoButton()}
+              </div> */}
             </div>
           </div>
           <div className="splash-ani-container">
