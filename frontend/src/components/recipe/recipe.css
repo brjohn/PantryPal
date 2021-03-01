@@ -17,7 +17,6 @@
 }
 
 .recipe {
-  
   display: flex;
   flex-direction: column;
   background: rgb(64,61,124);
@@ -28,7 +27,6 @@
   height: 100%;
   border-radius: 36px;
   background-color: rgba(206, 132, 132, 0.315);
-
 }
 
 #recipe-main {
@@ -99,9 +97,10 @@
   /* border-bottom-style: solid; */
   /* border-bottom-width: 2px; */
   border-bottom-color: rgb(211, 211, 211);
-  
   max-height: 40px;
 }
+
+
 
 .r-title {
   font-family: 'Roboto', sans-serif;
@@ -138,18 +137,14 @@
 
 .user-ingredients{
   list-style-type: none;
-
-   font-family: 'Roboto', sans-serif;
-   font-size: 15px;
-    max-height: 426px;
-  
-    overflow: hidden;
-
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  max-height: 426px;
   color: white;
   font-weight: 500;
   padding-left: 20px;
   padding-right: 20px;
-
+  min-height:82%;
 }
 
 .recipe-result-modal {
@@ -205,5 +200,5 @@
   border-bottom-left-radius: 36px;
   border-bottom-right-radius: 36px;
   
-
 }
+

@@ -9,7 +9,7 @@
   justify-content: center;
   border-radius: 36px;
   min-height: 400px;
-  padding: 20px 10px;
+  /* padding: 20px 10px; */
   
 }
 
@@ -22,11 +22,40 @@
 
 
 
-.recipe-show-box img {
-  background-color: white;
-}
 
 .recipe-ingredients {
-  background-color: white;
+  background-color: rgba(192, 186, 185, 0.671);
   width: 100%;
+  border-bottom-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+}
+
+.ingredient-item {
+  color: white;
+}
+
+.recipe-title {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+.r-img-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-top-left-radius: 36px;
+  border-top-right-radius: 36px;
+  background-color: rgba(192, 186, 185, 0.671);
+}
+
+ .recipe-show-box img {
+   align-self: center;
+    background-color: white;
+  }
+
+.recipe-instructions {
+  background-color: rgba(192, 186, 185, 0.671);
+  width: 100%;
+  border-radius: 20px;
+  color: white;
 }
