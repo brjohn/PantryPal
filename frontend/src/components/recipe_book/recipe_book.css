@@ -49,6 +49,7 @@
   display: flex;
   justify-content: space-between;
   padding-left: 8px;
+  padding-right: 8px;
 }
 
 .saved-recipe-left {
@@ -69,6 +70,16 @@
   color: white;
 }
 
+.saved-recipe-title:hover {
+  cursor: pointer;
+  color: rgba(122, 68, 66, 0.986);
+}
+
+.saved-recipe-title:hover {
+  cursor: pointer;
+  color: rgba(122, 68, 66, 0.986);
+}
+
 .exclusion h1 {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -84,6 +95,11 @@
   width: 20px;
   stroke: rgba(29, 29, 29, 0.295); 
   /* border: 1px solid red; */
+}
+
+.svg-circleminus:hover {
+  cursor: pointer;
+  color: rgba(122, 68, 66, 0.986);
 }
 
 .remove-button-div:hover .svg-circleminus {
