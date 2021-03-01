@@ -124,7 +124,12 @@ class Recipe extends React.Component {
               <li key={idx} className="recipe-results" >
 
                 <div className="recipe-result-modal" onClick={() => this.props.openModal(recipe)}>
-                  <img src={recipe.image} height="25" width="25" /> {recipe.title} - {recipe.missedIngredientCount}
+                  <div>
+                    <img src={recipe.image} height="25" width="25"  />
+                  </div>
+                  <div>
+                    {recipe.title}
+                  </div>
                 </div>
 
                 <div className="recipe-main-add" onClick={this.addRecipeToFavorite(recipe)}> 
