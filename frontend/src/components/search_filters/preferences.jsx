@@ -48,6 +48,7 @@ class Preferences extends React.Component {
 
 
   render() {
+
       return (
         <div className="p-grid">
           <form className='p-col-container' onSubmit={this.handleSubmit}>
@@ -66,6 +67,7 @@ class Preferences extends React.Component {
         </div>
       );
     }
+
 }
 
 export default Preferences;
