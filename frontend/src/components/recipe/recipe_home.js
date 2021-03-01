@@ -15,9 +15,10 @@ class RecipeHome extends React.Component {
     return (
 
       <div id='recipe-home'>
+        
         <div id='recipe-sidebar'>
           <div className='recipe-book'>
-            <RecipeBookContainer saved_recipes={this.props.users.saved_recipes}/>
+            <RecipeBookContainer/>
           </div> 
           <div className='search-filters'>
             <SearchFiltersContainer />
@@ -28,9 +29,9 @@ class RecipeHome extends React.Component {
           <RecipeMainContainer/>
         </div>
 
-        <div id='recipe-show'>
+        {/* <div id='recipe-show'>
           <RecipeShowContainer />
-        </div>
+        </div> */}
       </div>
 
 

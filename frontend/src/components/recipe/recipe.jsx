@@ -1,14 +1,15 @@
 import React from "react";
 import SearchFiltersContainer from '../search_filters/search_filters_container';
 import './recipe.css'
-import { getRecipeByIngredients } from "../../util/spoonacular_api/spoonacular_api"
+import { getRecipeByIngredients, getRecipeInformationBulk } from "../../util/spoonacular_api/spoonacular_api"
 import { listIcon, tilesIcon } from "./recipe_icons";
-import RecipeShow from './recipe_show'
+
+
+// import { openModal } from "../../actions/modal_actions";
 
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = { recipes: this.props.recipes, view: 'list' }
     this.updateRecipes = this.updateRecipes.bind(this);
   }
@@ -20,17 +21,60 @@ class Recipe extends React.Component {
   }
   
 
+  combine(recipeInfoArr, recipesArr) {
+    let combinedArr = [];
+    if (recipeInfoArr.every((el, idx) => el.id === recipesArr[idx].id)) {
+      console.log(true)
+      for (let i = 0; i < recipeInfoArr.length; i++) {
+        combinedArr.push(Object.assign({}, recipeInfoArr[i], recipesArr[i]))
+      }
+    } else {
+      console.log(false)
+      for (let i = 0; i < recipeInfoArr.length; i++) {
+        for (let j = 0; j < recipeInfoArr.length; j++) {
+          if (recipeInfoArr[i].id === recipesArr[j].id) {
+            combinedArr.push(Object.assign({}, recipeInfoArr[i], recipesArr[j]))
+            j = recipeInfoArr.length // breakts current loop
+          }
+        }
+      }
+    }
+    return combinedArr
+  }
+
+
   updateRecipes() {
     
-    return () => {
+    // return () => {
+    //   let ingredientsString = (this.props.ingredients.map(el => el.name)).join(',');
+    //   getRecipeByIngredients(ingredientsString, (returnedRecipes) => { 
+    //     this.props.updateUser({ id: this.props.currentUser.id, recipes: returnedRecipes })
+    //     this.setState({ recipes: returnedRecipes})
+    //   })
+    // } 
 
+
+    return () => {
       let ingredientsString = (this.props.ingredients.map(el => el.name)).join(',');
-      getRecipeByIngredients(ingredientsString, (returnedRecipes) => { 
-        this.props.updateUser({ id: this.props.currentUser.id, recipes: returnedRecipes })
-        this.setState({ recipes: returnedRecipes})
+      getRecipeByIngredients(ingredientsString, (returnedRecipes) => {
+        let bulkRequestString = returnedRecipes.map(recipe => recipe.id.toString()).join()
+        getRecipeInformationBulk(bulkRequestString, (returnedRecipeInformation) => {
+          let combinedRecipesArr = this.combine(returnedRecipeInformation, returnedRecipes)
+
+          this.props.updateUser({ id: this.props.currentUser.id, recipes: combinedRecipesArr })
+          this.setState({ recipes: combinedRecipesArr })
+
+          // debugger
+        })
+
+
+        // debugger
+
+
       })
-      // this.props.updateUser({ id: this.props.currentUser.id, recipes: this.props.recipes })
     } 
+
+
   }
 
   switchButton() {
@@ -57,15 +101,17 @@ class Recipe extends React.Component {
 
 
   listview(recipesArray) {
-    let newRecipeShow = new RecipeShow();
     return (
       <div className="recipe">
+        <h2>RECIPE.JSX</h2>
         <h2>Your current recipes:</h2>
 
         <ul className="user-ingredients">
-          {recipesArray.map((recipe, idx) => {
+          {recipesArray.slice(0, 15).map((recipe, idx) => {
             return (                          
-              <li key={idx} className="recipe-results" onClick={newRecipeShow.getRecipe(recipe.id)}>
+              <li key={idx} className="recipe-results" 
+                onClick={() => this.props.openModal(recipe)}
+              >
                 <img src={recipe.image} height="25" width="25"></img> {recipe.title} - {recipe.missedIngredientCount}
              </li>
             );
@@ -81,7 +127,9 @@ class Recipe extends React.Component {
 
 
   tilesView(recipesArray){
-    return (<div>
+    return (
+    <div>
+      <h2>RECIPE.JSX</h2>
       {this.switchButton()}
     </div>)
   }
@@ -89,6 +137,8 @@ class Recipe extends React.Component {
 
 
   render() {
+
+
     let recipesArray;
 
     // debugger
@@ -99,7 +149,8 @@ class Recipe extends React.Component {
     }
 
     // debugger
-    return ((this.state.view === 'list')? this.listview(recipesArray) : this.tilesView(recipesArray))
+    return (
+      (this.state.view === 'list')? this.listview(recipesArray) : this.tilesView(recipesArray))
   }
   
 }

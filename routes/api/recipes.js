@@ -5,17 +5,19 @@ const Recipe = require('../../models/Recipe');
 
 
 router.get('/:id', (req, res) => {
-    Recipe.findOne({ recipeObject: {id: req.params.id}})
+    Recipe.findOne({spoonacularId: req.params.id})
         .then(recipeInfo => {
             console.log(recipeInfo)
             res.json(recipeInfo)})
-        .catch(() => console.log("couldnt get"))
+        .catch(() => {
+            console.log("couldnt get")})
 })
 
 router.post('/', (req, res) => {
 
     const newRecipe = new Recipe({
-        recipeObject: req.body   //probably change this - don't know what we need
+        recipeObject: req.body,
+        spoonacularId: req.body.id
     })
     newRecipe.save().then(recipe => res.json(recipe))
         .catch(()=> console.log("couldnt post"));

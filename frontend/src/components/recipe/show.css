@@ -1,0 +1,9 @@
+.recipe-show-box {
+    background-color: white;
+}
+
+.save-recipe-div {
+    background-color: tomato;
+    width: min-content;
+    cursor: pointer;
+}

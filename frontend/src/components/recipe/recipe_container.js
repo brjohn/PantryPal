@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
+import { openModal } from "../../actions/modal_actions";
 import { updateUser } from "../../actions/user_actions"
+
 
 
 import Recipe from "./recipe";
@@ -12,7 +14,8 @@ const mapStateToProps = (state) => ({
 
 
 const mapDispatchToProps = (dispatch) => ({
-  updateUser: data => dispatch(updateUser(data))
+  updateUser: data => dispatch(updateUser(data)),
+  openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recipe);

@@ -26,12 +26,17 @@ class RecipeBook extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.setState({ saved_recipes: this.props.saved_recipes  })
+  }
+
 
   render() {
     let saved_recipes = this.props.saved_recipes || [];
 
     return (
       <div id='saved-recipes'>
+        <h2>RECIPE_BOOK.JSX</h2>
         {saved_recipes.map((saved_recipe, saved_recipe_index) => {
           // debugger
           return (
@@ -42,7 +47,8 @@ class RecipeBook extends React.Component {
                   {this.recipeTriedStatus(saved_recipe.recipe_tried)}
                 </div>
 
-                <div className="saved-recipe-title">
+                <div className="saved-recipe-title"
+                  onClick={() => this.props.openModal(saved_recipe)}>
                   {saved_recipe.title}
                 </div>
               </div>
