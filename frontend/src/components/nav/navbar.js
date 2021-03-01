@@ -38,26 +38,18 @@ class NavBar extends React.Component {
     }
   }
 
-  demoButton() {
-    return (
-      <button type="submit" className="pink-button"
-        onClick={() => this.setState({ email: "demo@gmail.com", password: '123456' })}>
-        Demo
-      </button>
-    )
-  }
 
 
-
-  handleSubmit(e) {
-    e.preventDefault();
-
-    let user = {
-      email: this.state.email,
-      password: this.state.password
-    };
-
-    this.props.login(user)
+  handleSubmit() {
+    return () => {
+      // console.log('clicked')
+      let user = {
+        email: "demo@gmail.com",
+        password: '123456'
+      };
+  
+      this.props.login(user)
+    }
    
   }
 
@@ -139,7 +131,7 @@ class NavBar extends React.Component {
             <div className="nav-right">
               <button className="grey-button" onClick={() => openModal('signup')}>Sign up</button>
               <button className="blue-button" onClick={() => openModal('login')}>Log in</button>
-              <button className="pink-button" onClick={() => this.demoButton('login')}>Demo</button>
+              <button className="pink-button" onClick={this.handleSubmit()}>Demo</button>
               {/* <div>
                 {this.demoButton()}
               </div> */}
