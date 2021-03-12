@@ -171,6 +171,10 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+  .dev-page{
+  margin-top: 14vh;
+  }
+
   #team-intro {
     font-size: 48px;
     }
@@ -185,7 +189,6 @@ body {
   }
 
   .about-us-links{
-    font-size: 10px;
     margin-top: 0px;
     padding: 0px;
     margin-block-start: 0em;
