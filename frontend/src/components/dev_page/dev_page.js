@@ -26,8 +26,8 @@ class DevPage extends React.Component {
   render() {
     return (
       <div className="dev-page">
-        <div id="dev-design-container">
-          <img id="dev-logo" src={About} alt="Team Logo" className="scroll-logo" onClick={() => this.scrollToBottom()}/>
+        <div id="dev-tobottom-container">
+          <img className="scroll-logo" src={About} alt="Team Logo" onClick={() => this.scrollToBottom()} />
         </div>
         <div className="footer">
           <div className="about-us">
@@ -146,10 +146,10 @@ class DevPage extends React.Component {
                 </ul>
               </div>
             </div>
-            <div id="dev-design-container">
+          </div>
+            <div id="dev-totop-container">
               <img id="top-logo" src={Top} alt="Back" onClick={() => this.scrollToTop()} className="top-scroll-logo" />
             </div>
-          </div>
         </div>
       </div>
 
