@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => ({
   openModal: (modal) => dispatch(openModal(modal))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeBook);
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeBook); 

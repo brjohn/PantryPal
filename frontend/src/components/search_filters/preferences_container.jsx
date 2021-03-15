@@ -4,8 +4,8 @@ import Preferences from './preferences';
 
 const mapStateToProps = ({entities, session}) => ({
     currentUser: session.currentUser,
-    preferences: entities.preferences || [],
-    recipes: entities.recipes || []
+    preferences: entities.preferences,
+    recipes: entities.recipes
 
 });
 

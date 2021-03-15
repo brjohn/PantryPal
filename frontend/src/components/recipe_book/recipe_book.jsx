@@ -11,10 +11,8 @@ class RecipeBook extends React.Component {
 
 
   clickRemove(saved_recipe_index) {
-    return () => {
-      this.props.saved_recipes.splice(saved_recipe_index, 1)
-      this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes})
-    }
+    this.props.saved_recipes.splice(saved_recipe_index, 1)
+    this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes})
   }
 
 
@@ -40,7 +38,7 @@ class RecipeBook extends React.Component {
               </div>
 
               <div className="saved-recipe-right">
-                <span className='svg-circleminus' onClick={this.clickRemove(saved_recipe_index)}>
+                <span className='svg-circleminus' onClick={() => this.clickRemove(saved_recipe_index)}>
                   {removeIcon}
                 </span>
               </div>

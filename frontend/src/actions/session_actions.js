@@ -35,11 +35,7 @@ export const receiveUserInfo = (user) => {
 
 export const signup = user => dispatch => (
   APIUtil.signup(user).then((userInfo) => {
-    // debugger
     dispatch(login(user))
-    // dispatch(receiveCurrentUser(userInfo.data._id))
-
-
   }, err => (
     dispatch(receiveErrors(err.response.data))
   ))
@@ -53,7 +49,6 @@ export const login = user => dispatch => (
     localStorage.setItem('jwtToken', token);
     APIUtil.setAuthToken(token);
     const decoded = jwt_decode(token);
-    // debugger
     dispatch(receiveCurrentUser(Object.assign({}, decoded, res.data.userInfo)))
   })
     .catch(err => {

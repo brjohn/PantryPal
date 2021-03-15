@@ -11,7 +11,7 @@ import { listIcon, tilesIcon } from "./recipe_icons";
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { recipes: this.props.recipes, view: 'list' }
+    this.state = { view: 'list' }
     this.updateRecipes = this.updateRecipes.bind(this);
     this.filterRecipes = this.filterRecipes.bind(this);
 
@@ -110,7 +110,8 @@ class Recipe extends React.Component {
 
 
 
-  listview(recipesArray) {
+  listview() {
+    const { recipes } = this.props
     return (
       <div className="recipe">
         <h1 className="r-title">Recipes</h1>
@@ -119,7 +120,7 @@ class Recipe extends React.Component {
         <ul className="user-ingredients">
 
 
-          {this.filterRecipes(recipesArray).map((recipe, idx) => {
+          {this.filterRecipes(recipes).map((recipe, idx) => {
             return (
               <li key={idx} className="recipe-results" >
 
@@ -166,7 +167,7 @@ class Recipe extends React.Component {
     const {recipes} = this.props;
     
     return (
-      (this.state.view === 'list') ? this.listview(recipes) : this.tilesView(recipes))
+      (this.state.view === 'list') ? this.listview() : this.tilesView(recipes))
   }
 
 }
