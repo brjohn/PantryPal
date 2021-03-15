@@ -1,7 +1,7 @@
 import React from 'react';
-import { removeIcon } from '../search/search_icon';
-import ExclusionSearch from './exclusion_search';
-import ExclusionSearchContainer from './exclusion_search_container';
+// import { removeIcon } from '../search/search_icon';
+// import ExclusionSearch from './exclusion_search';
+// import ExclusionSearchContainer from './exclusion_search_container';
 import PreferencesContainer from './preferences_container';
 import "./search_filters.css"
 

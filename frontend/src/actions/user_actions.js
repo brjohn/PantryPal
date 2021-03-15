@@ -44,7 +44,7 @@ const receiveSavedRecipes = saved_recipes => ({
 
 export const fetchUserRefresh = (userId) => (dispatch) => (
   UserApiUtil.fetchUser(userId).then(user => {
-    console.log(user)
+    // console.log(user)
     dispatch(receiveCurrentUser(user.data))
   })
 )

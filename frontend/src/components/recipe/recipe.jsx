@@ -1,6 +1,6 @@
 
 import React from "react";
-import SearchFiltersContainer from '../search_filters/search_filters_container';
+// import SearchFiltersContainer from '../search_filters/search_filters_container';
 import './recipe.css'
 import { getRecipeByIngredients, getRecipeInformationBulk } from "../../util/spoonacular_api/spoonacular_api"
 import { listIcon, tilesIcon } from "./recipe_icons";

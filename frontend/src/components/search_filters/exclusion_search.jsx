@@ -1,6 +1,6 @@
 import React from 'react';
-import { addIcon } from '../search/search_icon';
-import searchIngredient from '../search/search_function';
+// import { addIcon } from '../search/search_icon';
+// import searchIngredient from '../search/search_function';
 import "./search_filters.css";
 import "./../search/search.css";
 

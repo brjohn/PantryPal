@@ -1,6 +1,6 @@
 import React from 'react';
 import "./recipe_book.css";
-import { checkMark, loadingHourglass } from './recipe_book_icons';
+import { checkMark } from './recipe_book_icons';
 import { removeIcon } from '../search/search_icon'
 
 class RecipeBook extends React.Component {

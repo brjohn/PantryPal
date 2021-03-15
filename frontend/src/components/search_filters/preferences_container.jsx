@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUser, updateUser } from '../../actions/user_actions';
+import { updateUser } from '../../actions/user_actions';
 import Preferences from './preferences';
 
 const mapStateToProps = ({users, session}) => ({
