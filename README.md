@@ -1,4 +1,4 @@
-# PantryPal
+# ![Favicon](https://github.com/brjohn/PantryPal/blob/master/frontend/public/images/favicon.png) PantryPal
 
 ![PantryPal landing image](https://github.com/brjohn/PantryPal/blob/master/frontend/public/images/pantrypal.png "Pantry Pal")
 
