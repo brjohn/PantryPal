@@ -7,9 +7,10 @@ const mapStateToProps = state => ({
   ingredients: state.users.ingredients || []
 })
 
-const mapDispatchToProps = dispatch => ({
-  fetchUser: id => dispatch(fetchUser(id)),
+const mapDispatchToProps = dispatch => {
+  // debugger
+  return {
   updateUser: (data) => dispatch(updateUser(data))
-})
+}}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Pantry);

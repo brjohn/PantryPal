@@ -10,7 +10,6 @@ const mapStateToProps = ({users, session}) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchUser: id => dispatch(fetchUser(id)),
     updateUser: (data) =>  dispatch(updateUser(data))
 });
 

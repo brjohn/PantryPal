@@ -52,13 +52,9 @@ const receiveSavedRecipes = saved_recipes => ({
 
 
 
-
-export const fetchUser = (userId) => (dispatch) => (
-  UserApiUtil.fetchUser(userId).then(user => dispatch(receiveUser(user)))
-)
-
 export const fetchUserRefresh = (userId) => (dispatch) => (
   UserApiUtil.fetchUser(userId).then(user => {
+    console.log(user)
     dispatch(receiveCurrentUser(user.data))
   })
 )
@@ -72,5 +68,3 @@ export const updateUser = data => dispatch => {
 
   UserApiUtil.updateUser(data)
 }
-  // debugger
-// )
