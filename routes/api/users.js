@@ -132,16 +132,9 @@ router.post('/login', (req, res) => {
 
 
 router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) => {
-  // debugger
-  // const { errors, isValid } = validateRegisterInput(req.body);
-
-  // if (!isValid) {
-  //   return res.status(400).json(errors);
-  // }
 
   let filter = {_id: req.user.id};
   let { preferences, exclusions, ingredients, recipes, saved_recipes } = req.body;
-  // debugger
 
   let newInfo = {};
   if (preferences) newInfo.preferences = preferences;
@@ -150,9 +143,8 @@ router.patch('/:id', passport.authenticate('jwt', {session: false}), (req, res) 
   if (recipes) newInfo.recipes = recipes;
   if (saved_recipes) newInfo.saved_recipes = saved_recipes;
 
-  console.log(newInfo)
-
-
+  // console.log(newInfo)
+  // debugger
 
 
   User.findOneAndUpdate(filter, {$set: newInfo}, {new: true})
