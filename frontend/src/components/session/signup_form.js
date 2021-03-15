@@ -17,10 +17,10 @@ class SignupForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
+    if (nextProps.isAuthenticated === true) {
+      this.props.closeModal();
       this.props.history.push('/pantry');
     }
-
     this.setState({ errors: nextProps.errors })
   }
 
@@ -42,10 +42,15 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user)
-    //   this.props.signup(user, this.props.history)
-    // debugger
+    .then(() => {
+      if (Object.keys(this.state.errors).length){
+        this.renderErrors()
+      } else {
+        this.props.closeModal()
+      }
+    })
 
-    .then(() => {this.props.closeModal()})}
+  }
 
   renderErrors() {
     return (
