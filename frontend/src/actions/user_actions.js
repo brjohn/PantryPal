@@ -37,24 +37,23 @@ const receiveSavedRecipes = saved_recipes => ({
 })
 
 
-
-
-
-
-
-export const fetchUserRefresh = (userId) => (dispatch) => (
+export const fetchUser = (userId) => (dispatch) => (
   UserApiUtil.fetchUser(userId).then(user => {
-    // console.log(user)
     dispatch(receiveCurrentUser(user.data))
+    dispatch(receivePreferences(user.data.preferences))
+    dispatch(receiveExclusions(user.data.exclusions))
+    dispatch(receiveIngredients(user.data.ingredients))
+    dispatch(receiveRecipes(user.data.recipes))
+    dispatch(receiveSavedRecipes(user.data.saved_recipes))
   })
 )
 
 export const updateUser = data => dispatch => {
+  UserApiUtil.updateUser(data)
+
   if (data.preferences) dispatch(receivePreferences(data.preferences))
   if (data.exclusions) dispatch(receiveExclusions(data.exclusions))
   if (data.ingredients) dispatch(receiveIngredients(data.ingredients))
   if (data.recipes) dispatch(receiveRecipes(data.recipes))
   if (data.saved_recipes) dispatch(receiveSavedRecipes(data.saved_recipes))
-
-  UserApiUtil.updateUser(data)
 }

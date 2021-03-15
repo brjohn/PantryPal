@@ -5,7 +5,7 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
-import { fetchUserRefresh, updateUser } from './actions/user_actions';
+import { fetchUser, updateUser } from './actions/user_actions';
 import { fetchIngredient } from './util/user_api_util';
 import {fetchRecipeFromMongoDB, addRecipe} from './util/recipe_util';
 
@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // debugger
     const preloadedState = { session: { isAuthenticated: true, currentUser:{id: decodedUser.id}} };
     store = configureStore(preloadedState);
-    store.dispatch(fetchUserRefresh(preloadedState.session.currentUser.id));
+    // debugger
+    store.dispatch(fetchUser(preloadedState.session.currentUser.id));
     // debugger
 
     const currentTime = Date.now() / 1000;
