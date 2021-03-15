@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { fetchUser, updateUser } from '../../actions/user_actions';
+import { updateUser } from '../../actions/user_actions';
 import ExclusionSearch from './exclusion_search';
 
-const mapStateToProps = ({users, session}) => ({
+const mapStateToProps = ({entities, session}) => ({
     currentUser: session.currentUser,
-    exclusions: users.exclusions || []
+    exclusions: entities.exclusions || []
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -19,9 +19,8 @@ class Search extends React.Component {
   addToPantry(ingredient) {
     return () => { 
       fetchIngredient(ingredient).then(res => {
-        if (!this.props.ingredients.some(el => el.name === res.data.name)) {
-          this.props.ingredients.push(res.data)
-          this.props.updateUser({ id: this.props.currentUser.id, ingredients: this.props.ingredients }) // this updates MongoDB
+        if (!this.props.ingredients.some(el => el.name === res.data.name)) {         
+          this.props.updateUser({ id: this.props.currentUser.id, ingredients: this.props.ingredients.concat([res.data]) }) // this updates MongoDB
         }
       })
     }

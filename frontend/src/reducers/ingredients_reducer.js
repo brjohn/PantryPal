@@ -2,7 +2,7 @@ const { RECEIVE_INGREDIENTS } = require("../actions/user_actions");
 
 
 
-const ingredientsReducer = (oldState={}, action) => {
+const ingredientsReducer = (oldState=[], action) => {
   Object.freeze(oldState);
 
   switch (action.type) {

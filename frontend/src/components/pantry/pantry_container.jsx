@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import { updateUser } from '../../actions/user_actions';
 import Pantry from './pantry';
 
-const mapStateToProps = state => ({
-  currentUser: state.session.currentUser,
-  ingredients: state.users.ingredients || []
+const mapStateToProps = ({session, entities}) => ({
+  currentUser: session.currentUser,
+  ingredients: entities.ingredients || []
 })
 
 const mapDispatchToProps = dispatch => {
