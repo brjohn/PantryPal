@@ -64,9 +64,13 @@ export const fetchUserRefresh = (userId) => (dispatch) => (
 )
 
 export const updateUser = data => dispatch => {
-  // console.log(data.saved_recipes)
-  UserApiUtil.updateUser(data).then(newUser => dispatch(receiveUser(newUser)))
-  // UserApiUtil.updateUser(data)
+  if (data.preferences) dispatch(receivePreferences(data.preferences))
+  if (data.exclusions) dispatch(receiveExclusions(data.exclusions))
+  if (data.ingredients) dispatch(receiveIngredients(data.ingredients))
+  if (data.recipes) dispatch(receiveRecipes(data.recipes))
+  if (data.saved_recipes) dispatch(receiveSavedRecipes(data.saved_recipes))
+
+  UserApiUtil.updateUser(data)
 }
   // debugger
 // )
