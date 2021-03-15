@@ -3,19 +3,13 @@ import { receiveCurrentUser } from './session_actions';
 
 
 
-export const RECEIVE_USER = "RECEIVE_USER";
+
 export const RECEIVE_PREFERENCES = "RECEIVE_PREFERENCES";
 export const RECEIVE_EXCLUSIONS = "RECEIVE_EXCLUSIONS";
 export const RECEIVE_INGREDIENTS = "RECEIVE_INGREDIENTS";
 export const RECEIVE_RECIPES = "RECEIVE_RECIPES";
 export const RECEIVE_SAVED_RECIPES = "RECEIVE_SAVED_RECIPES";
 
-
-// this needs to go away since we're getting rid of users
-const receiveUser = user => ({
-  type: RECEIVE_USER,
-  user
-});
 
 const receivePreferences = preferences => ({
   type: RECEIVE_PREFERENCES,
@@ -41,10 +35,6 @@ const receiveSavedRecipes = saved_recipes => ({
   type: RECEIVE_SAVED_RECIPES,
   saved_recipes
 })
-
-
-
-
 
 
 
