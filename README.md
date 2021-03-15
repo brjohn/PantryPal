@@ -18,12 +18,14 @@ Pantry Pal is an application that allows users to create their own virtual pantr
 * [Cole Wendling](https://github.com/colewendling)
 * [Tului Gantulga](https://github.com/Tului2020)
 
+### Features:
+#### `Pantry`
+/ / screenshot here / /
+#### `Recipes`
+/ / screenshot here / /
+
 ### Technologies:
-PantryPal was built using Javascript and the MERN stack consisting of:
-* MongoDB
-* Express
-* React
-* Node
+PantryPal was built using the MERN stack (MongoDB, Express, React, Node) in combination with Javascript, Redux, HTML, and CSS.
 ___
 
 ### PantryPal Wiki:
