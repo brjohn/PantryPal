@@ -101,12 +101,12 @@ class DevPage extends React.Component {
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/" target="_blank">
+                    <a href="https://www.linkedin.com/in/brynn-j-6906051ba/" target="_blank">
                       <i className="fa fa-linkedin-square fa-icon"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://angellist.com/" target="_blank">
+                    <a href="https://angel.co/u/brynn-johnson-2" target="_blank">
                       <i className="fa fa-angellist fa-icon"></i>
                     </a>
                   </li>

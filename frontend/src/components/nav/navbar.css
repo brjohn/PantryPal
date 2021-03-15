@@ -70,6 +70,7 @@ button:active {
   cursor: pointer;
 }
 
+
 .animation {
   position: relative;
   bottom:  220px;
@@ -199,6 +200,11 @@ button:active {
    -webkit-box-shadow: 0 16px 6px -6px rgba(119, 119, 119, 0.28);
   -moz-box-shadow: 0 16px 6px -6px rgba(119, 119, 119, 0.28);
   box-shadow: 0 16px 6px -6px rgba(119, 119, 119, 0.28);
+}
+.pink-button:hover,
+.grey-button:hover,
+.blue-button:hover {
+  box-shadow: 0 6px 6px 3px rgba(119, 119, 119, 0.28);
 }
 
 
