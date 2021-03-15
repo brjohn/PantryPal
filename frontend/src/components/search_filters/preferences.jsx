@@ -57,7 +57,7 @@ class Preferences extends React.Component {
             })}
           </div>
         </form>
-        <button className='p-sub' type="submit" value="Update Pref">Add Filters</button>
+        {/* <button className='p-sub' type="submit" value="Update Pref">Add Filters</button> */}
       </div>
     );
   }
