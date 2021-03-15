@@ -155,17 +155,33 @@
   padding-left: 20px;
   padding-right: 20px;
   min-height:78%;
-  overflow: scroll;
+  overflow: auto;
 }
-ul.user-ingredients::-webkit-scrollbar {
-    color: #d19da5;
+
+.user-ingredients-tiles{
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+  -webkit-rows: 3;
+  -moz-rows: 3;
+  overflow: auto;
 }
-.user-ingredients::-webkit-scrollbar-track-piece {
-  color: none;
+/* Make scrollbar visible for recipe list and tiles view:  */
+ul.user-ingredients::-webkit-scrollbar{
+  width: 15px;
+  height: 15px;
 }
-.user-ingredients::-webkit-scrollbar-corner {
-  color: #d19da5;
+
+ul.user-ingredients::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px 10px rgba(78, 140, 202, 0.19);
+  border: solid 3px transparent;  
 }
+ 
+ul.user-ingredients::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
 
 .recipe-result-modal {
   cursor: pointer;
@@ -194,6 +210,12 @@ ul.user-ingredients::-webkit-scrollbar {
   padding-right: 8px;
 }
 
+.recipe-results-tiles{
+  display: inline-table;
+  width: 100%;
+  height: 32%;
+}
+
 .recipe-results:hover {
   filter: brightness(95%);
   transform: scale(0.98);
@@ -210,6 +232,16 @@ ul.user-ingredients::-webkit-scrollbar {
   width: 35px;
   margin-right: 8px;
   height: 32px;
+}
+.recipe-result-modal-tiles{
+  font-size: 18px;
+}
+.recipe-result-modal-tiles img {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  width: 140px;
+  margin-right: 8px;
+  height: 128px; 
 }
 
 .recipe-result-modal text {

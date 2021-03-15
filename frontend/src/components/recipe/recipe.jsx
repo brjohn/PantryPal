@@ -153,11 +153,40 @@ class Recipe extends React.Component {
 
   tilesView(recipesArray) {
     return (
+      <div className="recipe">
+        <h1 className="r-title">Recipes</h1>
+        {this.switchButton()}
 
-    <div>
-      <h1 className="r-title">RECIPE.JSX</h1>
-      {this.switchButton()}
-    </div>)
+        <ul className="user-ingredients user-ingredients-tiles">
+          {this.filterRecipes(recipesArray).map((recipe, idx) => {
+            return (
+              <li key={idx} className="recipe-results recipe-results-tiles">
+
+                <div className="recipe-result-modal recipe-result-modal-tiles" onClick={() => this.props.openModal(recipe)}>
+                  <div>
+                    <img src={recipe.image} height="25" width="25" />
+                  </div>
+                  <div>
+                    {recipe.title}
+                  </div>
+                </div>
+
+                <div className="recipe-main-add" onClick={this.addRecipeToFavorite(recipe)}>
+                  Save
+                </div>
+
+              </li>
+            );
+          })}
+
+
+        </ul>
+        <button onClick={this.updateRecipes()}>
+          Update Recipes
+        </button>
+
+      </div>
+    );
   }
 
 
