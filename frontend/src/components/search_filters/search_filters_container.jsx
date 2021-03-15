@@ -4,8 +4,8 @@ import SearchFilters from './search_filters';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
-  preferences: state.users.preferences || [],
-  exclusions: state.users.exclusions || []
+  preferences: state.entities.preferences || [],
+  exclusions: state.entities.exclusions || []
 })
 
 const mapDispatchToProps = dispatch => ({

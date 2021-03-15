@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import { updateUser } from '../../actions/user_actions';
 import Preferences from './preferences';
 
-const mapStateToProps = ({users, session}) => ({
+const mapStateToProps = ({entities, session}) => ({
     currentUser: session.currentUser,
-    preferences: users.preferences || [],
-    recipes: users.recipes || []
+    preferences: entities.preferences || [],
+    recipes: entities.recipes || []
 
 });
 

@@ -4,9 +4,10 @@ import RecipeBook from './recipe_book';
 import { openModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state) => {
+  // debugger
   return {
     currentUser: state.session.currentUser,
-    saved_recipes: state.users.saved_recipes || []
+    saved_recipes: state.entities.saved_recipes || []
   }
 };
 
