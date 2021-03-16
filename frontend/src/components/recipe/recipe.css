@@ -1,29 +1,19 @@
 #recipe-home {
   display: flex;
   flex-direction: row;
-  width: 98vw;
   height: 88vh;
   flex-direction: row;
-  padding: 8px;
-  padding-top: 0px;
+  padding: 0px;
+  padding-left: 4px;
 }
 
 #recipe-sidebar {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 8px;
+  padding: 0px;
   padding-top: 0px;
 }
-
-#saved-recipes {
-  overflow: hidden;
-  /* border: 1px solid red; */
-  height: 450px;
-  margin-bottom: 21px;
-
-}
-
 
 .recipe {
   display: flex;
@@ -42,10 +32,9 @@
   display: flex;
   flex-direction: column;
   flex: 2;
-  padding: 8px;
-  padding-top: 0px;
- 
-
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 12px;
 }
 
 .recipe-main {
@@ -66,7 +55,7 @@
   display: flex;
   flex-direction: column;
   height: 50%;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   background: rgb(64,61,124);
   background: linear-gradient(90deg, 
   rgba(63, 60, 129, 0.425) 0%, 
@@ -190,10 +179,10 @@ ul.user-ingredients::-webkit-scrollbar-thumb {
   /* border: 1px solid blue; */
 }
 
-.recipe-result-modal > div > img{
-  /* border: 1px solid blue; */
-  /* height: 30px; */
-}
+/* .recipe-result-modal > div > img{
+  border: 1px solid blue;
+  height: 30px;
+} */
 
 
 
@@ -277,6 +266,26 @@ ul.user-ingredients::-webkit-scrollbar-thumb {
   border-top-right-radius: 0px;
   border-bottom-left-radius: 36px;
   border-bottom-right-radius: 36px;
-  
 }
 
+.loader {
+  background-color: inherit;
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

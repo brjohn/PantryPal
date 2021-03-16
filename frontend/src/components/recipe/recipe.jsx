@@ -8,9 +8,11 @@ import { listIcon, tilesIcon } from "./recipe_icons";
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { view: 'list' }
+    this.state = { view: 'list', updatingRecipes: false };
     this.updateRecipes = this.updateRecipes.bind(this);
     this.filterRecipes = this.filterRecipes.bind(this);
+    this.setState = this.setState.bind(this);
+    this.toggleUpdateSpinner =this.toggleUpdateSpinner.bind(this);
   }
 
 
@@ -22,7 +24,6 @@ class Recipe extends React.Component {
         combinedArr.push(Object.assign({}, recipeInfoArr[i], recipesArr[i]))
       }
     } else {
-      console.log(false)
       for (let i = 0; i < recipeInfoArr.length; i++) {
         for (let j = 0; j < recipeInfoArr.length; j++) {
           if (recipeInfoArr[i].id === recipesArr[j].id) {
@@ -36,18 +37,24 @@ class Recipe extends React.Component {
   }
 
 
+
+
   updateRecipes() {
-    return () => {
-      let ingredientsString = (this.props.ingredients.map(el => el.name)).join(',');
-      getRecipeByIngredients(ingredientsString, (returnedRecipes) => {
-        let bulkRequestString = returnedRecipes.map(recipe => recipe.id.toString()).join()
-        getRecipeInformationBulk(bulkRequestString, (returnedRecipeInformation) => {
-          let filteredRecipesArr = this.combine(returnedRecipeInformation, returnedRecipes)
-          this.props.updateUser({ id: this.props.currentUser.id, recipes: filteredRecipesArr, preferences: [] })
-          this.setState({ recipes: filteredRecipesArr })
-        })
+    this.toggleUpdateSpinner()
+    let ingredientsString = (this.props.ingredients.map(el => el.name)).join(',');
+    getRecipeByIngredients(ingredientsString, (returnedRecipes) => {
+      let bulkRequestString = returnedRecipes.map(recipe => recipe.id.toString()).join()
+      getRecipeInformationBulk(bulkRequestString, (returnedRecipeInformation) => {
+        let filteredRecipesArr = this.combine(returnedRecipeInformation, returnedRecipes).map(({ title, image, instructions, extendedIngredients, diets }) => {
+          return { title, image, instructions, extendedIngredients, diets }
+          })
+        // debugger
+        // // { title, image, instructions, extendedIngredients, diets }
+
+        this.props.updateUser({ id: this.props.currentUser.id, recipes: filteredRecipesArr, preferences: [] })
+        this.toggleUpdateSpinner()
       })
-    }
+    })
   }
 
 
@@ -65,6 +72,20 @@ class Recipe extends React.Component {
     )
   }
 
+  toggleUpdateSpinner() {
+    let updateButton = document.getElementById('loader')
+    if (updateButton.innerHTML === 'Update Recipes') {
+      updateButton.innerHTML = "";
+      let spinner = document.createElement('div');
+      spinner.classList.add('loader');
+      updateButton.appendChild(spinner)
+    } else {
+      document.getElementsByClassName('loader')[0].remove();
+      updateButton.innerHTML = "Update Recipes";
+    }
+  }
+
+
 
   clickSwitchButton(chosenView) {
     return (() => {
@@ -75,8 +96,6 @@ class Recipe extends React.Component {
 
   addRecipeToFavorite(recipeToBeSaved) {
     return () => {
-
-    
       if (!this.props.saved_recipes.some(recipe => recipe.title === recipeToBeSaved.title)) {
         this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes.concat([recipeToBeSaved])})
       }
@@ -137,10 +156,9 @@ class Recipe extends React.Component {
 
 
         </ul>
-        <button onClick={this.updateRecipes()}>
+        <button onClick={this.updateRecipes} id="loader">
           Update Recipes
         </button>
-
       </div>
     );
   }
@@ -176,7 +194,7 @@ class Recipe extends React.Component {
 
 
         </ul>
-        <button onClick={this.updateRecipes()}>
+        <button onClick={this.updateRecipes} id="loader">
           Update Recipes
         </button>
 

@@ -47,6 +47,9 @@
 
 .flex-container {
   display: flex;
+  height: 88vh;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .search {

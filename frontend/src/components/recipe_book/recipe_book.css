@@ -2,10 +2,16 @@
 #saved-recipes {
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow: hidden;
+  overflow-y: scroll;
+  /* border: 1px solid red; */
+  height: 450px;
+  margin-bottom: 21px;
 }
+
 #saved-recipes::-webkit-scrollbar {
     color: #d19da5;
+    width: 0;
 }
 #saved-recipes::-webkit-scrollbar-track-piece {
   color: none;
