@@ -317,3 +317,23 @@ button {
   justify-content: center;
   align-items: center;
 }
+
+.recipe-result-modal.recipe-result-modal-tiles {
+  justify-content: center;
+  flex-direction: column;
+  font-size: 14px;
+  justify-content: space-between;
+}
+
+.recipe-result-modal.recipe-result-modal-tiles text{
+  margin-top: 14px;
+}
+
+.recipe-result-modal.recipe-result-modal-tiles img{
+    border-top-right-radius: 36px;
+    border-bottom-right-radius: 36px;
+}
+/* 
+.recipe-main-add {
+  margin-top: 25px;
+} */
