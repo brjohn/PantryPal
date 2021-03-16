@@ -24,7 +24,6 @@ class Recipe extends React.Component {
         combinedArr.push(Object.assign({}, recipeInfoArr[i], recipesArr[i]))
       }
     } else {
-      console.log(false)
       for (let i = 0; i < recipeInfoArr.length; i++) {
         for (let j = 0; j < recipeInfoArr.length; j++) {
           if (recipeInfoArr[i].id === recipesArr[j].id) {
@@ -46,7 +45,12 @@ class Recipe extends React.Component {
     getRecipeByIngredients(ingredientsString, (returnedRecipes) => {
       let bulkRequestString = returnedRecipes.map(recipe => recipe.id.toString()).join()
       getRecipeInformationBulk(bulkRequestString, (returnedRecipeInformation) => {
-        let filteredRecipesArr = this.combine(returnedRecipeInformation, returnedRecipes)
+        let filteredRecipesArr = this.combine(returnedRecipeInformation, returnedRecipes).map(({ title, image, instructions, extendedIngredients, diets }) => {
+          return { title, image, instructions, extendedIngredients, diets }
+          })
+        // debugger
+        // // { title, image, instructions, extendedIngredients, diets }
+
         this.props.updateUser({ id: this.props.currentUser.id, recipes: filteredRecipesArr, preferences: [] })
         this.toggleUpdateSpinner()
       })
