@@ -28,7 +28,8 @@ Pantry Pal is an application that allows users to create their own virtual pantr
 The defining feature of PantryPal is it's easy-to-use pantry: simply search for an ingredient in the search box, add it to your pantry, and remove on click. These pantry items are saved and used to generate a list of recipes specific to the available ingredients. 
 
 #### `Recipes`
-/ / screenshot here / /
+
+![Recipe Gif](https://github.com/brjohn/PantryPal/blob/master/frontend/public/images/Screen%20Recording%202021-03-16%20at%2010.42.00%20AM.gif)
 
 Once users have added ingredients to their pantry, they may navigate to the recipes section to view a list of recipes matching their available ingredients, sorted by the best match (fewest missing ingredients). Users may update their list as they add and remove pantry items, select dietary choices by which to filter their generated recipe list in the Filters box, view these recipes on click, and save or remove a recipe from their Recipe Book.   
 ##
