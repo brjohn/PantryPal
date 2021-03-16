@@ -15,19 +15,20 @@ class Search extends React.Component {
     this.updateSearch = this.updateSearch.bind(this);
     this.addToPantry = this.addToPantry.bind(this);
     this.pressEnter = this.pressEnter.bind(this);
+    this.searchAndUpdateDB = this.searchAndUpdateDB.bind(this);
   }
 
 
-  searchAndUpdateDB(ingredientName) {
-    getIngredient(ingredientName, (result) => {
-      debugger
-    })
-  }
+  // searchAndUpdateDB(ingredientName) {
+  //   getIngredient(ingredientName, (result) => {
+  //     debugger
+  //   })
+  // }
 
 
   pressEnter(e) {
     if (e.key === 'Enter') {
-      this.searchAndUpdateDB(this.state.searching)
+      // this.searchAndUpdateDB(this.state.searching)
     }
   }
 

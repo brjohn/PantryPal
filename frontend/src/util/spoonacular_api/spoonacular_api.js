@@ -3,7 +3,7 @@ const spoonacular = require('./keys');
 // const apiKeyToUse = spoonacular["apiKey" + Math.floor((Math.random() * 4) + 1)] //uses random apiKey between 1 and 4
 
 const apiKeys = [spoonacular.apiKey1, spoonacular.apiKey2, spoonacular.apiKey3, spoonacular.apiKey4, spoonacular.apiKey5, spoonacular.apiKey6, spoonacular.apiKey7, spoonacular.apiKey8, spoonacular.apiKey9, spoonacular.apiKey10]
-let apiKeyToUse = apiKeys[0]
+let numKeys = apiKeys.length
 
 
 
@@ -22,7 +22,7 @@ const getIngredient = (query, printToFileFunction, key=0) => axios.get(
   .catch(err => {
     console.log(key)
     console.log('402 err')
-    getIngredient(query, printToFileFunction, (key+1)%10)
+    getIngredient(query, printToFileFunction, (key+1)%numKeys)
   }) 
 
   
@@ -43,7 +43,7 @@ const getRecipeByIngredients = (ingredients, cbFunction, recipeCount = 100, key=
   .catch(err => {
     console.log(key)
     console.log('402 err')
-    getRecipeByIngredients(ingredients, cbFunction, recipeCount = 100, (key+1)%10)
+    getRecipeByIngredients(ingredients, cbFunction, recipeCount = 100, (key+1)%numKeys)
   }) 
 
 
@@ -59,8 +59,8 @@ const getRecipeInformation = (id, cbFunction, key=0) => axios.get(
   .then(payload => cbFunction(payload.data)) // we're gonna need to dispatch this through our reducers and middleware)
   .catch(err => {
     console.log(key)
-    console.log('402 err')
-    getRecipeInformation(id, cbFunction, (key+1)%10)
+    console.log(err)
+    getRecipeInformation(id, cbFunction, (key+1)%numKeys)
   }) 
 
 
@@ -77,7 +77,7 @@ const getRecipeInformationBulk = (ids, cbFunction, key=0) => axios.get(
   .catch(err => {
     console.log(key)
     console.log('402 err')
-    getRecipeInformationBulk(ids, cbFunction, (key+1)%10)
+    getRecipeInformationBulk(ids, cbFunction, (key+1)%numKeys)
   }) 
 
 
