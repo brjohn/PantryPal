@@ -1,7 +1,7 @@
 const axios = require('axios');
 const spoonacular = require('./keys');
 // const apiKeyToUse = spoonacular["apiKey" + Math.floor((Math.random() * 4) + 1)] //uses random apiKey between 1 and 4
-const apiKeyToUse = spoonacular.apiKey2
+const apiKeyToUse = spoonacular.apiKey4
 
 
 // 01. A function that gets ingredients
