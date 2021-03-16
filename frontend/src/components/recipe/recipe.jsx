@@ -125,7 +125,7 @@ class Recipe extends React.Component {
 
                 <div className="recipe-result-modal" onClick={() => this.props.openModal(recipe)}>
                   <div>
-                    <img src={recipe.image} height="25" width="25"  />
+                    <img src={recipe.image} height="25" width="25" alt="RecipeImage"  />
                   </div>
                   <div>
                     {recipe.title}
@@ -164,7 +164,7 @@ class Recipe extends React.Component {
 
                 <div className="recipe-result-modal recipe-result-modal-tiles" onClick={() => this.props.openModal(recipe)}>
                   <div>
-                    <img src={recipe.image} height="25" width="25" />
+                    <img src={recipe.image} height="25" width="25" alt="RecipeImage" />
                   </div>
                   <div>
                     {recipe.title}

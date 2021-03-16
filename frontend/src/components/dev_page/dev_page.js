@@ -40,22 +40,22 @@ class DevPage extends React.Component {
                 <p className="developer-name">Cole Wendling</p>
                 <ul className="about-us-links">
                   <li>
-                    <a href="https://github.com/colewendling" target="_blank">
+                    <a href="https://github.com/colewendling" target="_blank" rel="noreferrer">
                       <i className="fa fa-github fa-icon"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/in/colewendling/" target="_blank">
+                    <a href="https://www.linkedin.com/in/colewendling/" target="_blank" rel="noreferrer">
                       <i className="fa fa-linkedin-square fa-icon"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://angellist.com/" target="_blank">
+                    <a href="https://angellist.com/" target="_blank" rel="noreferrer">
                       <i className="fa fa-angellist fa-icon"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://progress.appacademy.io/me/students" target="_blank">
+                    <a href="https://progress.appacademy.io/me/students" target="_blank" rel="noreferrer">
                       <i className="fa fa-user-circle fa-icon"></i>
                     </a>
                   </li>
@@ -68,22 +68,22 @@ class DevPage extends React.Component {
                 <p className="developer-name">Tului Gantulga</p>
                 <ul className="about-us-links">
                   <li>
-                    <a href="https://github.com/Tului2020" target="_blank">
+                    <a href="https://github.com/Tului2020" target="_blank" rel="noreferrer">
                       <i className="fa fa-github fa-icon"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/in/tului/" target="_blank">
+                    <a href="https://www.linkedin.com/in/tului/" target="_blank" rel="noreferrer">
                       <i className="fa fa-linkedin-square fa-icon"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://angellist.com/" target="_blank">
+                    <a href="https://angellist.com/" target="_blank" rel="noreferrer">
                       <i className="fa fa-angellist fa-icon"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://progress.appacademy.io/me/students" target="_blank">
+                    <a href="https://progress.appacademy.io/me/students" target="_blank" rel="noreferrer">
                       <i className="fa fa-user-circle fa-icon"></i>
                     </a>
                   </li>
@@ -96,22 +96,22 @@ class DevPage extends React.Component {
                 <p className="developer-name">Brynn Johnson</p>
                 <ul className="about-us-links">
                   <li>
-                    <a href="https://github.com/brjohn" target="_blank">
+                    <a href="https://github.com/brjohn" target="_blank" rel="noreferrer">
                       <i className="fa fa-github fa-icon"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/in/brynn-j-6906051ba/" target="_blank">
+                    <a href="https://www.linkedin.com/in/brynn-j-6906051ba/" target="_blank" rel="noreferrer">
                       <i className="fa fa-linkedin-square fa-icon"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://angel.co/u/brynn-johnson-2" target="_blank">
+                    <a href="https://angel.co/u/brynn-johnson-2" target="_blank" rel="noreferrer">
                       <i className="fa fa-angellist fa-icon"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://progress.appacademy.io/me/students" target="_blank">
+                    <a href="https://progress.appacademy.io/me/students" target="_blank" rel="noreferrer">
                       <i className="fa fa-user-circle fa-icon"></i>
                     </a>
                   </li>
@@ -124,22 +124,22 @@ class DevPage extends React.Component {
                 <p className="developer-name">Alex Lang</p>
                 <ul className="about-us-links">
                   <li>
-                    <a href="https://github.com/droid4alex" target="_blank">
+                    <a href="https://github.com/droid4alex" target="_blank" rel="noreferrer">
                       <i className="fa fa-github fa-icon"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/in/alexander-lang-28847749/" target="_blank">
+                    <a href="https://www.linkedin.com/in/alexander-lang-28847749/" target="_blank" rel="noreferrer">
                       <i className="fa fa-linkedin-square fa-icon"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://angel.co/u/alex-lang-7" target="_blank">
+                    <a href="https://angel.co/u/alex-lang-7" target="_blank" rel="noreferrer">
                       <i className="fa fa-angellist fa-icon"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://my.indeed.com/p/alexl-l2zu58g" target="_blank">
+                    <a href="https://my.indeed.com/p/alexl-l2zu58g" target="_blank" rel="noreferrer">
                       <i className="fa fa-user-circle fa-icon"></i>
                     </a>
                   </li>
