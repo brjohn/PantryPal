@@ -5,10 +5,7 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
-import { fetchUser, updateUser } from './actions/user_actions';
-import { fetchIngredient } from './util/user_api_util';
-import {fetchRecipeFromMongoDB, addRecipe} from './util/recipe_util';
-
+import { fetchUser } from './actions/user_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,12 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);
     const decodedUser = jwt_decode(localStorage.jwtToken);
-    // debugger
     const preloadedState = { session: { isAuthenticated: true, currentUser:{id: decodedUser.id}} };
     store = configureStore(preloadedState);
-    // debugger
     store.dispatch(fetchUser(preloadedState.session.currentUser.id));
-    // debugger
 
     const currentTime = Date.now() / 1000;
     if (decodedUser.exp < currentTime) {
@@ -34,18 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.getState = store.getState;
-  // window.dispatch = store.dispatch;
-  // window.updateUser = updateUser;
-  // window.fetchIngredient = fetchIngredient;
-  // window.newUser = () => ({id: window.getState().users.id})
-  // window.fetchRecipeFromMongoDB = fetchRecipeFromMongoDB;
-  // window.addRecipe = addRecipe;
-  // window.user = () => window.getState().users
-
-
-
-  // window.fetchUser = fetchUser
-  // window.fetchUser = fetchUser;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

@@ -48,9 +48,6 @@ class Recipe extends React.Component {
         let filteredRecipesArr = this.combine(returnedRecipeInformation, returnedRecipes).map(({ title, image, instructions, extendedIngredients, diets }) => {
           return { title, image, instructions, extendedIngredients, diets }
           })
-        // debugger
-        // // { title, image, instructions, extendedIngredients, diets }
-
         this.props.updateUser({ id: this.props.currentUser.id, recipes: filteredRecipesArr, preferences: [] })
         this.toggleUpdateSpinner()
       })
