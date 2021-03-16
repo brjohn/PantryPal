@@ -10,9 +10,8 @@
 }
 
 .p-col-container {
-  display: flex;
   flex-direction: row;
-  min-height: 72%;
+  min-height: 80%;
   flex-flow: wrap;
   overflow: scroll;
 }
@@ -27,16 +26,15 @@
 }
 
 .p-col {
-  display: flex;
   flex-direction: column;
   margin-left: 16px;
 }
 
 .p-text {
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
-  padding-bottom: 40px;
+  padding-bottom: 4px;
 }
 
 .p-text input {

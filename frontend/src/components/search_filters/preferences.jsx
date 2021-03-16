@@ -36,6 +36,7 @@ class Preferences extends React.Component {
           onChange={this.handleChange(fieldName)}
         />
         {fieldName}
+      <br></br>
       </label>
     );
   }

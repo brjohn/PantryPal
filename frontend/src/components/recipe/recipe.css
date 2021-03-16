@@ -1,29 +1,19 @@
 #recipe-home {
   display: flex;
   flex-direction: row;
-  width: 98vw;
   height: 88vh;
   flex-direction: row;
-  padding: 8px;
-  padding-top: 0px;
+  padding: 0px;
+  padding-left: 4px;
 }
 
 #recipe-sidebar {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 8px;
+  padding: 0px;
   padding-top: 0px;
 }
-
-#saved-recipes {
-  overflow: hidden;
-  /* border: 1px solid red; */
-  height: 450px;
-  margin-bottom: 21px;
-
-}
-
 
 .recipe {
   display: flex;
@@ -42,10 +32,9 @@
   display: flex;
   flex-direction: column;
   flex: 2;
-  padding: 8px;
-  padding-top: 0px;
- 
-
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 12px;
 }
 
 .recipe-main {
@@ -66,7 +55,7 @@
   display: flex;
   flex-direction: column;
   height: 50%;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   background: rgb(64,61,124);
   background: linear-gradient(90deg, 
   rgba(63, 60, 129, 0.425) 0%, 
