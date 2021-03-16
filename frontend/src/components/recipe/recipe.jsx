@@ -91,12 +91,6 @@ class Recipe extends React.Component {
 
 
   addRecipeToFavorite(recipeToBeSaved) {
-    // return () => {
-    //   if (!this.props.saved_recipes.some(recipe => recipe.title === recipeToBeSaved.title)) {
-    //     this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes.concat([recipeToBeSaved])})
-    //   }
-    // }
-
     let { saved_recipes, updateUser, currentUser } = this.props;
     if (saved_recipes.map(recipe => recipe.title).includes(recipeToBeSaved.title)) {
       let newSavedRecipes = [];

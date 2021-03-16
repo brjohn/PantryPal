@@ -18,9 +18,7 @@ class Pantry extends React.Component {
 
   render() {
     const {ingredients} = this.props;
-
     return (
-
       <div className="flex-container">
 
         <div className="search">
