@@ -121,7 +121,10 @@ class Recipe extends React.Component {
 
 
   listview() {
-    const { recipes } = this.props
+    const { recipes, saved_recipes } = this.props
+    const recipeTitle = saved_recipes.map(recipe => recipe.title)
+
+    // debugger
     return (
       <div className="recipe">
         <h1 className="r-title">Recipes</h1>
@@ -144,7 +147,7 @@ class Recipe extends React.Component {
                 </div>
 
                 <div className="recipe-main-add" onClick={this.addRecipeToFavorite(recipe)}> 
-                  Save
+                  {(recipeTitle.includes(recipe.title))? (<div className="green">Saved</div>) : (`Save`)}
                 </div>
 
               </li>
