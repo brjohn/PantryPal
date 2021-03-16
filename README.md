@@ -10,13 +10,16 @@ Pantry Pal is an application that allows users to create their own virtual pantr
 
 
 ### Live Site:
-* [Live Site](https://pantrypal-mern.herokuapp.com/#/)
+[Live Site](https://pantrypal-mern.herokuapp.com/#/)
+
+##
 
 ### Developers:
 * [Alex Lang](https://github.com/droid4alex)  
 * [Brynn Johnson](https://github.com/brjohn)
 * [Cole Wendling](https://github.com/colewendling)
 * [Tului Gantulga](https://github.com/Tului2020)
+##
 
 ### Features:
 #### `Pantry`
@@ -25,9 +28,11 @@ The defining feature of PantryPal is it's easy-to-use pantry feature: simply sea
 
 #### `Recipes`
 / / screenshot here / /
+##
 
 ### Technologies:
 PantryPal was built using the MERN stack (MongoDB, Express, React, Node) in combination with Javascript, Redux, HTML, and CSS. The frontend and backend are nimbly constructed to store data in MongoDB while minimizing axios calls to our extensive recipe and ingredient API (spoonacularAPI) and our database, maximizing time efficiency and user experience. 
+
 The conditions of this project provided opportunities to master new technologies and problem solve for optimal user interface. Our primary concerns were (1) providing a useful service, (2) delivering it speedily with intuitive UI, and (3) presenting it in a sleek, eye-catching style. We accomplished these goals by implementing the following technical strategies:
 1. -
 2. -
