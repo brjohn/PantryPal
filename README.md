@@ -9,7 +9,7 @@ PantryPal is a single-page web and mobile application that offers users one plac
 Pantry Pal is an application that allows users to create their own virtual pantry containing the food items they have on hand at the time. Pantry Pal offers the functionality to cleverly recommend a curated list of recipes based on available inventory, dietary preferences, and more. Recipes may be saved in a user recipe book and ranked alongside a community of other users.
 
 
-### Live Site:
+### Visit the Live Site:
 [Live Site](https://pantrypal-mern.herokuapp.com/#/)
 
 ##
@@ -23,16 +23,19 @@ Pantry Pal is an application that allows users to create their own virtual pantr
 
 ### Features:
 #### `Pantry`
+
 ![Pantry Gif](https://github.com/brjohn/PantryPal/blob/master/frontend/public/images/Screen%20Recording%202021-03-16%20at%209.11.58%20AM.gif)
+
 The defining feature of PantryPal is it's easy-to-use pantry: simply search for an ingredient in the search box, add it to your pantry, and remove on click. These pantry items are saved and used to generate a list of recipes specific to the available ingredients. 
 
 #### `Recipes`
 / / screenshot here / /
+
 Once users have added ingredients to their pantry, they may navigate to the recipes section to view a list of recipes matching their available ingredients, sorted by the best match (fewest missing ingredients). Users may update their list as they add and remove pantry items, select dietary choices by which to filter their generated recipe list in the Filters box, view these recipes on click, and save or remove a recipe from their Recipe Book.   
 ##
 
 ### Technologies:
-PantryPal was built using the MERN stack (`MongoDB`, `Express`, `React`, `Node`) in combination with `Javascript`, `Redux`, `HTM`L, and `CSS`. The frontend and backend are nimbly constructed to store data in MongoDB while minimizing axios calls to our extensive ![recipe and ingredient API](https://spoonacular.com/food-api) and our database, maximizing time efficiency and user experience. 
+PantryPal was built using the MERN stack (`MongoDB`, `Express`, `React`, `Node`) in combination with `Javascript`, `Redux`, `HTML`, and `CSS`. The frontend and backend are nimbly constructed to store data in MongoDB while minimizing axios calls to our extensive [recipe and ingredient API](https://spoonacular.com/food-api) and our database, maximizing time efficiency and user experience. 
 
 The conditions of this project provided opportunities to master new technologies and problem solve for optimal user interface. Our primary concerns were (1) providing a useful service, (2) delivering it speedily with intuitive UI, and (3) presenting it with a sleek, eye-catching style. We accomplished these goals by implementing the following technical strategies:
 1. (ex: integrating spoonacular)
