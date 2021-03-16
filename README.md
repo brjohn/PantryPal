@@ -20,7 +20,7 @@ Pantry Pal is an application that allows users to create their own virtual pantr
 
 ### Features:
 #### `Pantry`
-/ / screenshot here / /
+![Pantry Gif](https://github.com/brjohn/PantryPal/blob/master/frontend/public/images/Screen%20Recording%202021-03-16%20at%209.11.58%20AM.gif)
 #### `Recipes`
 / / screenshot here / /
 
