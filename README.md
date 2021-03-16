@@ -9,8 +9,7 @@ PantryPal is a single-page web and mobile application that offers users one plac
 Pantry Pal is an application that allows users to create their own virtual pantry containing the food items they have on hand at the time. Pantry Pal offers the functionality to cleverly recommend a curated list of recipes based on available inventory, dietary preferences, and more. Recipes may be saved in a user recipe book and ranked alongside a community of other users.
 
 
-### Visit the Live Site:
-[Live Site](https://pantrypal-mern.herokuapp.com/#/)
+### [Visit the Live Site](https://pantrypal-mern.herokuapp.com/#/)
 
 ##
 
