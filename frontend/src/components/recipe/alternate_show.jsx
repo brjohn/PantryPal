@@ -59,7 +59,9 @@ class AlternateShow extends React.Component {
                 <div className='r-img-container'>
                 <img src={this.props.recipeObject.image} height="100" width="100" alt=""></img>
                 </div>
+                <h1 id='i-title-list'>Ingredients</h1>
                 <div className="recipe-ingredients">{this.listIngredients()}</div>
+                <h1 id='i-title-list'>Instructions</h1>
                 <p className="recipe-instructions">{this.listInstructions()}</p>
                 {/* </div> */}
                 <button className="save-recipe-div" onClick={this.saveRecipe}>Save</button>

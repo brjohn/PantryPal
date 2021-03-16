@@ -33,6 +33,7 @@
 
 .ingredients-ul {
   list-style-type: none;
+  align-self: left;
 }
 
 .ingredient-item {
@@ -87,4 +88,14 @@
 
   text-align: center;
   padding: 6px;
+
 }
+
+#i-title-list {
+  color: white;
+  text-decoration: underline;
+  margin-bottom: 0px;
+  font-size: 32px;
+  font-weight: 400px;
+}
+
