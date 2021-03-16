@@ -1,10 +1,11 @@
 import * as APIUtil from '../util/session_api_util';
 import jwt_decode from 'jwt-decode';
+import { updateUser } from './user_actions';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
-// export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+
 
 export const RECEIVE_USER_INFO = "RECEIVE_USER_INFO";
 
@@ -13,9 +14,6 @@ export const receiveCurrentUser = currentUser => ({
   currentUser
 });
 
-// export const receiveUserSignIn = () => ({
-//   type: RECEIVE_USER_SIGN_IN
-// });
 
 export const receiveErrors = errors => ({
   type: RECEIVE_SESSION_ERRORS,
@@ -50,6 +48,9 @@ export const login = user => dispatch => (
     APIUtil.setAuthToken(token);
     const decoded = jwt_decode(token);
     dispatch(receiveCurrentUser(Object.assign({}, decoded, res.data.userInfo)))
+    dispatch(updateUser(res.data.userInfo))
+
+
   })
     .catch(err => {
       dispatch(receiveErrors(err.response.data));

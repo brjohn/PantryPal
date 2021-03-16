@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.updateUser = updateUser;
-  window.fetchIngredient = fetchIngredient;
-  window.newUser = () => ({id: window.getState().users.id})
-  window.fetchRecipeFromMongoDB = fetchRecipeFromMongoDB;
-  window.addRecipe = addRecipe;
-  window.user = () => window.getState().users
+  // window.dispatch = store.dispatch;
+  // window.updateUser = updateUser;
+  // window.fetchIngredient = fetchIngredient;
+  // window.newUser = () => ({id: window.getState().users.id})
+  // window.fetchRecipeFromMongoDB = fetchRecipeFromMongoDB;
+  // window.addRecipe = addRecipe;
+  // window.user = () => window.getState().users
 
 
 
