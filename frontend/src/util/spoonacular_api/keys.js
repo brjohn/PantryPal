@@ -8,6 +8,7 @@ const spoonacular = {
   apiKey3: 'eff7e27d7d794d769e4a06b810563ce7', // Brynn
   apiKey4: 'eb527cf585ea4f8f8e35d8b496da7862', // Alex
   apiKey5: '3e7553da2ac14d1cae47268dec90057f', // Cole
+  apiKey6: 'c718730451164e549904457e26f04894',
 }
 
 module.exports = spoonacular;
