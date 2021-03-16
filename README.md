@@ -4,11 +4,6 @@
 
 PantryPal is a single-page web and mobile application that offers users one place to find and save recipes based on their dietary preferences and the contents of their refrigerator or pantry. With a database of tens of thousands of recipes, PantryPal reaches to the back of your cupboard to curate a list of recipes, making clever use of the ingredients you have available in your virtual pantry. 
 
-/
-
-Pantry Pal is an application that allows users to create their own virtual pantry containing the food items they have on hand at the time. Pantry Pal offers the functionality to cleverly recommend a curated list of recipes based on available inventory, dietary preferences, and more. Recipes may be saved in a user recipe book and ranked alongside a community of other users.
-
-
 ### [Visit the Live Site](https://pantrypal-mern.herokuapp.com/#/)
 
 ##
@@ -42,6 +37,8 @@ The conditions of this project provided opportunities to master new technologies
 2. (ex: state shape, sharing state)
 3. (ex: styling choices)
 ___
+___
+Pantry Pal is an application that allows users to create their own virtual pantry containing the food items they have on hand at the time. Pantry Pal offers the functionality to cleverly recommend a curated list of recipes based on available inventory, dietary preferences, and more. Recipes may be saved in a user recipe book and ranked alongside a community of other users.
 
 ### PantryPal Wiki:
 * [PantryPal Design Documents](https://github.com/brjohn/PantryPal/wiki)
