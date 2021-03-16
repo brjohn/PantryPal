@@ -1,4 +1,3 @@
-
 import React from "react";
 import './recipe.css'
 import { getRecipeByIngredients, getRecipeInformationBulk } from "../../util/spoonacular_api/spoonacular_api"
