@@ -11,7 +11,7 @@ class Recipe extends React.Component {
     this.updateRecipes = this.updateRecipes.bind(this);
     this.filterRecipes = this.filterRecipes.bind(this);
     this.setState = this.setState.bind(this);
-    this.toggleUpdateSpinner =this.toggleUpdateSpinner.bind(this);
+    this.toggleUpdateSpinner = this.toggleUpdateSpinner.bind(this);
   }
 
 
@@ -46,7 +46,7 @@ class Recipe extends React.Component {
       getRecipeInformationBulk(bulkRequestString, (returnedRecipeInformation) => {
         let filteredRecipesArr = this.combine(returnedRecipeInformation, returnedRecipes).map(({ title, image, instructions, extendedIngredients, diets }) => {
           return { title, image, instructions, extendedIngredients, diets }
-          })
+        })
         this.props.updateUser({ id: this.props.currentUser.id, recipes: filteredRecipesArr, preferences: [] })
         this.toggleUpdateSpinner()
       })
@@ -103,27 +103,28 @@ class Recipe extends React.Component {
       saved_recipes.forEach(recipe => {
         if (recipe.title !== recipeToBeSaved.title) newSavedRecipes.push(recipe)
       })
-      updateUser({id: currentUser.id, saved_recipes: newSavedRecipes})
+      updateUser({ id: currentUser.id, saved_recipes: newSavedRecipes })
 
     } else {
-      updateUser({id: currentUser.id, saved_recipes: saved_recipes.concat([recipeToBeSaved])})
+      updateUser({ id: currentUser.id, saved_recipes: saved_recipes.concat([recipeToBeSaved]) })
     }
 
 
   }
 
 
-  filterRecipes(recipes) {
-    const { exclusions, preferences } = this.props
+  filterRecipes() {
+    const { exclusions, preferences, recipes } = this.props
     let filteredRecipes = [];
 
     recipes.forEach(recipe => {
       if (preferences.every(pref => recipe.diets.includes(pref))) {
         let recipeIngredients = recipe.extendedIngredients.map(ingrediet => ingrediet.name)
         if (!exclusions.some(exc => recipeIngredients.includes(exc))) {
-          filteredRecipes.push(recipe)}
+          filteredRecipes.push(recipe)
         }
-        
+      }
+
     })
     return filteredRecipes
   }
@@ -137,11 +138,10 @@ class Recipe extends React.Component {
     const { recipes, saved_recipes } = this.props
     const recipeTitle = saved_recipes.map(recipe => recipe.title)
 
-    // debugger
     return (
       <div className="recipe">
         <h1 className="r-title">Recipes</h1>
-          {this.switchButton()}
+        {this.switchButton()}
 
         <ul className="user-ingredients">
 
@@ -152,15 +152,15 @@ class Recipe extends React.Component {
 
                 <div className="recipe-result-modal" onClick={() => this.props.openModal(recipe)}>
                   <div>
-                    <img src={recipe.image} height="25" width="25" alt="RecipeImage"  />
+                    <img src={recipe.image} height="25" width="25" alt="RecipeImage" />
                   </div>
                   <div>
                     {recipe.title}
                   </div>
                 </div>
 
-                <div className="recipe-main-add" onClick={() => this.addRecipeToFavorite(recipe)}> 
-                  {(recipeTitle.includes(recipe.title))? (<div className="green">Saved</div>) : (`Save`)}
+                <div className="recipe-main-add" onClick={() => this.addRecipeToFavorite(recipe)}>
+                  {(recipeTitle.includes(recipe.title)) ? (<div className="saved-indicator">Saved</div>) : (`Save`)}
                 </div>
 
               </li>
@@ -177,14 +177,17 @@ class Recipe extends React.Component {
   }
 
 
-  tilesView(recipesArray) {
+  tilesView() {
+    const { recipes } = this.props
+    const recipeTitle = this.props.saved_recipes.map(recipe => recipe.title)
+
     return (
       <div className="recipe">
         <h1 className="r-title">Recipes</h1>
         {this.switchButton()}
 
         <ul className="user-ingredients user-ingredients-tiles">
-          {this.filterRecipes(recipesArray).map((recipe, idx) => {
+          {this.filterRecipes(recipes).map((recipe, idx) => {
             return (
               <li key={idx} className="recipe-results recipe-results-tiles">
 
@@ -197,8 +200,8 @@ class Recipe extends React.Component {
                   </div>
                 </div>
 
-                <div className="recipe-main-add" onClick={this.addRecipeToFavorite(recipe)}>
-                  Save
+                <div className="recipe-main-add" onClick={() => this.addRecipeToFavorite(recipe)}>
+                  {(recipeTitle.includes(recipe.title)) ? (<div className="saved-indicator">Saved</div>) : (`Save`)}
                 </div>
 
               </li>
@@ -218,10 +221,8 @@ class Recipe extends React.Component {
 
 
   render() {
-    const {recipes} = this.props;
-    
     return (
-      (this.state.view === 'list') ? this.listview() : this.tilesView(recipes))
+      (this.state.view === 'list') ? this.listview() : this.tilesView())
   }
 
 }
