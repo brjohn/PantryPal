@@ -2,7 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
-  flex: 2;
   padding-left: 10px;
   padding-right: 5px;
 }
@@ -77,7 +76,20 @@
   border-color: lightgrey;
   flex-direction: column;
   text-align: center;
+  overflow: auto;
 }
+
+.pantry::-webkit-scrollbar {
+    color: #d19da5;
+    width: 0;
+}
+.pantry::-webkit-scrollbar-track-piece {
+  color: none;
+}
+.pantry::-webkit-scrollbar-corner {
+  color: #d19da5;
+}
+
 
 body {
   background: rgba(64, 61, 124, 0.615);
