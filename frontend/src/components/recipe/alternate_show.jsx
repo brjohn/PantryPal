@@ -9,6 +9,7 @@ class AlternateShow extends React.Component {
 
         this.saveRecipe = this.saveRecipe.bind(this);
         this.listIngredients = this.listIngredients.bind(this);
+        this.listInstructions = this.listInstructions.bind(this);
     }
 
     listIngredients(){
@@ -22,6 +23,21 @@ class AlternateShow extends React.Component {
                 }) }
             </ul>
         )    
+    }
+    listInstructions(){
+        if (!this.props.recipeObject.instructions) return <ul></ul>
+        const instructions = this.props.recipeObject.instructions;
+        const sentences = instructions.split('.')
+        return (
+            <ul className="instructions-ul">
+                {sentences.map((sentence, idx) => {
+                    return (
+                        <li className="instruction-li" key={idx}>{sentence}.</li>
+                    )
+                }) }
+            </ul>
+        )
+
     }
 
     saveRecipe(){
@@ -44,7 +60,7 @@ class AlternateShow extends React.Component {
                 <img src={this.props.recipeObject.image} height="100" width="100" alt=""></img>
                 </div>
                 <div className="recipe-ingredients">{this.listIngredients()}</div>
-                <p className="recipe-instructions">{this.props.recipeObject.instructions}</p>
+                <p className="recipe-instructions">{this.listInstructions()}</p>
                 {/* </div> */}
                 <button className="save-recipe-div" onClick={this.saveRecipe}>Save</button>
             </div>
