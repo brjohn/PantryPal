@@ -1,6 +1,6 @@
 
 import React from "react";
-import SearchFiltersContainer from '../search_filters/search_filters_container';
+// import SearchFiltersContainer from '../search_filters/search_filters_container';
 import './recipe.css'
 import { getRecipeByIngredients, getRecipeInformationBulk } from "../../util/spoonacular_api/spoonacular_api"
 import { listIcon, tilesIcon } from "./recipe_icons";
@@ -11,7 +11,7 @@ import { listIcon, tilesIcon } from "./recipe_icons";
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { recipes: this.props.recipes, view: 'list' }
+    this.state = { view: 'list' }
     this.updateRecipes = this.updateRecipes.bind(this);
     this.filterRecipes = this.filterRecipes.bind(this);
 
@@ -80,11 +80,10 @@ class Recipe extends React.Component {
 
   addRecipeToFavorite(recipeToBeSaved) {
     return () => {
-      if (!this.props.saved_recipes.some(recipe => recipe.title === recipeToBeSaved.title)) {
 
-        this.props.saved_recipes.push(recipeToBeSaved)
-        this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes})
-        // this.props.setRecipeHomeState({addedToFavorite: true})
+    
+      if (!this.props.saved_recipes.some(recipe => recipe.title === recipeToBeSaved.title)) {
+        this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes.concat([recipeToBeSaved])})
       }
     }
   }
@@ -110,7 +109,8 @@ class Recipe extends React.Component {
 
 
 
-  listview(recipesArray) {
+  listview() {
+    const { recipes } = this.props
     return (
       <div className="recipe">
         <h1 className="r-title">Recipes</h1>
@@ -119,7 +119,7 @@ class Recipe extends React.Component {
         <ul className="user-ingredients">
 
 
-          {this.filterRecipes(recipesArray).map((recipe, idx) => {
+          {this.filterRecipes(recipes).map((recipe, idx) => {
             return (
               <li key={idx} className="recipe-results" >
 
@@ -195,7 +195,7 @@ class Recipe extends React.Component {
     const {recipes} = this.props;
     
     return (
-      (this.state.view === 'list') ? this.listview(recipes) : this.tilesView(recipes))
+      (this.state.view === 'list') ? this.listview() : this.tilesView(recipes))
   }
 
 }

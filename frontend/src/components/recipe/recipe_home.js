@@ -8,12 +8,6 @@ import RecipeBookContainer from '../recipe_book/recipe_book_container';
 
 
 class RecipeHome extends React.Component {
-  constructor(props){
-    super(props);
-    this.setState = this.setState.bind(this);
-
-  }
-
 
   render() {
     return (

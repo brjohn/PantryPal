@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { fetchUser, updateUser } from '../../actions/user_actions';
+import { updateUser } from '../../actions/user_actions';
 import Search from './search';
 
-const mapStateToProps = ({users, session}) => ({
+const mapStateToProps = ({entities, session}) => ({
     currentUser: session.currentUser,
-    ingredients: users.ingredients || []
+    ingredients: entities.ingredients || []
 });
 
 const mapDispatchToProps = (dispatch) => ({

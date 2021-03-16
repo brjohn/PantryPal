@@ -6,8 +6,11 @@ import { removeIcon } from '../search/search_icon';
 class Pantry extends React.Component {
   removeIngredient(ingredientIndex) {
     return () => {
-      this.props.ingredients.splice(ingredientIndex, 1)
-      this.props.updateUser({ id: this.props.currentUser.id, ingredients: this.props.ingredients })
+      let newIngredients = []
+      this.props.ingredients.forEach((ingredient, idx) => {
+        if (idx !== ingredientIndex) newIngredients.push(ingredient)
+      })
+      this.props.updateUser({ id: this.props.currentUser.id, ingredients: newIngredients })
     }
   }
 

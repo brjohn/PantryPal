@@ -6,16 +6,28 @@ class Preferences extends React.Component {
 
   handleChange(diet) {
     return () => {
-      (this.props.preferences.includes(diet) ?
-        (this.props.preferences.splice(this.props.preferences.indexOf(diet), 1)) :
-        (this.props.preferences.push(diet)))
-      this.props.updateUser({ id: this.props.currentUser.id, preferences: this.props.preferences })
+      let isIncluded = false;
+      let { preferences } = this.props;
+      let newPreferences = [];
+
+
+      preferences.forEach(preference => {
+        if (preference === diet) {
+          isIncluded = true;
+        } else {
+          newPreferences.push(preference)
+        }
+      })
+
+      if (!isIncluded) newPreferences.push(diet)
+      // console.log([preferences, newPreferences])
+      this.props.updateUser({ id: this.props.currentUser.id, preferences: newPreferences })
     }
   }
 
 
   preferenceComponent(fieldName) {
-
+    // debugger
     return (
       <label className="p-text" key={fieldName}>
         <input

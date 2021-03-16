@@ -6,7 +6,7 @@ import { openModal } from "../../actions/modal_actions";
 const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
-    saved_recipes: state.users.saved_recipes || []
+    saved_recipes: state.entities.saved_recipes
   }
 };
 
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => ({
   openModal: (modal) => dispatch(openModal(modal))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeBook);
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeBook); 

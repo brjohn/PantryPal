@@ -1,15 +1,14 @@
 import { connect } from 'react-redux';
-import { fetchUser, updateUser } from '../../actions/user_actions';
+import { updateUser } from '../../actions/user_actions';
 import SearchFilters from './search_filters';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
-  preferences: state.users.preferences || [],
-  exclusions: state.users.exclusions || []
+  preferences: state.entities.preferences || [],
+  exclusions: state.entities.exclusions || []
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchUser: id => dispatch(fetchUser(id)),
   updateUser: (data) => dispatch(updateUser(data))
 })
 

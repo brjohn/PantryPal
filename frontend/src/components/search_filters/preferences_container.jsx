@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import { fetchUser, updateUser } from '../../actions/user_actions';
+import { updateUser } from '../../actions/user_actions';
 import Preferences from './preferences';
 
-const mapStateToProps = ({users, session}) => ({
+const mapStateToProps = ({entities, session}) => ({
     currentUser: session.currentUser,
-    preferences: users.preferences || [],
-    recipes: users.recipes || []
-
+    preferences: entities.preferences,
+    recipes: entities.recipes
 });
+
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchUser: id => dispatch(fetchUser(id)),
     updateUser: (data) =>  dispatch(updateUser(data))
 });
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Preferences);

@@ -17,26 +17,31 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  ingredients: {   //Array stores ingredients as string names for user's pantry.
-    type: Array,    // Recipes searched & found with findByIngredients https://spoonacular.com/food-api/docs#Search-Recipes-by-Ingredients
+  ingredients: 
+  // [{ type: Schema.Types.ObjectId, ref: 'Ingredient' }],
+  {   
+    type: Array,    
     "default": []
-    // type: Schema.Types.ObjectId,
-    // ref: 'ingredients'
+    
   },
-  preferences: {   //Array stores diet preferences as strings. Returned recipes MUST include. Full list: https://spoonacular.com/food-api/docs#Diets
-    type: Array,    // ?? May need "ComplexSearch" rather than just "findByIngredients" ?? https://api.spoonacular.com/recipes/complexSearch
-    "default": []
-  },
-  exclusions: {    //Array stores intolerances as strings. Returned recipes MUST avoid. Full list: https://spoonacular.com/food-api/docs#Intolerances
-    type: Array,    // ?? May need  "ComplexSearch" rather than just "findByIngredients" ?? https://api.spoonacular.com/recipes/complexSearch
+  preferences: {   
+    type: Array,    
     "default": []
   },
-  recipes: {       //Array stores recipes as spoonacular recipe IDs for user's saved recipes.
+  exclusions: {    
+    type: Array,    
+    "default": []
+  },
+  recipes: 
+  // [{ type: Schema.Types.ObjectId, ref: 'Recipe' }],
+  {       
     type: Array,
     "default": []
-    // references recipes
+    
   },
-  saved_recipes: {
+  saved_recipes: 
+  // [{ type: Schema.Types.ObjectId, ref: 'Recipe' }]
+  {
     type: Array,
     "default": []
   }
@@ -45,9 +50,5 @@ const UserSchema = new Schema({
   timestamps: true
 })
 
-// Decide later:
-// add booleans for user's dietary preferences
-// create an association for user's saved recipe IDs here
-// create an association for user's pantry
 
 module.exports = User = mongoose.model('User', UserSchema);
