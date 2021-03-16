@@ -6,11 +6,12 @@ const mapStateToProps = ({entities, session}) => ({
     currentUser: session.currentUser,
     preferences: entities.preferences,
     recipes: entities.recipes
-
 });
+
 
 const mapDispatchToProps = (dispatch) => ({
     updateUser: (data) =>  dispatch(updateUser(data))
 });
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Preferences);

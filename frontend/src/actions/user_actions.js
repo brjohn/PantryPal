@@ -1,7 +1,4 @@
 import * as UserApiUtil from '../util/user_api_util';
-import { receiveCurrentUser } from './session_actions';
-
-
 
 
 export const RECEIVE_PREFERENCES = "RECEIVE_PREFERENCES";
@@ -37,20 +34,17 @@ const receiveSavedRecipes = saved_recipes => ({
 })
 
 
-export const fetchUser = (userId) => (dispatch) => (
-  UserApiUtil.fetchUser(userId).then(user => {
-    dispatch(receiveCurrentUser(user.data))
-    dispatch(receivePreferences(user.data.preferences))
-    dispatch(receiveExclusions(user.data.exclusions))
-    dispatch(receiveIngredients(user.data.ingredients))
-    dispatch(receiveRecipes(user.data.recipes))
-    dispatch(receiveSavedRecipes(user.data.saved_recipes))
+export const fetchUser = userId => dispatch => (
+  UserApiUtil.fetchUser(userId).then(({data}) => {
+    dispatch(receivePreferences(data.preferences))
+    dispatch(receiveExclusions(data.exclusions))
+    dispatch(receiveIngredients(data.ingredients))
+    dispatch(receiveRecipes(data.recipes))
+    dispatch(receiveSavedRecipes(data.saved_recipes))
   })
 )
 
 export const updateUser = data => dispatch => {
-  
-
   if (data.preferences) dispatch(receivePreferences(data.preferences))
   if (data.exclusions) dispatch(receiveExclusions(data.exclusions))
   if (data.ingredients) dispatch(receiveIngredients(data.ingredients))

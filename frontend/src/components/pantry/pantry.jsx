@@ -8,8 +8,7 @@ class Pantry extends React.Component {
     return () => {
       let newIngredients = []
       this.props.ingredients.forEach((ingredient, idx) => {
-        if (idx !== ingredientIndex)
-          newIngredients.push(ingredient)
+        if (idx !== ingredientIndex) newIngredients.push(ingredient)
       })
       this.props.updateUser({ id: this.props.currentUser.id, ingredients: newIngredients })
     }

@@ -6,11 +6,11 @@ import Recipe from "./recipe";
 
 const mapStateToProps = ({session, entities}) => ({
   currentUser: session.currentUser,
-  ingredients: entities.ingredients || [],
-  recipes: entities.recipes || [],
-  saved_recipes: entities.saved_recipes || [],
-  exclusions: entities.exclusions || [],
-  preferences: entities.preferences || []
+  ingredients: entities.ingredients,
+  recipes: entities.recipes,
+  saved_recipes: entities.saved_recipes,
+  exclusions: entities.exclusions,
+  preferences: entities.preferences
 });
 
 

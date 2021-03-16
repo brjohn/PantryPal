@@ -6,7 +6,7 @@ import { openModal } from "../../actions/modal_actions";
 const mapStateToProps = (state) => {
   return {
     currentUser: state.session.currentUser,
-    saved_recipes: state.entities.saved_recipes || []
+    saved_recipes: state.entities.saved_recipes
   }
 };
 

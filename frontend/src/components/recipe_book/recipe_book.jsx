@@ -11,8 +11,11 @@ class RecipeBook extends React.Component {
 
 
   clickRemove(saved_recipe_index) {
-    this.props.saved_recipes.splice(saved_recipe_index, 1)
-    this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes})
+    let newSavedRecipes = [];
+    this.props.saved_recipes.forEach((savedRecipe, idx) => {
+      if (idx !== saved_recipe_index) newSavedRecipes.push(savedRecipe)
+    })
+    this.props.updateUser({id: this.props.currentUser.id, saved_recipes: newSavedRecipes})
   }
 
 

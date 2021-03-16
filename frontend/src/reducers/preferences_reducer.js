@@ -2,7 +2,7 @@ const { RECEIVE_PREFERENCES } = require("../actions/user_actions");
 
 
 
-const preferencesReducer = (oldState={}, action) => {
+const preferencesReducer = (oldState=[], action) => {
   Object.freeze(oldState);
 
   switch (action.type) {
