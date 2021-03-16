@@ -2,9 +2,9 @@ import React from 'react';
 import searchIngredient from './search_function';
 import './search.css'
 import { addIcon } from './search_icon';
-import fs from 'fs'
-import allIngredients from './search_data';
-import { getIngredient } from '../../util/spoonacular_api/spoonacular_api';
+// import fs from 'fs'
+// import allIngredients from './search_data';
+// import { getIngredient } from '../../util/spoonacular_api/spoonacular_api';
 
 
 

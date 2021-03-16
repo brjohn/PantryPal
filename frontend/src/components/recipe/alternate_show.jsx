@@ -1,6 +1,6 @@
 import React from 'react';
-import {fetchRecipeFromMongoDB} from '../../util/recipe_util';
-import { getRecipeInformation } from "../../util/spoonacular_api/spoonacular_api"
+// import {fetchRecipeFromMongoDB} from '../../util/recipe_util';
+// import { getRecipeInformation } from "../../util/spoonacular_api/spoonacular_api"
 import "./show.css";
 
 class AlternateShow extends React.Component {
@@ -41,7 +41,7 @@ class AlternateShow extends React.Component {
                 <h1 className="recipe-title">{this.props.recipeObject.title}</h1>
                 {/* <div className="show-content-div"> */}
                 <div className='r-img-container'>
-                <img src={this.props.recipeObject.image} height="100" width="100"></img>
+                <img src={this.props.recipeObject.image} height="100" width="100" alt=""></img>
                 </div>
                 <div className="recipe-ingredients">{this.listIngredients()}</div>
                 <p className="recipe-instructions">{this.props.recipeObject.instructions}</p>
