@@ -91,11 +91,25 @@ class Recipe extends React.Component {
 
 
   addRecipeToFavorite(recipeToBeSaved) {
-    return () => {
-      if (!this.props.saved_recipes.some(recipe => recipe.title === recipeToBeSaved.title)) {
-        this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes.concat([recipeToBeSaved])})
-      }
+    // return () => {
+    //   if (!this.props.saved_recipes.some(recipe => recipe.title === recipeToBeSaved.title)) {
+    //     this.props.updateUser({id: this.props.currentUser.id, saved_recipes: this.props.saved_recipes.concat([recipeToBeSaved])})
+    //   }
+    // }
+
+    let { saved_recipes, updateUser, currentUser } = this.props;
+    if (saved_recipes.map(recipe => recipe.title).includes(recipeToBeSaved.title)) {
+      let newSavedRecipes = [];
+      saved_recipes.forEach(recipe => {
+        if (recipe.title !== recipeToBeSaved.title) newSavedRecipes.push(recipe)
+      })
+      updateUser({id: currentUser.id, saved_recipes: newSavedRecipes})
+
+    } else {
+      updateUser({id: currentUser.id, saved_recipes: saved_recipes.concat([recipeToBeSaved])})
     }
+
+
   }
 
 
@@ -145,7 +159,7 @@ class Recipe extends React.Component {
                   </div>
                 </div>
 
-                <div className="recipe-main-add" onClick={this.addRecipeToFavorite(recipe)}> 
+                <div className="recipe-main-add" onClick={() => this.addRecipeToFavorite(recipe)}> 
                   {(recipeTitle.includes(recipe.title))? (<div className="green">Saved</div>) : (`Save`)}
                 </div>
 
