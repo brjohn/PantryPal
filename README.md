@@ -40,5 +40,7 @@ The conditions of this project provided opportunities to master new technologies
     
 2. State Shape
 
-    One of our greatest tools for increasing efficiency and code readability was through manipulating the state shape. 
+    One of our greatest tools for increasing efficiency and code readability was manipulating the state shape. This involved assessing what absolutely must be stored in our backend MongoDB (user information), what could be partially stored (ie: ingredient names, instead of a whole ingredient objects), and making an appealing flat state. This also demanded a frequent re-assessment of ways in which we could adapt our state to accomplish our above-listed goals. We ultimately landed on a flat state shape which relies on separeate actions for all data storage elements available to a user (ie: dietary preferences, recipes, saved recipes, pantry ingredients) nested under our entities reducer. 
+    By carefully managing our mapStateToProps, we were able to ensure our state was shared throughout our application components, so that a change in one component (such as filters) was reflected in the others (such as recipes).
+    
 3. (ex: styling choices)
