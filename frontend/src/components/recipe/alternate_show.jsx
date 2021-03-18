@@ -29,13 +29,21 @@ class AlternateShow extends React.Component {
         const instructions = this.props.recipeObject.instructions;
         const sentences = instructions.split('.')
         return (
-            <ul className="instructions-ul">
-                {sentences.map((sentence, idx) => {
-                    return (
-                        <li className="instruction-li" key={idx}>{sentence}.</li>
-                    )
-                }) }
-            </ul>
+            <div className="recipe-instructions">
+                <h1 id='i-title-list'>Instructions</h1>
+                <ul className="instructions-ul">
+                    {sentences.map((sentence, idx) => {
+                        if (idx < sentences.length - 1){
+                            return (
+                                <li className="instruction-li" key={idx}>{sentence}.</li>
+                            )
+                        } else {
+                            <li className="instruction-li" key={idx}>{sentence}</li>
+                        }
+                        
+                    }) }
+                </ul>
+            </div>
         )
 
     }
@@ -61,8 +69,9 @@ class AlternateShow extends React.Component {
                 </div>
                 <h1 id='i-title-list'>Ingredients</h1>
                 <div className="recipe-ingredients">{this.listIngredients()}</div>
-                <h1 id='i-title-list'>Instructions</h1>
-                <p className="recipe-instructions">{this.listInstructions()}</p>
+                {/* <h1 id='i-title-list'>Instructions</h1>
+                <div className="recipe-instructions">{this.listInstructions()}</div> */}
+                {this.listInstructions()}
                 {/* </div> */}
                 <button className="save-recipe-div" onClick={this.saveRecipe}>Save</button>
             </div>
