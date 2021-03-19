@@ -183,18 +183,16 @@ class Recipe extends React.Component {
         <ul className="user-ingredients user-ingredients-tiles">
           {this.filterRecipes(recipes).map((recipe, idx) => {
             return (
-              <li key={idx} className="recipe-results recipe-results-tiles">
-
-                <div className="recipe-result-modal recipe-result-modal-tiles" onClick={() => this.props.openModal(recipe)}>
-                  <div>
-                    <img src={recipe.image} height="25" width="25" alt="RecipeImage" />
-                  </div>
-                  <div>
-                    {recipe.title}
-                  </div>
+              <li key={idx} className="recipe-results-tiles">
+                <div className="recipe-result-modal-text" onClick={() => this.props.openModal(recipe)}>
+                  {recipe.title}
                 </div>
 
-                <div className="recipe-main-add" onClick={() => this.addRecipeToFavorite(recipe)}>
+                <div className="recipe-result-modal-tiles">
+                  <img src={recipe.image} alt="RecipeImage" onClick={() => this.props.openModal(recipe)} />
+                </div>
+
+                <div className="recipe-main-add-tiles" onClick={() => this.addRecipeToFavorite(recipe)}>
                   {(recipeTitle.includes(recipe.title)) ? (<div className="saved-indicator">Saved</div>) : (`Save`)}
                 </div>
 

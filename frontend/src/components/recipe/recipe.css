@@ -157,11 +157,11 @@
 }
 
 .user-ingredients-tiles{
-  columns: 3;
-  -webkit-columns: 3;
-  -moz-columns: 3;
-  -webkit-rows: 3;
-  -moz-rows: 3;
+  columns: 4;
+  -webkit-columns: 4;
+  -moz-columns: 4;
+  -webkit-rows: 4;
+  -moz-rows: 4;
   overflow: auto;
 }
 /* Make scrollbar visible for recipe list and tiles view:  */
@@ -210,8 +210,16 @@ ul.user-ingredients::-webkit-scrollbar-thumb {
 
 .recipe-results-tiles{
   display: inline-table;
-  width: 100%;
-  height: 32%;
+  justify-content: space-between;
+  align-items: center;
+    /* border: 1px solid red; */
+  background-color: rgba(78, 140, 202, 0.19);
+  margin-bottom: 10px;
+  border-radius: 30px;
+  padding-bottom: 0px;
+  text-align: center;
+  padding-right: 8px;
+  width: 95%;
 }
 
 .recipe-results:hover {
@@ -224,26 +232,30 @@ ul.user-ingredients::-webkit-scrollbar-thumb {
   vertical-align: middle;
 }
 
-.recipe-result-modal img {
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  width: 35px;
-  margin-right: 8px;
-  height: 32px;
-}
-.recipe-result-modal-tiles{
-  font-size: 18px;
-}
-.recipe-result-modal-tiles img {
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  width: 140px;
-  margin-right: 8px;
-  height: 128px; 
+.recipe-result-modal-text{
+  font-size: 14px;
+  cursor: pointer;
+  height: 13%;
+  padding: 1px;
+  margin: 1px;
 }
 
-.recipe-result-modal text {
-  padding-bottom: 10px;
+.recipe-result-modal-tiles{
+  justify-content: center;
+}
+
+.recipe-result-modal-tiles img {
+  border-top-right-radius: 15%;
+  border-bottom-right-radius: 15%;
+  border-top-left-radius: 15%;
+  border-bottom-left-radius: 15%;
+  margin: 0px;
+  width: 95%;
+  cursor: pointer;
+}
+
+.recipe-result-modal-text {
+  padding-bottom: 5px;
 }
 
 
@@ -325,18 +337,12 @@ button {
   justify-content: space-between;
 }
 
-.recipe-result-modal.recipe-result-modal-tiles text{
-  margin-top: 14px;
-}
 
-.recipe-result-modal.recipe-result-modal-tiles img{
-    border-top-right-radius: 36px;
-    border-bottom-right-radius: 36px;
+.recipe-main-add-tiles {
+  vertical-align: bottom;
+  height: 5%;
+  cursor: pointer;
 }
-/* 
-.recipe-main-add {
-  margin-top: 25px;
-} */
 
 ul.instructions-li {
   justify-content: left;
