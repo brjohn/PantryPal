@@ -4,7 +4,7 @@
 
 PantryPal is a single-page web and mobile application that offers users one place to find and save recipes based on their dietary preferences and the contents of their refrigerator or pantry. With a database of tens of thousands of recipes, PantryPal reaches to the back of your cupboard to curate a list of recipes, making clever use of the ingredients you have available in your virtual pantry. 
 
-### [Visit the Live Site](https://pantrypal-app.herokuapp.com/#/)
+### [Visit the Live Site](https://pantrypalapp.herokuapp.com/#/)
 
 ##
 
