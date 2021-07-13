@@ -138,7 +138,7 @@ class NavBar extends React.Component {
             </div>
           </div>
           <div className="splash-ani-container">
-            <img className="splash-ani" src="/images/pantrypal.png" alt=""/>
+            <img className="splash-ani" src="/images/pantrypal(compressed).png" alt=""/>
           </div>
         </div>
 
