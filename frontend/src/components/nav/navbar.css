@@ -285,8 +285,30 @@ footer {
 		 overflow: auto;
 	} */
 
-
-
+/* Fix Mobile Warping on Splash */
+  @media screen and (max-width:700px){
+     html {
+      overflow-x: hidden;
+    }
+    .splash-ani {
+      max-height:160px;
+    }
+    .splash-ani-container {
+      max-height:160px;
+    }
+    .nav-right {
+      padding: 0%;
+    }
+    .nav-right .grey-button {
+      transform: scale(.85);
+    }
+    .nav-right .blue-button {
+      transform: scale(.85);
+    }
+    .nav-right .pink-button {
+      transform: scale(.85);
+    }
+}
 
 
 
