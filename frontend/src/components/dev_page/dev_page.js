@@ -50,7 +50,7 @@ class DevPage extends React.Component {
                     </a>
                   </li>
                   <li>
-                    <a href="https://angellist.com/" target="_blank" rel="noreferrer">
+                    <a href="https://angel.co/u/colewendling" target="_blank" rel="noreferrer">
                       <i className="fa fa-angellist fa-icon"></i>
                     </a>
                   </li>
