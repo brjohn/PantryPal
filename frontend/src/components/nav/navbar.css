@@ -308,6 +308,14 @@ footer {
     .nav-right .pink-button {
       transform: scale(.85);
     }
+     #dev-tobottom-container {
+      max-height:120px;
+      min-height: 0px !important;
+    }
+     .scroll-logo {
+      max-height:120px;
+      min-height: 0px !important;
+    }
 }
 
 
